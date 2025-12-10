@@ -1,0 +1,208 @@
+{
+  "active": true,
+  "connections": {
+    "Busca dados active": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Busca dados active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Busca dados active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Excluir contatos active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-02T17:57:43.266Z",
+  "id": "WnEdifqGFVUEkZ6F",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Excluir leads Active",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://jvatpsdl19338.api-us1.com/api/3/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filters[created_before]",
+              "value": "2024-07-01"
+            },
+            {
+              "name": "status",
+              "value": "1"
+            },
+            {
+              "name": "limit",
+              "value": "100"
+            },
+            {
+              "name": "listid",
+              "value": "4"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "9a9f6e9c4ef9664e7ba861a7cf2c1d1a0fcf39950ab7c6df6da6fef8c19eecd54302c2f5"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -48,
+        16
+      ],
+      "id": "118518c1-6339-4036-bd64-e323a7efcd41",
+      "name": "Busca dados active"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        -80
+      ],
+      "id": "7123b6f8-bc24-4dda-a16f-dd474deef417",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        112
+      ],
+      "id": "314e2302-ee9e-4d7b-b5af-ae2c00322720",
+      "name": "When clicking ‘Execute workflow’",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Pega todos os itens de entrada\nconst items = $input.all();\n\n// 2. Cria um array para armazenar os novos itens separados\nconst novosItens = [];\n\n// 3. Itera sobre cada item de entrada (caso a busca retorne paginação ou múltiplos blocos)\nfor (const item of items) {\n  // Tenta acessar a lista de contatos.\n  // A API do ActiveCampaign retorna { \"contacts\": [ ... ] }\n  const lista = item.json.contacts;\n\n  // 4. Verifica se a lista existe e tem elementos\n  if (lista && Array.isArray(lista) && lista.length > 0) {\n    // 5. Loop para \"desempacotar\": transforma a lista em itens individuais\n    for (const contato of lista) {\n      // Adiciona cada contato como um novo item JSON\n      novosItens.push({ json: contato });\n    }\n  }\n}\n\n// 6. Retorna a lista de itens separados\nreturn novosItens;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        160,
+        16
+      ],
+      "id": "5215b501-3768-4156-ac7c-03cf122a10a1",
+      "name": "Code in JavaScript",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://jvatpsdl19338.api-us1.com/api/3/contacts/{{ $json.id }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "9a9f6e9c4ef9664e7ba861a7cf2c1d1a0fcf39950ab7c6df6da6fef8c19eecd54302c2f5"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        16
+      ],
+      "id": "5e2a3b80-8a1e-4911-bebc-a26f89af6713",
+      "name": "Excluir contatos active"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-02T17:57:43.266Z",
+      "createdAt": "2025-12-02T17:57:43.266Z",
+      "role": "workflow:owner",
+      "workflowId": "WnEdifqGFVUEkZ6F",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-03T12:58:47.601Z",
+  "versionId": "22182165-be97-40b0-a61d-c641325d852c"
+}

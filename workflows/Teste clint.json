@@ -1,0 +1,28 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-11-10T18:51:16.307Z",
+  "id": "E2ZUEf7lufPLTKDd",
+  "isArchived": true,
+  "meta": null,
+  "name": "Teste clint",
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-10T18:51:16.307Z",
+      "createdAt": "2025-11-10T18:51:16.307Z",
+      "role": "workflow:owner",
+      "workflowId": "E2ZUEf7lufPLTKDd",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-10T19:41:28.656Z",
+  "versionId": "5e5ccac0-6b3a-41b2-a934-1f4df7903767"
+}

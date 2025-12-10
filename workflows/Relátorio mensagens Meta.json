@@ -1,0 +1,130 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-23T11:47:51.957Z",
+  "id": "kZOYfRuirFZTTu4t",
+  "isArchived": false,
+  "meta": null,
+  "name": "Relátorio mensagens Meta",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "098fe0ab-15b1-4d9f-b423-adb08241f856",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega a data de hoje\nconst hoje = new Date();\n\n// Define o dia de anteontem (hoje - 2 dias)\nconst anteontem = new Date(hoje);\nanteontem.setDate(hoje.getDate() - 2);\n\n// Define o início do dia de anteontem (00:00:00)\nanteontem.setHours(0, 0, 0, 0);\n\n// A API da Meta exige o tempo em formato UNIX (segundos)\nconst startTimestamp = Math.floor(anteontem.getTime() / 1000);\n\n// O fim do período é o mesmo que o início, \n// pois a granularidade é DIÁRIA\nconst endTimestamp = startTimestamp;\n\n// Retorna os valores para serem usados nos próximos nós\nreturn [\n  {\n    json: {\n      startDate: startTimestamp,\n      endDate: endTimestamp\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "8ccca8e8-1fd5-4d9c-ae93-9b6b5a9008e1",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v20.0/794237613362214?fields=name,status,language,category,components",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "dimension",
+              "value": "TEMPLATE"
+            },
+            {
+              "name": "granularity",
+              "value": "DAILY"
+            },
+            {
+              "name": "start",
+              "value": "={{$node[\"Code in JavaScript\"].json[\"startDate\"]}}"
+            },
+            {
+              "name": "end",
+              "value": "={{$node[\"Code in JavaScript\"].json[\"endDate\"]}}"
+            },
+            {
+              "name": "metric",
+              "value": "COST"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAALbUQysiMMBP3raDUZBBHkZBfEe43pmlcJY16jcRVCb7ZBaRZAvMSCFmMC25qtSW304Lz8l14DwyuPjNZBIpFXh85nSZBBLUPEVGBHJzoP7j5UNkbkg0udL2Gevk2LteZBN8zd9icj0gZCv4ekYp1mqSiYF63wdDij4YrHZBki4EOrd48bWSzB7jA8fZBVih14NHN5AZDZD"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "0221c288-351c-494e-aab3-90cb8b347436",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-23T11:47:51.957Z",
+      "createdAt": "2025-10-23T11:47:51.957Z",
+      "role": "workflow:owner",
+      "workflowId": "kZOYfRuirFZTTu4t",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-18T12:06:06.042Z",
+  "versionId": "e99ee53e-4217-42da-838e-58da3705c391"
+}

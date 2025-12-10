@@ -1,0 +1,499 @@
+{
+  "active": true,
+  "connections": {
+    "HTTP Request38": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request65",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch21": {
+      "main": [
+        [
+          {
+            "node": "Wait62",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait61",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait60",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait60": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request109",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait61": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request108",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait62": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request107",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request65": {
+      "main": [
+        [
+          {
+            "node": "Switch21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request38",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-19T17:55:06.325Z",
+  "id": "KkVSXDbhGJnVz2Gb",
+  "isArchived": false,
+  "meta": null,
+  "name": "Forms Magra em Casa InLead",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"nome_produto\": \"Programa magra em casa\"\n    },\n    \"qual_tratamento\": \"\",\n    \"ja_usou_alguma_medic\": \"\",\n    \"nascimento\": \"{{ $json.body.uYH8ZM }}\",\n    \"peso\": \"{{ $json.body.peso }}\",\n    \"altura\": \"{{ $json.body.altura }}\",\n    \"maior_peso_que_ja_te\": \"{{ $json.body.maior_peso }}\",\n    \"quantos_quilos_quer\": \"{{ $json.body.quilos_a_perder }}\",\n    \"foi_diagnosticada\": \"{{ $json.body['saude_mental'] }}, {{ $json.body['coracao_circulacao'] }}, {{ $json.body.disturbios_abdominais }}, {{ $json.body['response.outros'] }}\",\n    \"fez_cirurgia\": \"{{ $json.body['responses.opcoes_HjqcuV'] }}\",\n    \"usou_medicamento\": \"{{ $json.body.lFsfFW }}\",\n    \"esta_gravida\": \"\",\n    \"alergico_a_medicamen\": \"{{ $json.body['responses.alergia'] }}\", \n    \"tem_duvidas\": \"{{ $json.body.Bmgln3 }}\"\n  },\n  \"origin_id\": \"89d0e85a-e3d2-4037-817e-4b75fe35f89b\",\n  \"name\": \"{{ $json.body.nome }}\",\n  \"phone\": \"{{ $json.body.phone }}\",\n  \"email\": \"{{ $json.body.email }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5936,
+        1136
+      ],
+      "id": "2e8f7a6e-1de4-4fce-aa6f-01bc5cdd07a7",
+      "name": "HTTP Request38"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"InLead - Magra em casa\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5712,
+        1136
+      ],
+      "id": "30283701-9ba7-488a-b34a-1d492a05c680",
+      "name": "HTTP Request65"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Ester\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        944
+      ],
+      "id": "28451d0c-64f0-4cb0-9dc5-1bcd9a0c5e0b",
+      "name": "HTTP Request107"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "ee57917e-c292-49e0-9e94-431c6412eeae",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bb940cd5-d346-4d65-8c55-a217c13a873f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Ester"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fd073c1e-88ac-40a1-b7d4-a45f60a84980",
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "ac79c561-1936-4afb-8282-8c0a242fca7e",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Jacira"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ba487cb7-816a-4382-a797-214b788aa581",
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "12b99bcf-1105-4342-842f-89be0cc19d6c",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Erika"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -5488,
+        1120
+      ],
+      "id": "f84269f7-daa0-4b5d-9ed3-368ef5701357",
+      "name": "Switch21"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        1328
+      ],
+      "id": "9f640a42-5f14-439b-9711-c99cb8f20e32",
+      "name": "Wait60",
+      "webhookId": "cf803f12-3cf1-4d4e-a311-98edb65b9ac9"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        1136
+      ],
+      "id": "2a4da442-fbd8-447b-bf05-ba4f9ea691e0",
+      "name": "Wait61",
+      "webhookId": "71d27b26-85ee-4506-8ab5-7dc802a6ca57"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        944
+      ],
+      "id": "db5bbe3a-ed79-426e-b775-da2c5f4b3664",
+      "name": "Wait62",
+      "webhookId": "24890791-11ae-4191-8c57-6e019f06aa91"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Jacira\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        1136
+      ],
+      "id": "9eb0e3c4-81fe-42d0-8507-433630591774",
+      "name": "HTTP Request108"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Erika\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        1328
+      ],
+      "id": "74e6cefa-e0e9-4b67-8626-4e7acea7c4d8",
+      "name": "HTTP Request109"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "6a62d1f7-fe49-48c4-b175-596c994b3396",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -6544,
+        1136
+      ],
+      "id": "08114529-9d48-4758-8c37-247c89f806e4",
+      "name": "Webhook",
+      "webhookId": "6a62d1f7-fe49-48c4-b175-596c994b3396"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+            "content-length": "1216",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+            "content-type": "application/x-www-form-urlencoded",
+            "origin": "https://questionario.magraemcasa.com.br",
+            "priority": "u=1, i",
+            "referer": "https://questionario.magraemcasa.com.br/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?1",
+            "sec-ch-ua-platform": "\"Android\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "no-cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "179.106.165.141",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "179.106.165.141"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "tracking.screen": "427x950",
+            "tracking.platform": "Linux armv81",
+            "score": "19",
+            "responses": "A|E|Refluxo frequente |A|B|A|B",
+            "nome": "Dany Vieira Silva ",
+            "NWYTHU": "Minas Gerais ",
+            "HTY3lt": "clicked",
+            "opcoes_y7B91j": "A",
+            "score.opcoes_y7B91j": "10",
+            "responses.opcoes_y7B91j": "A|*|*",
+            "wXZQNf": "clicked",
+            "kEa3Tf": "loaded",
+            "KUZzqo": "clicked",
+            "opcoes_x6kzFO": "E",
+            "score.opcoes_x6kzFO": "3",
+            "responses.opcoes_x6kzFO": "*|*|*|*|E",
+            "SYppLu": "clicked",
+            "jAWXNa": "clicked",
+            "uYH8ZM": "05/10/1978",
+            "botao_msZXJg": "clicked",
+            "peso": "98",
+            "altura": "171",
+            "IGlTon": "clicked",
+            "maior_peso": "98",
+            "quilos_a_perder": "20",
+            "g7ITsz": "clicked",
+            "botao_1qyaDZ": "clicked",
+            "phone": "(37) 99123-3058",
+            "email": "danyvieira-17@hotmail.com",
+            "botao_08wEn6": "clicked",
+            "disturbios_abdominais": "Refluxo frequente ",
+            "score.disturbios_abdominais": "0",
+            "responses.disturbios_abdominais": "*|*|*|Refluxo frequente ",
+            "botao_w2xY6x": "clicked",
+            "idhdEp": "loaded",
+            "opcoes_7y3GXB": "A",
+            "score.opcoes_7y3GXB": "1",
+            "responses.opcoes_7y3GXB": "A",
+            "opcoes_0tHHHW": "B",
+            "score.opcoes_0tHHHW": "2",
+            "responses.opcoes_0tHHHW": "*|B",
+            "opcoes_o8jauv": "B",
+            "score.opcoes_o8jauv": "2",
+            "responses.opcoes_o8jauv": "*|B",
+            "opcoes_FOe4OK": "A",
+            "score.opcoes_FOe4OK": "1",
+            "responses.opcoes_FOe4OK": "A",
+            "analisando_seu_perfil_com_base_em_suas_respostas": "loaded",
+            "opcoes_cJqAp4": "B",
+            "score.opcoes_cJqAp4": "2",
+            "responses.opcoes_cJqAp4": "B",
+            "botao_Roni3J": "clicked",
+            "code": "8VJ4nr"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/6a62d1f7-fe49-48c4-b175-596c994b3396",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-19T17:55:06.325Z",
+      "createdAt": "2025-11-19T17:55:06.325Z",
+      "role": "workflow:owner",
+      "workflowId": "KkVSXDbhGJnVz2Gb",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-26T17:47:52.008Z",
+  "versionId": "42506b12-3b91-4ea8-9109-41205aa80828"
+}

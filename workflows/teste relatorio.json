@@ -1,0 +1,1018 @@
+{
+  "active": false,
+  "connections": {
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Busca Transação na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca os Dados do Contato na Guru": {
+      "main": [
+        []
+      ]
+    },
+    "Busca a Última Transação na Guru": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        []
+      ]
+    },
+    "Busca Transação na Guru": {
+      "main": [
+        [
+          {
+            "node": "Entrou no funil - Fase 2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Entrou no funil - Fase 2": {
+      "main": [
+        []
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Entrou no funil - Fase 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-23T21:11:50.871Z",
+  "id": "BMyaCGqC3W0svKAr",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "teste relatorio",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## I'm a note \nBusine ID\n9680607361990376\nToken Meta Clint\nEAAN0nX5QMWMBPrtepPKeQqjOAeZAXr23XU0SrMXow3agG4ps8eQ78s21FoXUKYGQZCZCUmxf2IZADiZBpQ2RdtSJqAQf2XNcGui7sVjqByc4N2z9hlXbXOEI0gZBZAb9xLwJcZAY4LJzRZC4aTOhHjvmbjeLKWU5TsACH9gVm0ZCslbNbn4xwkNh5okN3nNPgGmmBT"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        464,
+        224
+      ],
+      "typeVersion": 1,
+      "id": "65f866f7-67fb-4667-87e7-71e6b3e62fa9",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        976,
+        160
+      ],
+      "id": "a1de9c02-bab2-4f36-bc1b-58d18ade1f71",
+      "name": "WhatsApp Trigger",
+      "webhookId": "4c1fce9a-7ddc-47f9-b90d-b0494b3b2558",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "iZgcIgdJQTq1lRBf",
+          "name": "WhatsApp OAuth account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrai dados úteis do payload do WhatsApp Cloud API\nconst results = [];\n\nfor (const entry of items[0].json.entry || []) {\n  for (const change of entry.changes || []) {\n    const value = change.value || {};\n\n    // Caso seja status (mensagem enviada, entregue, lida, etc.)\n    if (value.statuses) {\n      for (const s of value.statuses) {\n        results.push({\n          json: {\n            type: \"status\",\n            status: s.status,\n            message_id: s.id,\n            timestamp: s.timestamp,\n            recipient_id: s.recipient_id,\n            template: s.pricing?.category || \"unknown\",\n          }\n        });\n      }\n    }\n\n    // Caso seja mensagem (ex: inbound ou outbound)\n    if (value.messages) {\n      for (const m of value.messages) {\n        results.push({\n          json: {\n            type: \"message\",\n            message_id: m.id,\n            timestamp: m.timestamp,\n            from: m.from,\n            template: m.template?.name || \"unknown\",\n            text: m.text?.body || null,\n          }\n        });\n      }\n    }\n  }\n}\n\nreturn results;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1184,
+        160
+      ],
+      "id": "a0558c27-b889-4c03-890e-eda50db8e53e",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds",
+              "secondsInterval": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        944,
+        432
+      ],
+      "id": "d4d8ea62-7b5d-4a1a-b6d2-a596ba81284f",
+      "name": "Schedule Trigger",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "approved"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1152,
+        432
+      ],
+      "id": "1ed67dc6-c826-4771-b7a5-04e0b0a0fff2",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "767d15ae-f41e-4c09-9506-43d33b3c105f",
+              "leftValue": "={{ $json[\"ID da Transacao\"] }}",
+              "rightValue": "read",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "337fc507-3e54-47fa-aee5-793f2b66c05a",
+              "leftValue": "={{ $json[\"Data de Atualização do Status\"] }}",
+              "rightValue": "failed",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        1360,
+        432
+      ],
+      "id": "0b583e09-2ba0-4da5-a5a2-bc92e97d7969",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1uTqLGECFOfgc1oCjlQ5Fh7wdAtAHyfrUDjrhclXOYow",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Fluxo Pix/Boleto",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Message_ID": "={{ $json.messages[0].id }}",
+            "Timestamp_Envio": "={{ $now }}",
+            "Recipient": "={{ $('Prepara Envio').item.json.Phone }}",
+            "Status_Atual": "sent"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Message_ID",
+              "displayName": "Message_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Timestamp_Envio",
+              "displayName": "Timestamp_Envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Recipient",
+              "displayName": "Recipient",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status_Atual",
+              "displayName": "Status_Atual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Timestamp_Ultima_Verificacao",
+              "displayName": "Timestamp_Ultima_Verificacao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1488,
+        144
+      ],
+      "id": "53ee3f53-cc89-48b7-ba5f-2d21e4116bef",
+      "name": "Entrou no funil - Fase ",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1uTqLGECFOfgc1oCjlQ5Fh7wdAtAHyfrUDjrhclXOYow",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 398880187,
+          "mode": "list",
+          "cachedResultName": "Fluxo Pix/Boleto",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uTqLGECFOfgc1oCjlQ5Fh7wdAtAHyfrUDjrhclXOYow/edit#gid=398880187"
+        },
+        "filtersUI": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1808,
+        160
+      ],
+      "id": "7a8638ec-1d8e-42f3-b7de-babfeb5bf15c",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID da Transacao": "={{ $('Get row(s) in sheet').item.json['ID da Transacao'] }}",
+            "Data de Atualização do Status": "={{\n(() => {\n  const dates = $('Busca Transação na Guru').item.json.dates;\n\n  if (dates.confirmed_at) {\n    return new Date(dates.confirmed_at * 1000).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });\n  }\n\n  return null;\n})()\n}}"
+          },
+          "matchingColumns": [
+            "ID da Transacao"
+          ],
+          "schema": [
+            {
+              "id": "Data de Entrada",
+              "displayName": "Data de Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CPF",
+              "displayName": "CPF",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Produto",
+              "displayName": "Produto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Metodo de Pagamento",
+              "displayName": "Metodo de Pagamento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID da Transacao",
+              "displayName": "ID da Transacao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data de Expiracao",
+              "displayName": "Data de Expiracao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Link Fatura",
+              "displayName": "Link Fatura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "workflowId",
+              "displayName": "workflowId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fase",
+              "displayName": "Fase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Data de Atualização do Status",
+              "displayName": "Data de Atualização do Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2352,
+        560
+      ],
+      "id": "3f65c4ee-3158-4bee-97d4-27f95100e087",
+      "name": "Entrou no funil - Fase 1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/contacts/9fd64782-7ec0-400f-9346-8e2d02616255",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1072,
+        800
+      ],
+      "id": "3c97d796-bd31-4455-9504-5eff326fb49b",
+      "name": "Busca os Dados do Contato na Guru",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "IAL5Uo26XkKrv5Gv",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/transactions/a02eec3a-2865-4e56-bf3a-a92b986ced37",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1456,
+        800
+      ],
+      "id": "6e943d4c-ef34-492c-a0ec-c471ece2408e",
+      "name": "Busca a Última Transação na Guru"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7bf04c99-7775-442d-84d9-fee8d1f38342",
+              "name": "Data de criação",
+              "value": "={{ new Date( $json.invoice.created_at ).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}, {{ new Date($json.invoice.created_at).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "99c1a457-bd92-4c70-8a02-d0507982fe37",
+              "name": "",
+              "value": "={{ new Date( $json.payment.processing_times.finished_at ).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}, {{ new Date($json.payment.processing_times.finished_at).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "6f037a4f-34a5-443e-a1cc-4dbed613e016",
+              "name": "",
+              "value": "={{ new Date( $json.payment.processing_times.started_at ).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}, {{ new Date( $json.payment.processing_times.started_at).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "eeaecf7e-6663-45d7-9723-f3ed166a4c30",
+              "name": "=",
+              "value": "={{ new Date( $now ).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}, {{ new Date( $now).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', second: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "3c164dff-8450-4e0e-b030-3fc8580bd46f",
+              "name": "",
+              "value": "={{ luxon.DateTime.fromSeconds($json.dates.created_at).setZone('America/Sao_Paulo').toFormat('dd/MM/yyyy HH:mm:ss') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2304,
+        848
+      ],
+      "id": "337a3051-5ac8-4710-b023-73872bdfd5d8",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2544,
+        800
+      ],
+      "id": "32311249-7d2a-465f-a2a1-85c9a3ed246c",
+      "name": "Prepara Envio"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "68c53e39-d095-4de5-a968-4430c63d3e8e",
+              "name": "dates.created_at",
+              "value": "={{ new Date($json.dates.confirmed_at * 1000).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "49ebe2d6-e972-4812-beee-8a5bfc06e125",
+              "name": "",
+              "value": "={{ new Date($json.dates.updated_at * 1000).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2592,
+        960
+      ],
+      "id": "f3d29977-a14c-4f19-9fc1-8c4a8fe25fd9",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega a lista de transações que acabamos de buscar\nconst allTransactions = $('Verifica Status Novamente').first().json.data;\n\n// Pega o ID da transação original que salvamos no início\nconst targetTransactionId = $('Edit Fields').first().json.ID_da_Transacao;\n\n// Encontra na lista a transação que tem o mesmo ID\nconst targetTransaction = allTransactions.find(t => t.id === targetTransactionId);\n\n// Retorna apenas os dados dessa transação específica\nreturn [ { json: targetTransaction } ];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1728,
+        784
+      ],
+      "id": "e4615244-6f89-4f74-a44e-4cb01e05e2e5",
+      "name": "Filtra Transação Específica"
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/transactions/{{ $json['ID da Transacao'] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1808,
+        400
+      ],
+      "id": "10c1a913-53ad-44dc-9921-d6d5c1a1bdf6",
+      "name": "Busca Transação na Guru",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "IAL5Uo26XkKrv5Gv",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1nU47Z1pByv8BgHY6ABiKJTkIBoAG8TT3P0Zfj4LldzE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID da Transacao": "={{ $('Get row(s) in sheet').item.json['ID da Transacao'] }}",
+            "Status": "={{ $json.status }}"
+          },
+          "matchingColumns": [
+            "ID da Transacao"
+          ],
+          "schema": [
+            {
+              "id": "Data de Entrada",
+              "displayName": "Data de Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CPF",
+              "displayName": "CPF",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Produto",
+              "displayName": "Produto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Metodo de Pagamento",
+              "displayName": "Metodo de Pagamento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID da Transacao",
+              "displayName": "ID da Transacao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data de Expiracao",
+              "displayName": "Data de Expiracao",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Link Fatura",
+              "displayName": "Link Fatura",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "workflowId",
+              "displayName": "workflowId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fase",
+              "displayName": "Fase",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data de Atualização do Status",
+              "displayName": "Data de Atualização do Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2368,
+        352
+      ],
+      "id": "fba3eff4-19ed-495c-ac8c-68413035c894",
+      "name": "Entrou no funil - Fase 2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2016,
+        480
+      ],
+      "id": "459b82b5-09cf-4afe-a80f-82d3fd057695",
+      "name": "Wait",
+      "webhookId": "c330cb7b-e96b-4e07-9eb7-d519a0d72459"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-23T21:11:50.871Z",
+      "createdAt": "2025-10-23T21:11:50.871Z",
+      "role": "workflow:owner",
+      "workflowId": "BMyaCGqC3W0svKAr",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-18T12:06:15.876Z",
+  "versionId": "940e144a-6bf6-40ec-a435-79d97d7fe6e0"
+}

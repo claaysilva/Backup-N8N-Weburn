@@ -1,0 +1,566 @@
+{
+  "active": false,
+  "connections": {
+    "Busca Contato na Clint": {
+      "main": [
+        [
+          {
+            "node": "Atualiza Contato na Clint",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Monta link da fatura": {
+      "main": [
+        [
+          {
+            "node": "Create link switchy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook da Clint": {
+      "main": [
+        [
+          {
+            "node": "Busca os Dados do Contato na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca os Dados do Contato na Guru": {
+      "main": [
+        [
+          {
+            "node": "Busca a Última Transação na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca a Última Transação na Guru": {
+      "main": [
+        [
+          {
+            "node": "Monta link da fatura",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Busca Contato na Clint1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create link switchy": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "Atualiza Contato na Clint1": {
+      "main": [
+        []
+      ]
+    },
+    "Busca Contato na Clint1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-13T18:05:08.383Z",
+  "id": "vs1ynojekHCCwgze",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Link pix Guru - Ricardo",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=https://api.clint.digital/v1/contacts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $items('Busca a Última Transação na Guru')[0].json.data[0].contact.email }}"
+            }
+          ]
+        },
+        "options": {
+          "lowercaseHeaders": false
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1616,
+        0
+      ],
+      "id": "a63c9763-eaf5-490a-84ee-f8261a069ee3",
+      "name": "Busca Contato na Clint",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "gTyzJXEQCTsI2KDX",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{$json.data[0].id}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"link_ultima_fatura\": \"{{ $items('Monta link da fatura')[0].json.link_fatura_final }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1968,
+        0
+      ],
+      "id": "942bca19-2f30-4734-9657-2a748e71fd2b",
+      "name": "Atualiza Contato na Clint"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "956be347-49f8-428d-8982-1fefac10c1c5",
+              "name": "link_fatura_final",
+              "value": "=https://{{ $json.data[0].infrastructure.host }}/invoice/{{ $json.data[0].id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        0
+      ],
+      "id": "aa99dfb3-e570-4460-b950-1ffe43239ede",
+      "name": "Monta link da fatura"
+    },
+    {
+      "parameters": {
+        "path": "62439f9e-0823-4017-88b0-3226fb1320da",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cb488a50-8af8-4208-97bc-2eeec04a8858",
+      "name": "Webhook da Clint",
+      "webhookId": "62439f9e-0823-4017-88b0-3226fb1320da"
+    },
+    {
+      "parameters": {
+        "url": "https://digitalmanager.guru/api/v2/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.contact_email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "e126b74d-a01c-4773-ad7d-f9074eab2461",
+      "name": "Busca os Dados do Contato na Guru"
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/contacts/{{ $json.data[0].id }}/transactions",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "4c054158-6315-4ab3-9cf0-69149bc73593",
+      "name": "Busca a Última Transação na Guru"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \nBusine ID\n9680607361990376\nToken Meta Clint\nEAAN0nX5QMWMBPrtepPKeQqjOAeZAXr23XU0SrMXow3agG4ps8eQ78s21FoXUKYGQZCZCUmxf2IZADiZBpQ2RdtSJqAQf2XNcGui7sVjqByc4N2z9hlXbXOEI0gZBZAb9xLwJcZAY4LJzRZC4aTOhHjvmbjeLKWU5TsACH9gVm0ZCslbNbn4xwkNh5okN3nNPgGmmBT"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        464,
+        224
+      ],
+      "typeVersion": 1,
+      "id": "9d0c8a9f-be25-41c2-aeb1-33cf461e99d8",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "aba32da4-c9e6-4565-9001-08ec9c90be28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"link\": {\n    \"url\": \"{{ $json.link_fatura_final }}\",\n    \"title\": \"{{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }} - {{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].name }}\",\n    \"domain\": \"link.chatweburn.com\",\n    \"tags\": [\n      \"whatsapp\",\n      \"funil clint\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        944,
+        0
+      ],
+      "id": "2a17d579-c41e-42b2-8e4d-7d0495c80e31",
+      "name": "Create link switchy"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{$json.data[0].id}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"link_ultima_fatura\": \"{{ $items('Monta link da fatura')[0].json.link_fatura_final }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        160
+      ],
+      "id": "1eac068b-883d-4d25-9d65-84b4aaf3d585",
+      "name": "Atualiza Contato na Clint1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee1f9d62-7d25-4029-9143-a3c05fc9547d",
+              "name": "Nome",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "186aca19-8485-4bc9-9e9e-f311639f5673",
+              "name": "Metodo de Pagamento",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }}",
+              "type": "string"
+            },
+            {
+              "id": "9b7348c2-b586-4d79-a4ec-771bfee8f70e",
+              "name": "Nome Produto",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].offer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f02876a4-8e90-4419-9378-35ef69eee7c6",
+              "name": "link_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "40441c29-dd02-4f6b-bdb0-23ccfafb1a5c",
+              "name": "Phone",
+              "value": "={{ $('Busca os Dados do Contato na Guru').item.json.data[0].phone_full_number }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "61a31e37-0c85-4106-8816-5cb7fd4df4be",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg1|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $json['Nome Produto'] }}"
+                  },
+                  {
+                    "text": "={{ $json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $json.link_id }}"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1328,
+        0
+      ],
+      "id": "b90c2366-2395-49e8-9b1d-ee220c348095",
+      "name": "Send template",
+      "webhookId": "b9582367-aeae-4237-aed5-7c5611f24cd0",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/b13d3d7e-2798-412b-8afc-e21e869eba19",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "=name",
+              "value": "={{ $json.data[0].name }}"
+            },
+            {
+              "name": "name",
+              "value": "={{ $json.data[0].email }}"
+            },
+            {
+              "name": "name",
+              "value": "={{ $json.data[0].fullPhone }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1008,
+        416
+      ],
+      "id": "c3113b77-b78d-441d-8589-bc7a572d3628",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.clint.digital/v1/contacts/",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.data[35].contact.email }}"
+            }
+          ]
+        },
+        "options": {
+          "lowercaseHeaders": false
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        768,
+        416
+      ],
+      "id": "24508929-3e1a-4c43-a5b6-ea985c8f322e",
+      "name": "Busca Contato na Clint1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "gTyzJXEQCTsI2KDX",
+          "name": "Header Auth account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Webhook da Clint": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "axios/1.11.0",
+            "content-length": "125",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "baggage": "sentry-environment=production,sentry-release=bfa74456c8f9fee81d1aea2a1c1b1f94e55858c0,sentry-public_key=3bff5cff929c44f9856518b808937983,sentry-trace_id=10b64683643c44bc87d583f91854a3da,sentry-org_id=4508812279349248,sentry-sampled=false,sentry-sample_rand=0.8996700739498285,sentry-sample_rate=0.03125,sentry-transaction=core.tasks.create_message_from_dupond,origin=3,name=flows,loc=app.tasks.flows.batch_evaluate_flow_action_evaluations_webhook_send_multibroker__r2,source=klaviyo,bubblegroup.http.route=api%2F1.1%2Fwf,bubblegroup.http.host=metrifiquei.bubbleapps.io,bubblegroup.workflow.appname=metrifiquei,bubblegroup.workflow.app_version=live,bubblegroup.workflow.situation=post_wf_api,bubblegroup.workflow.id=bTqMF,bubblegroup.workflow.event.type=APIEvent,bubblegroup.workflow.action.id=bTueZ,bubblegroup.workflow.action.type=apiconnector2-bTueO.bTueP,actorType=user,userToken=01K4N4EPF6RV3YQ6PDZ9G9ERTT,rootTraceId=a98df290efb3c3abf38fe4806f114ad2,userId=01F1FM1QRPZVFPV768WFSN0V1M,rootTimestamp=1757599986191",
+            "content-type": "application/json",
+            "traceparent": "00-68ed367700000000543bb89736cbc038-4507c4155c33e2bf-00",
+            "tracestate": "dd=t.tid:68ed367700000000;t.dm:-12;s:-1;p:4507c4155c33e2bf",
+            "x-datadog-parent-id": "4974159909474263743",
+            "x-datadog-sampling-priority": "-1",
+            "x-datadog-tags": "_dd.p.tid=68ed367700000000",
+            "x-datadog-trace-id": "6069647882410770488",
+            "x-forwarded-for": "34.237.121.97",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-real-ip": "34.237.121.97"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "contact_name": "Clayton Silva",
+            "contact_email": "clayton@weburn.com.br",
+            "contact_phone": "38998626001",
+            "contact_id_user": null
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/7f8faf60-ee84-4e69-b163-61196f9cab71",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-13T18:05:08.383Z",
+      "createdAt": "2025-10-13T18:05:08.383Z",
+      "role": "workflow:owner",
+      "workflowId": "vs1ynojekHCCwgze",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-06T11:23:50.324Z",
+  "versionId": "b6b4a978-c428-46cb-b5dc-403d88678371"
+}

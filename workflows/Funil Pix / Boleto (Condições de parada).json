@@ -1,0 +1,265 @@
+{
+  "active": true,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-30T14:52:03.784Z",
+  "id": "TFd168yVKKP0kYvQ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Funil Pix / Boleto (Condições de parada)",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.body.JSON.body.entry[0].changes[0].value.messages[0].button.payload }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        416,
+        -752
+      ],
+      "id": "bb5d7eb1-4748-4747-bc7d-06dfda190193",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "111a53a7-0707-4159-aad6-3322cd45d29e",
+              "leftValue": "={{ $json.body.JSON.body.entry[0].changes[0].value.messages }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "1e95b646-0927-4e63-a653-4356d11b0c1f",
+              "leftValue": "={{ $json.body.JSON.body.entry[0].changes[0].value.messages[0].button.payload }}",
+              "rightValue": "webhook-wait",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        192,
+        -752
+      ],
+      "id": "1697a08a-6219-45e0-b041-103aff239881",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "## Condição de parada ao clicar no botão \"Já fiz o pagamento\" do Funil Pix/Boleto \n",
+        "height": 400,
+        "width": 976,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        -816
+      ],
+      "typeVersion": 1,
+      "id": "9ba56da5-d436-4315-ae88-8049cea54eaa",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -32,
+        -592
+      ],
+      "id": "4c771879-f1ad-4f8e-a62b-ec22374475db",
+      "name": "When Executed by Another Workflow",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "0f964dec-b665-4539-bfaa-be81db539152",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -32,
+        -752
+      ],
+      "id": "e849dfb6-8df4-4d9c-8eee-a9d6e70c73dd",
+      "name": "Webhook",
+      "webhookId": "0f964dec-b665-4539-bfaa-be81db539152"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "axios/1.12.0",
+            "content-length": "1353",
+            "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "JSON": {
+              "headers": {
+                "host": "webh.weburn.com.br",
+                "user-agent": "facebookexternalua",
+                "content-length": "709",
+                "accept": "*/*",
+                "accept-encoding": "deflate, gzip",
+                "content-type": "application/json",
+                "x-forwarded-for": "173.252.107.115",
+                "x-forwarded-host": "webh.weburn.com.br",
+                "x-forwarded-port": "443",
+                "x-forwarded-proto": "https",
+                "x-forwarded-server": "cbd1a77a7869",
+                "x-hub-signature": "sha1=d9bc69affbeac39ddaacc6627f66195963c156de",
+                "x-hub-signature-256": "sha256=8a538e0f0c490b45be8d68c58b3bacb6e3b58960f2ac0f7a5824f6b02a546516",
+                "x-real-ip": "173.252.107.115"
+              },
+              "params": {},
+              "query": {},
+              "body": {
+                "object": "whatsapp_business_account",
+                "entry": [
+                  {
+                    "id": "9680607361990376",
+                    "changes": [
+                      {
+                        "value": {
+                          "messaging_product": "whatsapp",
+                          "metadata": {
+                            "display_phone_number": "5511972236661",
+                            "phone_number_id": "569361946259055"
+                          },
+                          "contacts": [
+                            {
+                              "profile": {
+                                "name": "Clayton ✌🏻👊🏻"
+                              },
+                              "wa_id": "553898626001"
+                            }
+                          ],
+                          "messages": [
+                            {
+                              "context": {
+                                "from": "5511972236661",
+                                "id": "wamid.HBgMNTUzODk4NjI2MDAxFQIAERgSQ0NEMTBGQTk3OEJFQTY3QTkyAA=="
+                              },
+                              "from": "553898626001",
+                              "id": "wamid.HBgMNTUzODk4NjI2MDAxFQIAEhgUM0E0RUU3RDgxNzI3NjM2RDk3QjYA",
+                              "timestamp": "1762256421",
+                              "type": "button",
+                              "button": {
+                                "payload": "https://webh.weburn.com.br/webhook-waiting/198600",
+                                "text": "Já fiz o pagamento"
+                              }
+                            }
+                          ]
+                        },
+                        "field": "messages"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "webhookUrl": "https://webh.weburn.com.br/webhook/4d873b62-weburn-clint",
+              "executionMode": "production"
+            }
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/0f964dec-b665-4539-bfaa-be81db539152",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-30T14:52:03.784Z",
+      "createdAt": "2025-10-30T14:52:03.784Z",
+      "role": "workflow:owner",
+      "workflowId": "TFd168yVKKP0kYvQ",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-18T12:05:37.963Z",
+  "versionId": "aed7d27f-4171-4b6d-9359-2e702b70199b"
+}

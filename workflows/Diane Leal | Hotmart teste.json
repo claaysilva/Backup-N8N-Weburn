@@ -1,0 +1,1201 @@
+{
+  "active": false,
+  "connections": {
+    "Monta link da fatura": {
+      "main": [
+        [
+          {
+            "node": "Create link switchy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca os Dados do Contato na Guru": {
+      "main": [
+        [
+          {
+            "node": "Busca a Última Transação na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca a Última Transação na Guru": {
+      "main": [
+        [
+          {
+            "node": "Monta link da fatura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create link switchy": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [],
+        [
+          {
+            "node": "FIM (Botão Clicado)6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook da Clint": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Busca os Dados do Contato na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio": {
+      "main": [
+        [
+          {
+            "node": "Send template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Monta link da fatura1": {
+      "main": [
+        [
+          {
+            "node": "Create link switchy1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create link switchy1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio1": {
+      "main": [
+        [
+          {
+            "node": "Send template1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Monta link da fatura1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-23T19:32:36.568Z",
+  "id": "XkhH59wBR6kvMV4t",
+  "isArchived": false,
+  "meta": null,
+  "name": "Diane Leal | Hotmart teste",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c98905ab-b9e3-4d86-b3aa-59bf3e356d13",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        384,
+        480
+      ],
+      "id": "3e262a54-c69b-4cfa-a55e-52b4f1a4d847",
+      "name": "Webhook",
+      "webhookId": "c98905ab-b9e3-4d86-b3aa-59bf3e356d13",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "956be347-49f8-428d-8982-1fefac10c1c5",
+              "name": "link_fatura_final",
+              "value": "=https://pay.hotmart.com/thanks?transactionReference={{ $json.data[0].payment.marketplace_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        480
+      ],
+      "id": "2f7d002d-8e4b-42fe-8028-b9d75eef2b52",
+      "name": "Monta link da fatura"
+    },
+    {
+      "parameters": {
+        "url": "https://digitalmanager.guru/api/v2/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.data.buyer.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        832,
+        480
+      ],
+      "id": "a18c26a1-dd02-4045-8e7c-3206abbab1cc",
+      "name": "Busca os Dados do Contato na Guru"
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/contacts/{{ $json.data[0].id }}/transactions",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1056,
+        480
+      ],
+      "id": "3be1d090-d96c-4176-83d9-84323f451e64",
+      "name": "Busca a Última Transação na Guru"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "aba32da4-c9e6-4565-9001-08ec9c90be28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"link\": {\n    \"url\": \"{{ $json.link_fatura_final }}\",\n    \"title\": \"{{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }} - {{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].name }}\",\n    \"domain\": \"link.chatweburn.com\",\n    \"tags\": [\n      \"whatsapp\",\n      \"funil clint\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1504,
+        480
+      ],
+      "id": "13516864-801e-4b78-9be6-4f284698396a",
+      "name": "Create link switchy"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee1f9d62-7d25-4029-9143-a3c05fc9547d",
+              "name": "Nome",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "186aca19-8485-4bc9-9e9e-f311639f5673",
+              "name": "Metodo de Pagamento",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }}",
+              "type": "string"
+            },
+            {
+              "id": "9b7348c2-b586-4d79-a4ec-771bfee8f70e",
+              "name": "Nome Produto",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data.find(item => item.is_order_bump === 0)?.items[0]?.offer?.name ?? $('Busca a Última Transação na Guru').item.json.data.find(item => item.is_order_bump === 0)?.items[0]?.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f02876a4-8e90-4419-9378-35ef69eee7c6",
+              "name": "link_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "40441c29-dd02-4f6b-bdb0-23ccfafb1a5c",
+              "name": "Phone",
+              "value": "={{ $('Busca os Dados do Contato na Guru').item.json.data[0].phone_full_number }}",
+              "type": "string"
+            },
+            {
+              "id": "5536395f-5531-4849-ab91-c6df7a8e6fdf",
+              "name": "workflowId",
+              "value": "={{ $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "50f3510f-506a-4eff-a71f-25f7487d828a",
+              "name": "Data de Expiração",
+              "value": "={{ new Date($('Busca a Última Transação na Guru').item.json.data[0].dates.expires_at).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "6251c900-c13c-4c92-908d-7a9b17cbacf2",
+              "name": "Hora de Expiração",
+              "value": "={{ new Date($('Busca a Última Transação na Guru').item.json.data[0].dates.expires_at).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "fd5d7264-3175-491f-b054-c566830a3152",
+              "name": "ID_da_Transacao",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data.find(item => item.is_order_bump === 0).id }}",
+              "type": "string"
+            },
+            {
+              "id": "b178cc89-0a4a-42e4-8516-4e9d21d456e1",
+              "name": "Email",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.email }}",
+              "type": "string"
+            },
+            {
+              "id": "4c575faf-7348-45f6-8e21-ebf4776926f9",
+              "name": "CPF",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.doc }}",
+              "type": "string"
+            },
+            {
+              "id": "dd3ed2e0-4674-47cb-8134-44dc3de475ed",
+              "name": "link_encurtado",
+              "value": "={{ $json.domain }}/{{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "7d1b4ee6-02b2-4bc2-a7e4-35b119c972e0",
+              "name": "Status",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].status }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1728,
+        480
+      ],
+      "id": "f340b079-ed4b-45bc-acab-1bcb3a8c4127",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1952,
+        480
+      ],
+      "id": "b536df6d-d9a2-4bb4-90f4-e27947b4aae7",
+      "name": "Prepara Envio"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9dced621-2801-49f2-b7b8-79ed0f259112",
+              "leftValue": "={{ $json.body.is_order_bump }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        832,
+        256
+      ],
+      "id": "d75bfdc3-ea52-41fb-96ca-b63f199afe26",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1056,
+        256
+      ],
+      "id": "6b4a0349-0118-46e1-8994-5247d4e5aa72",
+      "name": "FIM (Botão Clicado)6"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "40e09e93-d27c-40ea-be7d-34c3cf969537",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        384,
+        256
+      ],
+      "id": "ee675160-f7fb-4a85-a172-e62df95d97a9",
+      "name": "Webhook da Clint",
+      "webhookId": "40e09e93-d27c-40ea-be7d-34c3cf969537",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c0e06e8f-f89a-4cba-a686-4c1ce39b5e53",
+              "leftValue": "={{ $json.body.items[0].marketplace_id }}",
+              "rightValue": "5811810",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "2751f207-e145-441b-a26a-293d6658b999",
+              "leftValue": "={{ $json.body.items[0].marketplace_id }}",
+              "rightValue": "5812193",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "37cd9e9d-9b13-4eed-bda5-c15ba2717d59",
+              "leftValue": "={{ $json.body.items[0].marketplace_id }}",
+              "rightValue": "5813093",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        608,
+        256
+      ],
+      "id": "8689b600-4414-412d-887e-591671a1f1a3",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c0e06e8f-f89a-4cba-a686-4c1ce39b5e53",
+              "leftValue": "={{ $json.body.data.product.id }}",
+              "rightValue": 5811810,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "2751f207-e145-441b-a26a-293d6658b999",
+              "leftValue": "={{ $json.body.data.product.id }}",
+              "rightValue": 5812193,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "37cd9e9d-9b13-4eed-bda5-c15ba2717d59",
+              "leftValue": "={{ $json.body.data.product.id }}",
+              "rightValue": 5813093,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        608,
+        480
+      ],
+      "id": "9cab87cb-3afb-4407-a35e-dbe8df3a71ed",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v21.0/9680607361990376/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAALbUQysiMMBP3raDUZBBHkZBfEe43pmlcJY16jcRVCb7ZBaRZAvMSCFmMC25qtSW304Lz8l14DwyuPjNZBIpFXh85nSZBBLUPEVGBHJzoP7j5UNkbkg0udL2Gevk2LteZBN8zd9icj0gZCv4ekYp1mqSiYF63wdDij4YrHZBki4EOrd48bWSzB7jA8fZBVih14NHN5AZDZD"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"5538998626001\",\n  \"type\": \"interactive\",\n  \"interactive\": {\n    \"type\": \"button\",\n    \"body\": {\n      \"text\": \"Aqui está seu código promocional exclusivo! 🎁\"\n    },\n    \"action\": {\n      \"buttons\": [\n        {\n          \"type\": \"copy_code\",\n          \"reply\": {\n            \"id\": \"promo_2025\",\n            \"title\": \"Copiar código\"\n          },\n          \"code\": \"DESCONTO2025\"\n        }\n      ]\n    }\n  }\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        384,
+        32
+      ],
+      "id": "6fa1c46e-dfde-41a3-9c85-54ebf9527fca",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Prepara Envio').item.json.Phone }}",
+        "template": "teste_n8n_botao_copiar|pt_BR"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2176,
+        480
+      ],
+      "id": "752375bd-e524-4b03-a9d1-acc7ce75eb8a",
+      "name": "Send template",
+      "webhookId": "274adfd4-b9fe-46c3-9f5a-6a54d13390f2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ea89a7b2-41bf-4e5d-9c18-1cea11a8531f",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        384,
+        704
+      ],
+      "id": "d37ba3cd-1fc3-4987-9f5e-386bb74b9889",
+      "name": "Webhook1",
+      "webhookId": "ea89a7b2-41bf-4e5d-9c18-1cea11a8531f"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "956be347-49f8-428d-8982-1fefac10c1c5",
+              "name": "link_fatura_final",
+              "value": "=https://pay.hotmart.com/thanks?transactionReference={{ $json.body.data.purchase.transaction.replace('C1', '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        816,
+        688
+      ],
+      "id": "9a423a29-1caf-44b1-b016-f7a6404b1797",
+      "name": "Monta link da fatura1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "aba32da4-c9e6-4565-9001-08ec9c90be28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"link\": {\n    \"url\": \"{{ $json.link_fatura_final }}\",\n    \"title\": \"{{ $json.body.data.purchase.payment.type }} - {{ $json.body.data.product.name }}\",\n    \"domain\": \"link.chatweburn.com\",\n    \"tags\": [\n      \"whatsapp\",\n      \"funil clint\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        704
+      ],
+      "id": "d1f7ae14-9dd8-4336-9636-f18a70862b03",
+      "name": "Create link switchy1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee1f9d62-7d25-4029-9143-a3c05fc9547d",
+              "name": "Nome",
+              "value": "={{ $('Webhook1').item.json.body.data.buyer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "186aca19-8485-4bc9-9e9e-f311639f5673",
+              "name": "Metodo de Pagamento",
+              "value": "={{ $('Webhook1').item.json.body.data.purchase.payment.type }}",
+              "type": "string"
+            },
+            {
+              "id": "9b7348c2-b586-4d79-a4ec-771bfee8f70e",
+              "name": "Nome Produto",
+              "value": "={{ $('Webhook1').item.json.body.data.product.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f02876a4-8e90-4419-9378-35ef69eee7c6",
+              "name": "link_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "40441c29-dd02-4f6b-bdb0-23ccfafb1a5c",
+              "name": "Phone",
+              "value": "={{ $('Webhook1').item.json.body.data.buyer.checkout_phone }}",
+              "type": "string"
+            },
+            {
+              "id": "5536395f-5531-4849-ab91-c6df7a8e6fdf",
+              "name": "workflowId",
+              "value": "={{ $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "50f3510f-506a-4eff-a71f-25f7487d828a",
+              "name": "Data de Expiração",
+              "value": "={{ new Date($('Webhook1').item.json.body.data.purchase.payment.pix_expiration_date).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "6251c900-c13c-4c92-908d-7a9b17cbacf2",
+              "name": "Hora de Expiração",
+              "value": "={{ new Date($('Webhook1').item.json.body.data.purchase.payment.pix_expiration_date).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "fd5d7264-3175-491f-b054-c566830a3152",
+              "name": "ID_da_Transacao",
+              "value": "={{ $('Webhook1').item.json.body.id }}",
+              "type": "string"
+            },
+            {
+              "id": "b178cc89-0a4a-42e4-8516-4e9d21d456e1",
+              "name": "Email",
+              "value": "={{ $('Webhook1').item.json.body.data.buyer.email }}",
+              "type": "string"
+            },
+            {
+              "id": "4c575faf-7348-45f6-8e21-ebf4776926f9",
+              "name": "CPF",
+              "value": "={{ $('Webhook1').item.json.body.data.buyer.document_type }}",
+              "type": "string"
+            },
+            {
+              "id": "dd3ed2e0-4674-47cb-8134-44dc3de475ed",
+              "name": "link_encurtado",
+              "value": "={{ $json.domain }}/{{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "7d1b4ee6-02b2-4bc2-a7e4-35b119c972e0",
+              "name": "Status",
+              "value": "={{ $('Webhook1').item.json.body.data.purchase.status }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1264,
+        704
+      ],
+      "id": "cbde102c-7e32-433d-b3e4-f505f27444d1",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1488,
+        704
+      ],
+      "id": "36ec5946-5109-4446-87a6-d2e5a1808709",
+      "name": "Prepara Envio1"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Prepara Envio1').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg2|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $json['Nome Produto'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1712,
+        704
+      ],
+      "id": "524df638-450f-49e8-9cdd-e57e1ded1da0",
+      "name": "Send template1",
+      "webhookId": "274adfd4-b9fe-46c3-9f5a-6a54d13390f2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4761c2a2-c07f-42af-aa88-2b3be598bf52",
+              "leftValue": "={{ !$json.body.data.purchase.order_bump.parent_purchase_transaction }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        704
+      ],
+      "id": "a5c3c251-f621-454c-ab52-31f914da9e0a",
+      "name": "If3"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "Jodd HTTP",
+            "content-length": "2018",
+            "content-type": "application/json",
+            "x-forwarded-for": "44.204.41.12",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-hotmart-hottok": "2P8HfzNmTVqhXUr52SQ8FprodKd0wz3710133",
+            "x-real-ip": "44.204.41.12",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "data": {
+              "product": {
+                "support_email": "contato@dianelealnutri.com.br",
+                "has_co_production": false,
+                "name": "Reset do Corpo - 7 dias para resetar seu metabolismo",
+                "is_physical_product": false,
+                "id": 5811810,
+                "ucode": "849920cb-490a-4799-b86e-8892cb1eba0d"
+              },
+              "commissions": [
+                {
+                  "currency_value": "BRL",
+                  "source": "MARKETPLACE",
+                  "value": 4.71
+                },
+                {
+                  "currency_value": "BRL",
+                  "source": "PRODUCER",
+                  "value": 39.8
+                }
+              ],
+              "purchase": {
+                "original_offer_price": {
+                  "currency_value": "BRL",
+                  "value": 47
+                },
+                "subscription_anticipation_purchase": false,
+                "checkout_country": {
+                  "iso": "BR",
+                  "name": "Brasil"
+                },
+                "origin": {
+                  "sck": "1761613005694_17616127537093"
+                },
+                "order_bump": {
+                  "is_order_bump": true
+                },
+                "offer": {
+                  "code": "vklc6rk5",
+                  "description": "Disponível por tempo limitado"
+                },
+                "is_funnel": false,
+                "order_date": 1761612218000,
+                "price": {
+                  "currency_value": "BRL",
+                  "value": 47
+                },
+                "payment": {
+                  "pix_qrcode": "https://live-us.adyen.com/hpp/generateQRCodeImage.shtml?url=00020101021226900014br.gov.bcb.pix2568pix.adyen.com%2Fpixqrcodelocation%2Fpixloc%2Fv1%2Floc%2FSfw8Tv3KQHqYedmrhdXEgQ5204000053039865802BR5924LAUNCH+PAD+TECNOLOGIA+SE6009SAO+PAULO62070503***6304E637",
+                  "pix_expiration_date": 1761785018000,
+                  "installments_number": 1,
+                  "type": "PIX",
+                  "pix_code": "00020101021226900014br.gov.bcb.pix2568pix.adyen.com/pixqrcodelocation/pixloc/v1/loc/Sfw8Tv3KQHqYedmrhdXEgQ5204000053039865802BR5924LAUNCH PAD TECNOLOGIA SE6009SAO PAULO62070503***6304E637"
+                },
+                "full_price": {
+                  "currency_value": "BRL",
+                  "value": 47
+                },
+                "business_model": "I",
+                "invoice_by": "HOTMART",
+                "transaction": "HP3099614197C1",
+                "status": "BILLET_PRINTED"
+              },
+              "affiliates": [
+                {
+                  "affiliate_code": "",
+                  "name": ""
+                }
+              ],
+              "producer": {
+                "legal_nature": "Pessoa Jurídica",
+                "document": "26849805000106",
+                "name": "Weburn"
+              },
+              "buyer": {
+                "checkout_phone_code": "38",
+                "address": {
+                  "country": "Brasil",
+                  "country_iso": "BR"
+                },
+                "document": "",
+                "name": "Clayton Diane teste 1",
+                "last_name": "1",
+                "checkout_phone": "38998626001",
+                "first_name": "Clayton",
+                "email": "clayton@weburn.com.br",
+                "document_type": ""
+              }
+            },
+            "id": "7c5105ef-50ea-42cc-b120-db3daa8b4d06",
+            "creation_date": 1761612230111,
+            "event": "PURCHASE_BILLET_PRINTED",
+            "version": "2.0.0"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/c98905ab-b9e3-4d86-b3aa-59bf3e356d13",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook1": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "Jodd HTTP",
+            "content-length": "2020",
+            "content-type": "application/json",
+            "x-forwarded-for": "13.217.198.248",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-hotmart-hottok": "2P8HfzNmTVqhXUr52SQ8FprodKd0wz3710133",
+            "x-real-ip": "13.217.198.248",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "data": {
+              "product": {
+                "support_email": "contato@dianelealnutri.com.br",
+                "has_co_production": false,
+                "name": "Protocolo Corpo Livre - 30 dias para desinflamar",
+                "is_physical_product": false,
+                "id": 5812193,
+                "ucode": "8350403c-304e-4b31-92b2-86e4aa0aa9d7"
+              },
+              "commissions": [
+                {
+                  "currency_value": "BRL",
+                  "source": "MARKETPLACE",
+                  "value": 16.56
+                },
+                {
+                  "currency_value": "BRL",
+                  "source": "PRODUCER",
+                  "value": 177.95
+                }
+              ],
+              "purchase": {
+                "original_offer_price": {
+                  "currency_value": "BRL",
+                  "value": 197
+                },
+                "subscription_anticipation_purchase": false,
+                "checkout_country": {
+                  "iso": "BR",
+                  "name": "Brasil"
+                },
+                "origin": {
+                  "sck": "1761664597638_17616647561783"
+                },
+                "order_bump": {
+                  "is_order_bump": true
+                },
+                "offer": {
+                  "code": "3ujzo7s3",
+                  "description": "Disponível por tempo limitado"
+                },
+                "is_funnel": false,
+                "order_date": 1761664408000,
+                "price": {
+                  "currency_value": "BRL",
+                  "value": 197
+                },
+                "payment": {
+                  "pix_qrcode": "https://live-us.adyen.com/hpp/generateQRCodeImage.shtml?url=00020101021226900014br.gov.bcb.pix2568pix.adyen.com%2Fpixqrcodelocation%2Fpixloc%2Fv1%2Floc%2FaH0okMJOR96S_PfAyYuzEA5204000053039865802BR5924LAUNCH+PAD+TECNOLOGIA+SE6009SAO+PAULO62070503***6304F76A",
+                  "pix_expiration_date": 1761837210000,
+                  "installments_number": 1,
+                  "type": "PIX",
+                  "pix_code": "00020101021226900014br.gov.bcb.pix2568pix.adyen.com/pixqrcodelocation/pixloc/v1/loc/aH0okMJOR96S_PfAyYuzEA5204000053039865802BR5924LAUNCH PAD TECNOLOGIA SE6009SAO PAULO62070503***6304F76A"
+                },
+                "full_price": {
+                  "currency_value": "BRL",
+                  "value": 197
+                },
+                "business_model": "I",
+                "invoice_by": "HOTMART",
+                "transaction": "HP0862793005C1",
+                "status": "BILLET_PRINTED"
+              },
+              "affiliates": [
+                {
+                  "affiliate_code": "",
+                  "name": ""
+                }
+              ],
+              "producer": {
+                "legal_nature": "Pessoa Jurídica",
+                "document": "26849805000106",
+                "name": "Weburn"
+              },
+              "buyer": {
+                "checkout_phone_code": "38",
+                "address": {
+                  "country": "Brasil",
+                  "country_iso": "BR"
+                },
+                "document": "",
+                "name": "Clayton Diane teste 5",
+                "last_name": "5",
+                "checkout_phone": "38998626001",
+                "first_name": "Clayton",
+                "email": "clayton@weburn.com.br",
+                "document_type": ""
+              }
+            },
+            "id": "f8757560-8c02-4607-bcac-d42df0dcda49",
+            "creation_date": 1761664422021,
+            "event": "PURCHASE_BILLET_PRINTED",
+            "version": "2.0.0"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/ea89a7b2-41bf-4e5d-9c18-1cea11a8531f",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-23T19:32:36.568Z",
+      "createdAt": "2025-10-23T19:32:36.568Z",
+      "role": "workflow:owner",
+      "workflowId": "XkhH59wBR6kvMV4t",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-28T21:05:39.381Z",
+  "versionId": "10157189-06d8-4b00-bbb2-d7e2d1ccdae8"
+}

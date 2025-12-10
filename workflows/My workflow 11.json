@@ -1,0 +1,246 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request36": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-11T19:40:20.224Z",
+  "id": "HHe32vjdXtPe3exP",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 11",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -944,
+        64
+      ],
+      "id": "dfa86021-34f0-402d-a200-846afe28f939",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega os dados estáticos (Sintaxe V2 Correta usando 'this')\nconst staticData = this.getWorkflowStaticData(\"global\");\n\n// Pega o contador atual ou inicia em 0\nlet counter = staticData.leadDistroCounter || 0;\n\n// O 'pathIndex' nos diz para onde o lead vai (0, 1, 2, ou 3)\nconst pathIndex = counter % 4;\n\n// Incrementa o contador para o próximo lead e reseta em 4\nlet nextCounter = (counter + 1) % 4;\n\n// Salva o contador atualizado (Sintaxe V2 Correta usando 'this')\nthis.setWorkflowStaticData(\"global\", { \"leadDistroCounter\": nextCounter });\n\n// Pega o lead que acabou de chegar (Sintaxe V2 Correta)\nconst item = $item;\n\n// Roteia o lead:\nif (pathIndex === 0) {\n  // Envia para a Saída 0 (25%)\n  return [ item ];\n} else {\n  // Envia para a Saída 1 (75%)\n  return [ null, item ];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -448,
+        64
+      ],
+      "id": "0552bd1a-3d1f-4c4a-8de3-17999e7c17ff",
+      "name": "Code in JavaScript1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  item.json.random = Math.random();\n  return item;\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -736,
+        48
+      ],
+      "id": "6166f150-193c-4dca-9ec1-c7cce6221de9",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n  \"user_id\": \"teste\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        368
+      ],
+      "id": "18ef627a-6634-4a67-85c6-b0e7e517ef36",
+      "name": "HTTP Request36"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        368
+      ],
+      "id": "2134fd90-f894-46aa-a572-bd13abc0708c",
+      "name": "HTTP Request37"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2348e2db-8aaa-489b-b80d-b0c23dedca12",
+              "name": "random75",
+              "value": "={{ Math.round($json.random * 0.75) }}",
+              "type": "string"
+            },
+            {
+              "id": "32b58b1d-5ae3-4116-bcf8-d39923d5efc5",
+              "name": "random25",
+              "value": "={{ Math.round($json.random * 0.25) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        528
+      ],
+      "id": "e5aa146f-edb6-44b3-a543-1afe7a4f3949",
+      "name": "Random Clint"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1b46f533-c0fd-40a8-bd4a-97b641dc9052",
+              "leftValue": "={{ $json.random }}",
+              "rightValue": "=0.25",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -32,
+        384
+      ],
+      "id": "3cc8a8bb-a9e7-4ce7-b75d-e6cbf768a165",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  item.json.random = Math.random();\n  return item;\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -448,
+        432
+      ],
+      "id": "77f9b031-9bf6-428e-b52d-e942854ef843",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-11T19:40:20.224Z",
+      "createdAt": "2025-11-11T19:40:20.224Z",
+      "role": "workflow:owner",
+      "workflowId": "HHe32vjdXtPe3exP",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-11T19:53:26.115Z",
+  "versionId": "2d3893dc-b32c-498a-bbe1-68ee41f1ff61"
+}

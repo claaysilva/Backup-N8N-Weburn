@@ -1,0 +1,3841 @@
+{
+  "active": true,
+  "connections": {
+    "Busca dados active": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Foi enviado?": {
+      "main": [
+        [
+          {
+            "node": "Dados separados",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Dados separados": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Foi enviado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados Cashback",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados Cashback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?3": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados Freemium",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados Freemium",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?2": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados Quarteto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados Quarteto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?1": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados NITA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados NITA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe Cashback": {
+      "main": [
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe NITA": {
+      "main": [
+        [
+          {
+            "node": "Wait7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe Quarteto": {
+      "main": [
+        [
+          {
+            "node": "Wait8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe Freemium": {
+      "main": [
+        [
+          {
+            "node": "Wait9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir dados Cashback": {
+      "main": [
+        [
+          {
+            "node": "Automações",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir dados Freemium": {
+      "main": [
+        [
+          {
+            "node": "Automações",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Pedro Sancha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir dados Quarteto": {
+      "main": [
+        [
+          {
+            "node": "Automações",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir dados NITA": {
+      "main": [
+        [
+          {
+            "node": "Automações",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe Cashback",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe NITA",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me2": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe Quarteto",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me3": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe Freemium",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?4": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados Magra",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados Magra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items4": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me4": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe Magra",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca dados active (auto)": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Dados separados Mormaii",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe Magra": {
+      "main": [
+        [
+          {
+            "node": "Wait10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inserir dados Magra": {
+      "main": [
+        [
+          {
+            "node": "Automações",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campanha é Nova?5": {
+      "main": [
+        [
+          {
+            "node": "Inserir dados Mormaii",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Atualizar dados Mormaii",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items5": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me5": {
+      "main": [
+        [
+          {
+            "node": "Verificar se Existe Mormaii",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se Existe Mormaii": {
+      "main": [
+        [
+          {
+            "node": "Wait11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Busca dados active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger3": {
+      "main": [
+        [
+          {
+            "node": "Busca dados active (auto)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait7": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait8": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait9": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait10": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait11": {
+      "main": [
+        [
+          {
+            "node": "Campanha é Nova?5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar dados Mormaii": {
+      "main": [
+        []
+      ]
+    },
+    "Dados separados Mormaii": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-14T15:16:47.221Z",
+  "id": "heaj01g46jwlZSQk",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Relatório Active",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://jvatpsdl19338.api-us1.com/api/3/campaigns",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "filters[name]",
+              "value": "Campanha Black | Nov EMAIL"
+            },
+            {
+              "name": "limit",
+              "value": "100"
+            },
+            {
+              "name": "orders[sdate]",
+              "value": "DESC"
+            },
+            {
+              "name": "filters[status]",
+              "value": "5"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "9a9f6e9c4ef9664e7ba861a7cf2c1d1a0fcf39950ab7c6df6da6fef8c19eecd54302c2f5"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -48,
+        16
+      ],
+      "id": "5b6edcfd-7377-4955-ae13-0b4ad457bca3",
+      "name": "Busca dados active"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3c679818-81cc-4f56-a2d9-4f5558fc7c3e",
+              "leftValue": "={{ $json.statusString }}",
+              "rightValue": "Enviado",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        352,
+        16
+      ],
+      "id": "ea88e86e-928c-4687-bde6-e739693d4d65",
+      "name": "Foi enviado?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9d11bee9-00f3-4257-b8b1-b6624dac2f27",
+              "name": "nome_campanha",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "d8ca4b65-657f-4dc3-980a-05502c501e13",
+              "name": "data_envio",
+              "value": "={{ DateTime.fromISO($json.sdate).setLocale('pt-BR').toFormat(\"d 'de' MMMM 'de' yyyy\") }}",
+              "type": "string"
+            },
+            {
+              "id": "4450ddda-858e-4cca-92b1-81b3b8ad6ae8",
+              "name": "envios",
+              "value": "={{ Number($json.send_amt) }}",
+              "type": "string"
+            },
+            {
+              "id": "73793e2e-c419-483e-b099-b7b96f1a99f0",
+              "name": "aberturas_unicas",
+              "value": "={{ Number($json.uniqueopens) }}",
+              "type": "string"
+            },
+            {
+              "id": "bf494285-21ec-46ac-9741-9aa51d1a993b",
+              "name": "cliques_unicos",
+              "value": "={{ Number($json.uniquelinkclicks) }}",
+              "type": "string"
+            },
+            {
+              "id": "ed706c34-9669-41aa-bbd7-1beeebcf186e",
+              "name": "rejeicoes_total",
+              "value": "={{ Number($json.hardbounces) + Number($json.softbounces) }}",
+              "type": "string"
+            },
+            {
+              "id": "3345f6cc-75a5-4ad5-8aac-01ee9d6d93fa",
+              "name": "cancelamentos",
+              "value": "={{ Number($json.unsubscribes) }}",
+              "type": "string"
+            },
+            {
+              "id": "1b6006ce-9c14-4da3-9a0c-728e2277e14a",
+              "name": "encaminhamentos",
+              "value": "={{ Number($json.uniqueforwards) }}",
+              "type": "string"
+            },
+            {
+              "id": "df0feeea-1849-4314-8b02-35e89b005bf9",
+              "name": "clique_para_abertura_taxa",
+              "value": "={{ (function() { \n  const opens = Number($json.uniqueopens); \n  const clicks = Number($json.uniquelinkclicks); \n  \n  if (opens === 0) { \n    return 0; \n  } \n  \n  return parseFloat(((clicks / opens) * 100).toFixed(2)); \n})() }}",
+              "type": "string"
+            },
+            {
+              "id": "7bc615c9-29b0-4a49-b7c4-d944fd571514",
+              "name": "id_campanha",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "4ddf29ec-b920-4183-a439-e817e21923f4",
+              "name": "nome_da_aba",
+              "value": "={{ (function() { \n  const nome = $json.name.toLowerCase(); \n  \n  if (nome.includes('freemium')) { \n    return 'Freemium';\n  } \n  if (nome.includes('cashback')) { \n    return 'Cashback'; \n  } \n  if (nome.includes('quarteto')) { \n    return 'Quarteto'; \n  } \n  if (nome.includes('nita')) { \n    return 'Nita'; \n  }\n  if (nome.includes('magra')) { \n      return 'Magra'; \n    } \n  if (nome.includes('mormaii')) { \n      return 'Mormaii'; \n    } \n  \n  return 'AbaPadrão';\n})() }}\n\n",
+              "type": "string"
+            },
+            {
+              "id": "85ed9c23-f325-4c02-8e8f-d619510604cd",
+              "name": "Data Mormaii",
+              "value": "={{ DateTime.fromISO($json.ldate).setLocale('pt-BR').toFormat(\"d 'de' MMMM 'de' yyyy\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        16
+      ],
+      "id": "4322d167-43cc-4642-9dd3-bf9d4279d450",
+      "name": "Dados separados",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "914c0497-c00c-4751-b386-eaf78e246b15",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "Cashback",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Cashback"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "be9cc361-8992-4b11-a5b7-04240af83d65",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "NITA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "NITA"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "65e84e77-9cb6-4b64-8485-bb0c876fc177",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "Quarteto",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Quarteto"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "489ec9f8-d796-448a-a843-7e38f9c06c37",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "Freemium",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Freemium"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "377b75ec-7a62-42d5-afd6-4c8ddd41ed72",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "Magra em Casa",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Magra em casa"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0fec6d04-888d-433b-aa71-9d783a69abf4",
+                    "leftValue": "={{ $json.nome_campanha }}",
+                    "rightValue": "MORMAII",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Mormaii"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        800,
+        -16
+      ],
+      "id": "179119a6-6ff4-420d-b4dc-63be8eb3e3ca",
+      "name": "Switch",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o item que vem do nó anterior\nconst item = $input.item;\nconst campanhas = item.json.campaigns;\n\n// Cria uma nova lista de itens\nconst novosItens = [];\n\n// Loop para \"desempacotar\" cada campanha\nfor (const campanha of campanhas) {\n  // Cria um novo item n8n para cada campanha\n  novosItens.push({ json: campanha });\n}\n\n// Retorna a nova lista de itens\n// O n8n vai processar cada item um por um\nreturn novosItens;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        128,
+        16
+      ],
+      "id": "3790242b-ccd2-4d05-aa1c-bee84944e5a0",
+      "name": "Code in JavaScript",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2112,
+        -912
+      ],
+      "id": "52b5f224-6af8-4ba6-bb02-76f1ecf293d6",
+      "name": "Campanha é Nova?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2128,
+        -512
+      ],
+      "id": "695579cb-71e7-4748-9057-a33ac2542ac2",
+      "name": "Campanha é Nova?1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2144,
+        -112
+      ],
+      "id": "d5cbef60-6279-4e8b-aad9-51cea5767b1f",
+      "name": "Campanha é Nova?2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2144,
+        352
+      ],
+      "id": "a2145449-4370-47fd-8b45-8d047628484d",
+      "name": "Campanha é Nova?3"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Cashback",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1680,
+        -912
+      ],
+      "id": "2f46d692-d4cd-4850-912f-baaae555d058",
+      "name": "Verificar se Existe Cashback",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Nita",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1696,
+        -512
+      ],
+      "id": "498088dd-df4e-4e6d-b059-efb826a368aa",
+      "name": "Verificar se Existe NITA",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Quarteto",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1712,
+        -112
+      ],
+      "id": "716739a5-832b-46b9-af05-5f6dd201c922",
+      "name": "Verificar se Existe Quarteto",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Freemium",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1712,
+        352
+      ],
+      "id": "61c5a9f8-fe53-4504-9a32-299cb50dd6dc",
+      "name": "Verificar se Existe Freemium",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Cashback",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2336,
+        -1008
+      ],
+      "id": "e18e86e4-882a-4e4a-9f7a-3c5c8b066db5",
+      "name": "Inserir dados Cashback",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Cashback",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2336,
+        -816
+      ],
+      "id": "85d9ee40-4495-4c92-93fe-e29fa68623b1",
+      "name": "Atualizar dados Cashback",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Freemium",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2368,
+        448
+      ],
+      "id": "71e46baf-44b0-4d7f-8d90-5512f1a64cb5",
+      "name": "Atualizar dados Freemium",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Freemium",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2368,
+        256
+      ],
+      "id": "514e4fb3-d85c-4926-8a66-4a8b48f7a726",
+      "name": "Inserir dados Freemium",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Quarteto",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2368,
+        -208
+      ],
+      "id": "e97bfa4f-c7b4-4df8-89f3-cdf21edcc2bd",
+      "name": "Inserir dados Quarteto",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Quarteto",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2368,
+        -16
+      ],
+      "id": "776b1d43-1a1d-41ec-84e7-fa8732a27776",
+      "name": "Atualizar dados Quarteto",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Nita",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2352,
+        -416
+      ],
+      "id": "5b1c66ba-9a15-44cd-972d-0b8194d9c440",
+      "name": "Atualizar dados NITA",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Nita",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2352,
+        -608
+      ],
+      "id": "34ad6ddc-79d2-4105-a126-e28bdbf122c0",
+      "name": "Inserir dados NITA",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1024,
+        -912
+      ],
+      "id": "5e9e468b-4a1c-47ac-aa3e-5b5ff1579823",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        -912
+      ],
+      "id": "57f8c69c-8f15-452f-9ea5-92e13ee408b5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        -512
+      ],
+      "id": "6469a99d-b764-4eb8-bfbd-858a5da6ce54",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        1264,
+        -512
+      ],
+      "id": "a1a25cdb-7ee4-4e14-b14d-f45ac574d136"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1056,
+        -112
+      ],
+      "id": "04294abd-1422-46c6-bdf6-f45fa991e40c",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me2",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        -112
+      ],
+      "id": "c1450f56-6297-4fb2-94af-a0817a92d202"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1056,
+        352
+      ],
+      "id": "034acbf1-b4b5-460d-a4c7-02cd93fef9a8",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me3",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        352
+      ],
+      "id": "54f8ceaa-523c-4bcf-bc69-e879a85d6661"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "user",
+        "user": {
+          "__rl": true,
+          "value": "D09TDKJ28BF",
+          "mode": "id"
+        },
+        "text": "=*Relatório de Campanhas ({{ $now.toFormat('dd/MM/yyyy') }})* 🚀\n\n*Campanha:* {{ $json.nome_campanha }}\n*Data de Envio:* {{ $json.data_envio }}\n\n\n*Métricas Principais:*\n• *Envios:* {{ $json.envios }}\n• *Aberturas Únicas:* {{ $json.aberturas_unicas }}\n• *Cliques Únicos:* {{ $json.cliques_unicos }}\n• *Taxa de Clique-por-Abertura (CTOR):* {{ $json.clique_para_abertura_taxa }}%\n• *Rejeições:* {{ $json.rejeicoes_total }}\n• *Cancelamentos:* {{ $json.cancelamentos }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        3104,
+        400
+      ],
+      "id": "e373b6aa-f40f-43e8-b4de-d971993f47d2",
+      "name": "Pedro Sancha",
+      "webhookId": "a1597e3e-a30f-4c39-87dd-286c6a644839",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "nvPQmNyOCDvdJyX1",
+          "name": "Slack account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08KEPEH62Z",
+          "mode": "id"
+        },
+        "text": "=*Relatório de Campanhas ({{ $now.toFormat('dd/MM/yyyy') }})* 🚀\n\n*Campanha:* {{ $json.nome_campanha }}\n*Data de Envio:* {{ $json.data_envio }}\n\n\n*Métricas Principais:*\n• *Envios:* {{ $json.envios }}\n• *Aberturas Únicas:* {{ $json.aberturas_unicas }}\n• *Cliques Únicos:* {{ $json.cliques_unicos }}\n• *Taxa de Clique-por-Abertura (CTOR):* {{ $json.clique_para_abertura_taxa }}%\n• *Rejeições:* {{ $json.rejeicoes_total }}\n• *Cancelamentos:* {{ $json.cancelamentos }}\n\n------------------------\n------------------------",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        4768,
+        -64
+      ],
+      "id": "ddf5c853-eb35-4f55-8109-9d0203e79893",
+      "name": "Automações",
+      "webhookId": "a1597e3e-a30f-4c39-87dd-286c6a644839",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "nvPQmNyOCDvdJyX1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        752
+      ],
+      "id": "d31dea6e-7d95-4689-b019-0b7693b70cd7",
+      "name": "Campanha é Nova?4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1072,
+        752
+      ],
+      "id": "5e79ff4a-71e8-494e-9ce4-4cedcc7c0210",
+      "name": "Loop Over Items4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me4",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        752
+      ],
+      "id": "bb0e2276-34a3-42a9-b059-fdf1698461f8"
+    },
+    {
+      "parameters": {
+        "url": "https://jvatpsdl19338.api-us1.com/api/3/automations/531/campaigns",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "orders[sdate]",
+              "value": "DESC"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "9a9f6e9c4ef9664e7ba861a7cf2c1d1a0fcf39950ab7c6df6da6fef8c19eecd54302c2f5"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -48,
+        224
+      ],
+      "id": "2d230a43-9a5f-4be5-b67f-520863fae1a9",
+      "name": "Busca dados active (auto)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o item que vem do nó anterior\nconst item = $input.item;\nconst campanhas = item.json.campaigns;\n\n// Cria uma nova lista de itens\nconst novosItens = [];\n\n// Loop para \"desempacotar\" cada campanha\nfor (const campanha of campanhas) {\n  // Cria um novo item n8n para cada campanha\n  novosItens.push({ json: campanha });\n}\n\n// Retorna a nova lista de itens\n// O n8n vai processar cada item um por um\nreturn novosItens;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        224
+      ],
+      "id": "90a929a1-6404-4210-8644-48b413d18875",
+      "name": "Code in JavaScript1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Magra",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1728,
+        752
+      ],
+      "id": "dfd5c003-0263-4515-bd06-c5032730b150",
+      "name": "Verificar se Existe Magra",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Magra",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2384,
+        656
+      ],
+      "id": "7b82045e-8100-4dab-bc07-7586d10ea204",
+      "name": "Inserir dados Magra",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Magra",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2384,
+        848
+      ],
+      "id": "2dd1c715-4ed5-4ae3-97b2-fbdd5806e64b",
+      "name": "Atualizar dados Magra",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "40446fb4-e68b-4481-b932-b699bf79c5f6",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        1200
+      ],
+      "id": "6d9f83d8-1758-406b-b9cb-7ac2fa54f571",
+      "name": "Campanha é Nova?5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1072,
+        1200
+      ],
+      "id": "3e6f9031-0060-4b4c-9a9a-06060b93133e",
+      "name": "Loop Over Items5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me5",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        1200
+      ],
+      "id": "df004d48-0f1b-4450-bbd1-ff757d680f68"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Mormaii",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id_campanha",
+              "lookupValue": "={{ $json.id_campanha }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1728,
+        1200
+      ],
+      "id": "912136d5-287e-46e8-a74d-ac6406ea6451",
+      "name": "Verificar se Existe Mormaii",
+      "executeOnce": false,
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Mormaii",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2384,
+        1296
+      ],
+      "id": "a55324fe-ab0e-4e4e-acc4-ed80951749e2",
+      "name": "Atualizar dados Mormaii",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7,
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -752,
+        16
+      ],
+      "id": "b900bcac-3bd1-421b-a0aa-2e079f6e7493",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "16XrvYEi6rdxH8fzNduKbk7oV2S6Y5FBGUmSs0LbsszM",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "=Mormaii",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id_campanha": "={{ $('Switch').item.json.id_campanha }}",
+            "nome_campanha": "={{ $('Switch').item.json.nome_campanha }}",
+            "data_envio": "={{ $('Switch').item.json.data_envio }}",
+            "envios": "={{ $('Switch').item.json.envios }}",
+            "aberturas_unicas": "={{ $('Switch').item.json.aberturas_unicas }}",
+            "cliques_unicos": "={{ $('Switch').item.json.cliques_unicos }}",
+            "rejeicoes_total": "={{ $('Switch').item.json.rejeicoes_total }}",
+            "cancelamentos": "={{ $('Switch').item.json.cancelamentos }}",
+            "encaminhamentos": "={{ $('Switch').item.json.encaminhamentos }}",
+            "clique_para_abertura_taxa": "={{ $('Switch').item.json.clique_para_abertura_taxa }}"
+          },
+          "matchingColumns": [
+            "id_campanha"
+          ],
+          "schema": [
+            {
+              "id": "id_campanha",
+              "displayName": "id_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nome_campanha",
+              "displayName": "nome_campanha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_envio",
+              "displayName": "data_envio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "envios",
+              "displayName": "envios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "aberturas_unicas",
+              "displayName": "aberturas_unicas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cliques_unicos",
+              "displayName": "cliques_unicos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "rejeicoes_total",
+              "displayName": "rejeicoes_total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cancelamentos",
+              "displayName": "cancelamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "encaminhamentos",
+              "displayName": "encaminhamentos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "clique_para_abertura_taxa",
+              "displayName": "clique_para_abertura_taxa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2384,
+        1104
+      ],
+      "id": "721847dc-0748-4955-aefb-68f965367dd6",
+      "name": "Inserir dados Mormaii",
+      "executeOnce": false,
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "notesInFlow": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "i0KmTbyNf5uyslIa",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1456,
+        -912
+      ],
+      "id": "c26feda1-c661-4635-9acb-75fee21a1b24",
+      "name": "Wait",
+      "webhookId": "d4e03024-87e7-42e4-b46d-32b868951dbd"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1472,
+        -512
+      ],
+      "id": "9081110d-e9da-4aa6-abe2-b0b080c43f41",
+      "name": "Wait1",
+      "webhookId": "8d763d26-e224-4dae-aa58-6fc65e5c2355"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1488,
+        -112
+      ],
+      "id": "6f182b80-266b-4628-bb16-9058dd770839",
+      "name": "Wait2",
+      "webhookId": "a41fc94a-a508-49bf-9aa1-1e5097a689f0"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1488,
+        352
+      ],
+      "id": "9224efc5-1d0e-4b61-ad70-a800f490af26",
+      "name": "Wait3",
+      "webhookId": "8ddc4429-ac73-43dc-bee9-ca8fe6d04f9f"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1504,
+        752
+      ],
+      "id": "771b70f9-34f8-43e6-8346-ce0b75db6015",
+      "name": "Wait4",
+      "webhookId": "0b43c842-d18d-4101-8ff2-8bae363ec2be"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1504,
+        1200
+      ],
+      "id": "c1636806-8b4c-4c45-8ff3-5a9de3d438da",
+      "name": "Wait5",
+      "webhookId": "efa30963-b4ec-44ee-8bf8-b82a892728e3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -752,
+        224
+      ],
+      "id": "c77b1266-c8f2-4797-89c4-cd78f82f5927",
+      "name": "Schedule Trigger3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1888,
+        -912
+      ],
+      "id": "724dbf57-eeda-47c6-bdd6-8d2736bfa37b",
+      "name": "Wait6",
+      "webhookId": "48dcbe85-b2b3-4ff7-abd8-95dd01cb07e1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1904,
+        -512
+      ],
+      "id": "795070f1-687e-4c7d-9054-a18336a4a335",
+      "name": "Wait7",
+      "webhookId": "f4b17507-c794-444d-a1b3-65e4b1895361"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1920,
+        -112
+      ],
+      "id": "6af612a4-eee4-4f45-b682-2a90b4f9a25d",
+      "name": "Wait8",
+      "webhookId": "52cc57c2-6fc3-4ff9-a5b6-16ae7babc927"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1920,
+        352
+      ],
+      "id": "441a1aae-4a7f-4d5c-992d-e2078daccfe4",
+      "name": "Wait9",
+      "webhookId": "1c1ac044-e820-4d85-86bb-6952bf279811"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1936,
+        752
+      ],
+      "id": "b874402a-7adb-466c-86a7-95b08f9efcde",
+      "name": "Wait10",
+      "webhookId": "d3ebedff-b2f7-41d0-87e8-30fceb3022d2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1936,
+        1200
+      ],
+      "id": "4542379c-bf2c-4414-be51-6c6dc3489014",
+      "name": "Wait11",
+      "webhookId": "1f0269e3-3714-4e17-b71d-02e8c760ba3d"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9d11bee9-00f3-4257-b8b1-b6624dac2f27",
+              "name": "nome_campanha",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "d8ca4b65-657f-4dc3-980a-05502c501e13",
+              "name": "data_envio",
+              "value": "={{ DateTime.fromISO($json.ldate).setLocale('pt-BR').toFormat(\"d 'de' MMMM 'de' yyyy\") }}",
+              "type": "string"
+            },
+            {
+              "id": "4450ddda-858e-4cca-92b1-81b3b8ad6ae8",
+              "name": "envios",
+              "value": "={{ Number($json.send_amt) }}",
+              "type": "string"
+            },
+            {
+              "id": "73793e2e-c419-483e-b099-b7b96f1a99f0",
+              "name": "aberturas_unicas",
+              "value": "={{ Number($json.uniqueopens) }}",
+              "type": "string"
+            },
+            {
+              "id": "bf494285-21ec-46ac-9741-9aa51d1a993b",
+              "name": "cliques_unicos",
+              "value": "={{ Number($json.uniquelinkclicks) }}",
+              "type": "string"
+            },
+            {
+              "id": "ed706c34-9669-41aa-bbd7-1beeebcf186e",
+              "name": "rejeicoes_total",
+              "value": "={{ Number($json.hardbounces) + Number($json.softbounces) }}",
+              "type": "string"
+            },
+            {
+              "id": "3345f6cc-75a5-4ad5-8aac-01ee9d6d93fa",
+              "name": "cancelamentos",
+              "value": "={{ Number($json.unsubscribes) }}",
+              "type": "string"
+            },
+            {
+              "id": "1b6006ce-9c14-4da3-9a0c-728e2277e14a",
+              "name": "encaminhamentos",
+              "value": "={{ Number($json.uniqueforwards) }}",
+              "type": "string"
+            },
+            {
+              "id": "df0feeea-1849-4314-8b02-35e89b005bf9",
+              "name": "clique_para_abertura_taxa",
+              "value": "={{ (function() { \n  const opens = Number($json.uniqueopens); \n  const clicks = Number($json.uniquelinkclicks); \n  \n  if (opens === 0) { \n    return 0; \n  } \n  \n  return parseFloat(((clicks / opens) * 100).toFixed(2)); \n})() }}",
+              "type": "string"
+            },
+            {
+              "id": "7bc615c9-29b0-4a49-b7c4-d944fd571514",
+              "name": "id_campanha",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "4ddf29ec-b920-4183-a439-e817e21923f4",
+              "name": "nome_da_aba",
+              "value": "={{ (function() { \n  const nome = $json.name.toLowerCase(); \n  \n  if (nome.includes('freemium')) { \n    return 'Freemium';\n  } \n  if (nome.includes('cashback')) { \n    return 'Cashback'; \n  } \n  if (nome.includes('quarteto')) { \n    return 'Quarteto'; \n  } \n  if (nome.includes('nita')) { \n    return 'Nita'; \n  }\n  if (nome.includes('magra')) { \n      return 'Magra'; \n    } \n  if (nome.includes('mormaii')) { \n      return 'Mormaii'; \n    } \n  \n  return 'AbaPadrão';\n})() }}\n\n",
+              "type": "string"
+            },
+            {
+              "id": "85ed9c23-f325-4c02-8e8f-d619510604cd",
+              "name": "Data Mormaii",
+              "value": "={{ DateTime.fromISO($json.ldate).setLocale('pt-BR').toFormat(\"d 'de' MMMM 'de' yyyy\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        224
+      ],
+      "id": "a843a629-a3bf-405b-9d41-93497ccdb484",
+      "name": "Dados separados Mormaii",
+      "alwaysOutputData": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-14T15:16:47.221Z",
+      "createdAt": "2025-11-14T15:16:47.221Z",
+      "role": "workflow:owner",
+      "workflowId": "heaj01g46jwlZSQk",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger1": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger2": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger3": {
+      "recurrenceRules": [
+        6
+      ]
+    }
+  },
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-12-05T12:41:20.228Z",
+  "versionId": "908a17f8-e62c-473e-80fa-5ad289e70367"
+}

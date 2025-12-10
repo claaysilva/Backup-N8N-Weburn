@@ -1,0 +1,425 @@
+{
+  "active": false,
+  "connections": {
+    "Monta link da fatura": {
+      "main": [
+        [
+          {
+            "node": "Create link switchy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca os Dados do Contato na Guru": {
+      "main": [
+        [
+          {
+            "node": "Busca a Última Transação na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca a Última Transação na Guru": {
+      "main": [
+        [
+          {
+            "node": "Monta link da fatura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create link switchy": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Send template1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-10-13T21:59:59.079Z",
+  "id": "7RrOmFzudEjqT5BV",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Funil Pix / Boleto (Condição de parada)",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "956be347-49f8-428d-8982-1fefac10c1c5",
+              "name": "link_fatura_final",
+              "value": "=https://{{ $json.data[0].infrastructure.host }}/invoice/{{ $json.data[0].id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        672,
+        0
+      ],
+      "id": "38d48737-b528-4f99-b904-72a42b05c430",
+      "name": "Monta link da fatura"
+    },
+    {
+      "parameters": {
+        "url": "https://digitalmanager.guru/api/v2/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.contact_email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "96b99fc8-bfd0-4738-93da-facff712785e",
+      "name": "Busca os Dados do Contato na Guru"
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/contacts/{{ $json.data[0].id }}/transactions",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "01295993-ca59-45af-a539-5683342da63f",
+      "name": "Busca a Última Transação na Guru"
+    },
+    {
+      "parameters": {
+        "content": "## I'm a note \nBusine ID\n9680607361990376\nToken Meta Clint\nEAAN0nX5QMWMBPrtepPKeQqjOAeZAXr23XU0SrMXow3agG4ps8eQ78s21FoXUKYGQZCZCUmxf2IZADiZBpQ2RdtSJqAQf2XNcGui7sVjqByc4N2z9hlXbXOEI0gZBZAb9xLwJcZAY4LJzRZC4aTOhHjvmbjeLKWU5TsACH9gVm0ZCslbNbn4xwkNh5okN3nNPgGmmBT"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        464,
+        224
+      ],
+      "typeVersion": 1,
+      "id": "45748caa-f861-4c67-99f4-a02c88a7079b",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "aba32da4-c9e6-4565-9001-08ec9c90be28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"link\": {\n    \"url\": \"{{ $json.link_fatura_final }}\",\n    \"title\": \"{{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }} - {{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].name }}\",\n    \"domain\": \"link.chatweburn.com\",\n    \"tags\": [\n      \"whatsapp\",\n      \"funil clint\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        944,
+        0
+      ],
+      "id": "725ac918-92ab-4fe8-8661-4a0a100abf7c",
+      "name": "Create link switchy"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee1f9d62-7d25-4029-9143-a3c05fc9547d",
+              "name": "Nome",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "186aca19-8485-4bc9-9e9e-f311639f5673",
+              "name": "Metodo de Pagamento",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }}",
+              "type": "string"
+            },
+            {
+              "id": "9b7348c2-b586-4d79-a4ec-771bfee8f70e",
+              "name": "Nome Produto",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].offer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f02876a4-8e90-4419-9378-35ef69eee7c6",
+              "name": "link_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "40441c29-dd02-4f6b-bdb0-23ccfafb1a5c",
+              "name": "Phone",
+              "value": "={{ $('Busca os Dados do Contato na Guru').item.json.data[0].phone_full_number }}",
+              "type": "string"
+            },
+            {
+              "id": "5536395f-5531-4849-ab91-c6df7a8e6fdf",
+              "name": "workflowId",
+              "value": "={{ $execution.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1232,
+        -16
+      ],
+      "id": "8dccab85-adc5-4b3e-a5c3-c0658c9cc5ea",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "limitWaitTime": true,
+        "resumeUnit": "minutes",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2464,
+        64
+      ],
+      "id": "24300f2b-2d50-433f-8a63-753a28d5f6e4",
+      "name": "Wait1",
+      "webhookId": "0dd48727-8ddc-4aca-b3c5-02ced66638e2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2608,
+        80
+      ],
+      "id": "7a60504c-265f-475f-b8de-35d1579ccbea",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $json.contacts[0].input }}",
+        "template": "funil_pix_boleto_n8n_msg2|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Nome Produto'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $execution.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2912,
+        64
+      ],
+      "id": "86f411fc-4b34-43f4-81ba-cbdea5e05418",
+      "name": "Send template1",
+      "webhookId": "4fcbe965-a8f5-46c2-87ad-b96bf8c64913",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        144,
+        -240
+      ],
+      "id": "e14f490c-28e6-4610-a221-d4d3eb869577",
+      "name": "WhatsApp Trigger",
+      "webhookId": "b2f4f05f-6d8e-44c2-96b1-73bd724898db",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "iZgcIgdJQTq1lRBf",
+          "name": "WhatsApp OAuth account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-13T21:59:59.079Z",
+      "createdAt": "2025-10-13T21:59:59.079Z",
+      "role": "workflow:owner",
+      "workflowId": "7RrOmFzudEjqT5BV",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-14T00:19:54.708Z",
+  "versionId": "ccc5dd54-ab0b-4f3c-bf95-0f24982bb111"
+}

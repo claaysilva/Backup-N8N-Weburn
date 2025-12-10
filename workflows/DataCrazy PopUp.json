@@ -1,0 +1,705 @@
+{
+  "active": false,
+  "connections": {
+    "Buscar Lead": {
+      "main": [
+        [
+          {
+            "node": "Lead Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Lead": {
+      "main": [
+        [
+          {
+            "node": "Definir Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Lead": {
+      "main": [
+        [
+          {
+            "node": "Definir Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negocio": {
+      "main": [
+        [
+          {
+            "node": "Verificar Duplicidade",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Existe?": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config IDs": {
+      "main": [
+        [
+          {
+            "node": "Sorteador Atendentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Config IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Negócio Existe?": {
+      "main": [
+        [
+          {
+            "node": "Mover Etapa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Duplicidade": {
+      "main": [
+        [
+          {
+            "node": "Negócio Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mover Etapa": {
+      "main": [
+        []
+      ]
+    },
+    "Criar Negocio": {
+      "main": [
+        []
+      ]
+    },
+    "Definir Lead": {
+      "main": [
+        [
+          {
+            "node": "Buscar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Tag1": {
+      "main": [
+        [
+          {
+            "node": "Tag Existe?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tag Existe?1": {
+      "main": [
+        [
+          {
+            "node": "Seleciona Tag1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Tag1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Tag1": {
+      "main": [
+        [
+          {
+            "node": "Seleciona Tag1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Seleciona Tag1": {
+      "main": [
+        [
+          {
+            "node": "Buscar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sorteador Atendentes": {
+      "main": [
+        [
+          {
+            "node": "Buscar Tag1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-21T12:59:45.460Z",
+  "id": "Us7QL7VYD0arhWB3",
+  "isArchived": false,
+  "meta": null,
+  "name": "DataCrazy PopUp",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.dc_email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        432,
+        528
+      ],
+      "id": "933537cb-4a56-4f68-a776-4e5e8aa9fc39",
+      "name": "Buscar Lead",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $('Buscar Lead').item.json.data[0].id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag1').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        880,
+        432
+      ],
+      "id": "79ddedb7-7947-4cff-9ff4-648b27763746",
+      "name": "Atualizar Lead"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag1').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        880,
+        624
+      ],
+      "id": "0a928227-20f5-411d-910f-058be34b7791",
+      "name": "Criar Lead",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.email_busca }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1328,
+        528
+      ],
+      "id": "55ec2a27-0cdf-47eb-aac3-1644ffb93a89",
+      "name": "Buscar Negocio",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.data[0].id }}",
+              "rightValue": "Is Not Empty",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        656,
+        528
+      ],
+      "id": "8969af3e-ee41-43f5-b0d8-a0b1e6a74da0",
+      "name": "Lead Existe?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- 1. CONFIGURAÇÃO DOS IDs DO DATACRAZY ---\n// Defina aqui o ID da etapa onde os Leads do Popup devem cair\nconst stageIdPopup = \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"; // ID da etapa \"PopUp\"\n\n// --- 2. CAPTURA DOS DADOS DO WEBHOOK ---\nconst body = items[0].json.body || {};\n\n// Captura segura dos campos do formulário\n// O formulário manda \"Nome\", \"E-mail\" e \"Telefone\" (com maiúscula)\nconst nome = body.Nome || \"\";\nconst email = body[\"E-mail\"] || \"\"; // Nota: Precisa de aspas/colchetes por causa do hífen\nconst rawPhone = body.Telefone || \"\";\nconst formName = body.form_name || \"Formulário Site\";\n\n// --- 3. TRATAMENTO INTELIGENTE DE TELEFONE ---\n// Remove tudo que não é número (tira parênteses, traços, espaços)\nlet phoneClean = rawPhone.replace(/\\D/g, '');\n\n// CORREÇÕES PARA BRASIL:\n// Se tiver 10 ou 11 dígitos, assume que é BR e adiciona o DDI 55\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n// Se duplicou o 55 (ex: 555545...), corrige\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); \n}\n// Formato final E.164\nconst finalPhone = \"+\" + phoneClean;\n\n\n// --- 4. RETORNO FINAL PARA OS PRÓXIMOS NÓS ---\nreturn {\n  json: {\n    // Mantém os dados originais se precisar\n    ...items[0].json,\n    \n    // Dados Tratados para o DataCrazy\n    dc_name: nome,\n    dc_email: email,\n    dc_phone: finalPhone,\n    dc_stage_id: stageIdPopup,\n    dc_source: formName,\n    \n    // Variável útil para o \"Buscar Lead\" (busca por e-mail)\n    email_busca: email\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -960,
+        544
+      ],
+      "id": "21b1b1f9-054d-4db7-b0ef-d0eec04a1ec1",
+      "name": "Config IDs"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1200,
+        544
+      ],
+      "id": "9737e303-91a1-401b-a59c-c2e6ec83b1f7",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.existe }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1776,
+        528
+      ],
+      "id": "215799ae-e1e6-4abf-937a-d5648a88f8ef",
+      "name": "Negócio Existe?"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "leadId",
+              "value": "={{ $('Definir Lead').item.json.leadId }}"
+            },
+            {
+              "name": "stageId",
+              "value": "={{ $('Config IDs').item.json.dc_stage_id }}"
+            },
+            {
+              "name": "attendantId",
+              "value": "={{ $('Sorteador Atendentes').item.json.atendente.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2000,
+        624
+      ],
+      "id": "56dd8b52-b0b6-41ea-b30d-0bdaaf20935f",
+      "name": "Criar Negocio"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pega o resultado do nó anterior \"Buscar Negocio\"\nconst resultadoBusca = $('Buscar Negocio').first().json;\n\n// A API geralmente retorna um array dentro de \"data\" ou \"items\"\n// Se a busca não achou nada, o array vem vazio ou o count é 0\nconst listaNegocios = resultadoBusca.data || [];\n\nif (listaNegocios.length > 0) {\n  // ENCONTROU: Pega o ID do primeiro negócio da lista (geralmente o mais recente ou o único)\n  return {\n    json: {\n      existe: true,\n      businessId: listaNegocios[0].id,\n      stageIdAtual: listaNegocios[0].stageId // Útil se quiser saber onde ele está hoje\n    }\n  };\n} else {\n  // NÃO ENCONTROU\n  return {\n    json: {\n      existe: false,\n      businessId: null\n    }\n  };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        528
+      ],
+      "id": "69749ef0-221d-43df-8f32-69c7aac3e1ec",
+      "name": "Verificar Duplicidade"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.businessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"stageId\": \"{{ $('Config IDs').item.json.dc_stage_id }}\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2000,
+        432
+      ],
+      "id": "7a44bb31-15f0-4de5-b2da-39d656a3ffbf",
+      "name": "Mover Etapa"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Este nó serve para unificar o ID, não importa de onde ele veio.\n// Como conectamos as duas pontas nele, o \"items[0]\" será o dado do vencedor.\n\nconst lead = items[0].json;\n\n// Garante que pegamos o ID, seja da criação ou atualização\n// Se por acaso algo falhar, tentamos pegar o ID que veio da busca lá atrás\nconst leadId = lead.id || $('Buscar Lead').first().json.data[0].id;\n\nreturn {\n  json: {\n    leadId: leadId\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1104,
+        528
+      ],
+      "id": "db9b8ff1-cce6-4e0c-8b27-dd92e29f8fe7",
+      "name": "Definir Lead"
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/tags",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.dc_source }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -464,
+        528
+      ],
+      "id": "8930214e-011f-4742-94f2-81f675e91637",
+      "name": "Buscar Tag1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        528
+      ],
+      "id": "15f5968a-f441-47ee-b951-b602a69b974b",
+      "name": "Tag Existe?1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Config IDs').item.json.dc_source }}"
+            },
+            {
+              "name": "useRandomColor",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -16,
+        608
+      ],
+      "id": "4349b30c-7937-44e5-aa21-801178474574",
+      "name": "Criar Tag1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Verifica se veio da criação (tem o campo 'id' na raiz)\nif (items[0].json.id && !items[0].json.data) {\n  return {\n    json: {\n      tag_id: items[0].json.id\n    }\n  };\n}\n\n// Se não, veio da busca (tem o campo 'data' com array)\nif (items[0].json.data && items[0].json.data.length > 0) {\n  return {\n    json: {\n      tag_id: items[0].json.data[0].id\n    }\n  };\n}\n\n// Fallback (caso dê erro e não encontre nada)\nreturn { json: { tag_id: null } };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        528
+      ],
+      "id": "6c215df8-4204-4344-ba22-93df5c89e2b2",
+      "name": "Seleciona Tag1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- 1. REGRAS FIXAS (100% PARA MATHEUS) ---\n// Coloque aqui partes do nome do formulário. \n// O código vai procurar se o \"form_name\" CONTÉM alguma dessas palavras.\nconst regrasMatheus = [\n    \"muzy\", \n    \"weburn\", \n    \"mecabo\" // Adicionei um exemplo, pode remover se quiser\n];\n\nconst idMatheus = \"e718891f-d45e-4b9f-9411-fe123a9eb238\"; \n\n// --- 2. EQUIPE DO SORTEIO (RESTO) ---\nconst equipeRoleta = [\n    { \n        name: \"Jacira\", \n        id: \"fd0d06b4-ef33-438e-826b-c27f1ee8131a\", \n        peso: 33 \n    },\n    { \n        name: \"Erika\", \n        id: \"ffa0859f-3300-4cd0-9e2d-997e2951f34e\", \n        peso: 33 \n    },\n    { \n        name: \"Ester Rosa\", \n        id: \"86ef09b7-d185-4d3a-940b-6c501dbf9bd6\", \n        peso: 33 \n    }\n];\n\n// --- 3. LÓGICA DE DECISÃO ---\n\n// Pega o corpo dos dados que veio do Config IDs\nconst body = $('Config IDs').item.json.body || {};\n\n// Pega o Nome do Formulário (ou form_id se preferir) e converte para minúsculo\n// Se não tiver form_name, usa string vazia para não dar erro\nconst tagParaVerificar = (body.form_name || body.form_id || \"\").toLowerCase();\n\nlet escolhido = null;\n\n// Verifica: O nome do formulário contém alguma palavra do Matheus?\nconst ehDoMatheus = regrasMatheus.some(palavra => tagParaVerificar.includes(palavra));\n\nif (ehDoMatheus) {\n    // CASO 1: É do Matheus (ex: \"Weburn - Cyber Week\")\n    escolhido = { \n        name: \"Matheus Donha\", \n        id: idMatheus,\n        tipo: \"Regra Fixa (\" + tagParaVerificar + \")\"\n    };\n} else {\n    // CASO 2: Não é do Matheus, roda a roleta\n    const totalPeso = equipeRoleta.reduce((sum, a) => sum + a.peso, 0);\n    let numeroSorteado = Math.random() * totalPeso;\n\n    for (const atendente of equipeRoleta) {\n        if (numeroSorteado < atendente.peso) {\n            escolhido = atendente;\n            break;\n        }\n        numeroSorteado -= atendente.peso;\n    }\n    if (!escolhido) escolhido = equipeRoleta[0];\n    escolhido.tipo = \"Sorteio\";\n}\n\n// --- RETORNO ---\nreturn {\n    json: {\n        ...items[0].json, \n        atendente: {\n            id: escolhido.id,\n            nome: escolhido.name,\n            motivo: escolhido.tipo\n        }\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -704,
+        544
+      ],
+      "id": "44568fc7-2687-4647-89e3-2de4b42f5797",
+      "name": "Sorteador Atendentes"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "WordPress/6.9; https://weburn.com.br",
+            "content-length": "219",
+            "accept": "*/*",
+            "accept-encoding": "deflate, gzip, br, zstd",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "195.35.19.59",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "195.35.19.59"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "Nome": "Clayton teste datacrazy",
+            "E-mail": "clayton@weburn.com.br",
+            "Telefone": "(38) 99862-6001",
+            "utm_source": "",
+            "utm_content": "",
+            "utm_term": "",
+            "utm_medium": "",
+            "utm_campaign": "",
+            "src": "",
+            "cross": "",
+            "utm_hidden": "",
+            "form_id": "a56b2bc",
+            "form_name": "Weburn - Cyber Week"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/bdbca672-b938-41cd-b356-7db5b00b6d53",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-21T12:59:45.460Z",
+      "createdAt": "2025-11-21T12:59:45.460Z",
+      "role": "workflow:owner",
+      "workflowId": "Us7QL7VYD0arhWB3",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-09T17:24:01.163Z",
+  "versionId": "b82a7e28-b4b1-4e82-8c1e-e6ba1b575a75"
+}

@@ -1,0 +1,365 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2025-12-01T19:29:44.943Z",
+  "id": "ShkdmVe2UFq8T1o4",
+  "isArchived": false,
+  "meta": null,
+  "name": "DataCrazy (Samanta)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "21fde295-8bc6-4521-98d0-d9cd401e3324-samanta",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        320,
+        -160
+      ],
+      "id": "d8019843-5527-4b6b-b8f5-257a40066c61",
+      "name": "Webhook Assinantes1",
+      "webhookId": "21fde295-8bc6-4521-98d0-d9cd401e3324"
+    }
+  ],
+  "pinData": {
+    "Webhook Assinantes1": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+            "content-length": "6392",
+            "content-type": "application/json",
+            "x-forwarded-for": "35.185.104.125",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "35.185.104.125",
+            "x-request-id": "a07db04a-ccab-4fc4-9aed-88957051c887",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "affiliations": null,
+            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+            "cancel_at_cycle_end": 0,
+            "cancel_reason": "",
+            "cancelled_by": {
+              "name": "",
+              "email": "",
+              "date": ""
+            },
+            "charged_every_days": 3650,
+            "charged_times": 1,
+            "contracts": [],
+            "current_invoice": {
+              "charge_at": "2025-12-06",
+              "code": "in_CRDSHfd9wMIjeMC2x",
+              "created_at": 1764616525,
+              "cycle": 1,
+              "days_until_payment": -5,
+              "discount_value": 0,
+              "id": "a07dae1d-3503-469e-a1e5-5621ab46e1f5",
+              "increment_value": 0,
+              "paid_at": "2025-12-01",
+              "payment_attempts": 0,
+              "payment_url": "https://clkdmg.site/pay/a07dae1d-3503-469e-a1e5-5621ab46e1f5/invoice",
+              "period_end": "2035-12-01",
+              "period_start": "2025-12-01",
+              "status": "paid",
+              "subscription_id": "a07dae1d-32a3-467e-88aa-790b21e2d1b4",
+              "tax_value": 0,
+              "transaction_was_reissued": 0,
+              "type": "cycle",
+              "updated_at": 1764616786,
+              "value": 358.8
+            },
+            "dates": {
+              "canceled_at": null,
+              "cycle_end_date": "2035-12-01",
+              "cycle_start_date": "2025-12-01",
+              "last_status_at": "2025-12-01T19:21:16Z",
+              "next_cycle_at": "2035-12-02",
+              "started_at": "2025-12-01T19:15:25Z"
+            },
+            "id": "sub_E0vJHjg3iu9xfxuo",
+            "internal_id": "a07dae1d-32a3-467e-88aa-790b21e2d1b4",
+            "last_status": "active",
+            "last_transaction": {
+              "affiliations": [],
+              "checkout_url": "https://pagar.queima48.com.br/subscribe/q48-ultima-black-friday-ads",
+              "contact": {
+                "id": "a07dade5-4e11-4ed3-8b45-d0c72fd5a223",
+                "name": "Flavio G.",
+                "company_name": "",
+                "email": "willneverforever@gmail.com",
+                "doc": "24879984825",
+                "phone_number": "11914619969",
+                "phone_local_code": "55",
+                "address": "",
+                "address_number": "",
+                "address_comp": "",
+                "address_district": "",
+                "address_city": "",
+                "address_state": "",
+                "address_state_full_name": "",
+                "address_country": "BR",
+                "address_zip_code": "",
+                "lead": []
+              },
+              "dates": {
+                "canceled_at": null,
+                "confirmed_at": "2025-12-01T19:17:22Z",
+                "created_at": "2025-12-01T19:14:48Z",
+                "expires_at": "2025-12-06T03:00:00Z",
+                "ordered_at": "2025-12-01T19:12:50Z",
+                "unavailable_until": "2025-12-31T19:17:22Z",
+                "updated_at": "2025-12-01T19:17:55Z",
+                "warranty_until": "2025-12-31T19:17:22Z"
+              },
+              "ecommerces": [],
+              "extras": {
+                "accepted_terms_url": 0,
+                "accepted_privacy_policy_url": 0
+              },
+              "id": "a07dad30-ccdb-4eaa-8e52-f4a5d044ad78",
+              "infrastructure": {
+                "ip": "2804:14c:46:8f96:625a:4e68:5ff5:9363",
+                "city": "sao paulo",
+                "host": "pagar.queima48.com.br",
+                "ga_id": "GA1.1.490968632.1762768223",
+                "region": "sp",
+                "country": "BR",
+                "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+                "city_lat_long": "-23.555771,-46.639557",
+                "facebook_browser_id": "fb.2.1762768223089.1863288837"
+              },
+              "invoice": {
+                "charge_at": "2025-12-06",
+                "created_at": "2025-12-01T19:15:25Z",
+                "cycle": 1,
+                "discount_value": 0,
+                "id": "in_CRDSHfd9wMIjeMC2x",
+                "increment_value": 0,
+                "period_end": "2035-12-01",
+                "period_start": "2025-12-01",
+                "status": "paid",
+                "tax_value": 0,
+                "tries": 0,
+                "try": 0,
+                "type": "cycle",
+                "value": 358.8
+              },
+              "payment": {
+                "affiliate_value": 0,
+                "acquirer": {
+                  "code": "0",
+                  "message": "",
+                  "name": "none",
+                  "nsu": "4195162701",
+                  "tid": "4195162701"
+                },
+                "can_try_again": 1,
+                "coupon": null,
+                "currency": "BRL",
+                "discount_value": 0,
+                "gross": 358.8,
+                "installments": {
+                  "value": 358.8,
+                  "qty": 1,
+                  "interest": 0
+                },
+                "marketplace_id": "ch_lBXn7R1ukFRvpwzW",
+                "marketplace_name": "pagarme2",
+                "marketplace_value": 3.55,
+                "method": "pix",
+                "net": 355.25,
+                "processing_times": {
+                  "started_at": "2025-12-01T19:15:19.995Z",
+                  "finished_at": "2025-12-01T19:15:21.835Z",
+                  "delay_in_seconds": 1
+                },
+                "refund_reason": "",
+                "refuse_reason": " (0)",
+                "tax": {
+                  "value": 0,
+                  "rate": 0
+                },
+                "total": 358.8,
+                "pix": {
+                  "qrcode": {
+                    "signature": "00020101021226820014br.gov.bcb.pix2560pix.stone.com.br/pix/v2/d0f3350e-08cc-4401-bc2b-141842b307d75204000053039865406358.805802BR5913PAGAR.ME S.A.6014RIO DE JANEIRO622905255e65a40dc62e738406738cd696304B876",
+                    "url": "https://pagar.queima48.com.br/api/checkout/invoices/a07dad30-ccdb-4eaa-8e52-f4a5d044ad78/qrcodes/pix"
+                  },
+                  "expiration_date": "2025-12-06"
+                }
+              },
+              "product": {
+                "group": {
+                  "id": "9b7643fd-fffd-4f56-86b8-60c19dac83d5",
+                  "name": "Q48"
+                },
+                "id": "1762196492",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a048fb0b-c24d-4cf1-a519-f4aac8a7a603.png",
+                "internal_id": "a04555c6-43df-427a-af02-502447650a46",
+                "marketplace_id": "1762196492",
+                "marketplace_name": "pagarme2",
+                "name": "Q48 | Última Black Friday",
+                "offer": {
+                  "id": "a04557e2-1c59-4eea-a3ab-b7ff6bc30dbb",
+                  "name": "Q48 | Última Black Friday | [ADS]"
+                },
+                "producer": {
+                  "marketplace_id": "26849805000106",
+                  "name": "Weburn",
+                  "contact_email": "suporte@weburn.com.br"
+                },
+                "qty": 1,
+                "total_value": 358.8,
+                "type": "plan",
+                "unit_value": 358.8
+              },
+              "shipment": {
+                "carrier": "",
+                "service": "",
+                "tracking": "",
+                "value": 0,
+                "status": "",
+                "delivery_time": ""
+              },
+              "shipping": {
+                "name": "Standard",
+                "value": 0
+              },
+              "source": {
+                "source": null,
+                "checkout_source": null,
+                "utm_source": null,
+                "utm_campaign": null,
+                "utm_medium": null,
+                "utm_content": null,
+                "utm_term": null,
+                "pptc": []
+              },
+              "status": "approved",
+              "type": "producer",
+              "self_attribution": null
+            },
+            "name": "Q48 | Última Black Friday",
+            "next_cycle_installments": 1,
+            "next_cycle_value": 358.8,
+            "next_product": {
+              "id": "a04555c6-43df-427a-af02-502447650a46",
+              "marketplace_id": "1762196492",
+              "marketplace_name": "pagarme2",
+              "name": "Q48 | Última Black Friday",
+              "offer": {
+                "cash_discount": 0,
+                "id": "a04557e2-1c59-4eea-a3ab-b7ff6bc30dbb",
+                "name": "Q48 | Última Black Friday | [ADS]",
+                "plan": {
+                  "cycles": 0,
+                  "discount": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "increment": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "interval": 10,
+                  "interval_type": "year",
+                  "provider": "guru",
+                  "split_cycles": 0,
+                  "trial_days": 0
+                },
+                "units_per_sale": 1,
+                "value": 358.8
+              }
+            },
+            "payment_method": "pix",
+            "product": {
+              "group": {
+                "id": "9b7643fd-fffd-4f56-86b8-60c19dac83d5",
+                "name": "Q48"
+              },
+              "id": "a04555c6-43df-427a-af02-502447650a46",
+              "marketplace_id": "1762196492",
+              "marketplace_name": "pagarme2",
+              "name": "Q48 | Última Black Friday",
+              "offer": {
+                "cash_discount": 0,
+                "id": "a04557e2-1c59-4eea-a3ab-b7ff6bc30dbb",
+                "name": "Q48 | Última Black Friday | [ADS]",
+                "plan": {
+                  "cycles": 0,
+                  "discount": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "increment": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "interval": 10,
+                  "interval_type": "year",
+                  "provider": "guru",
+                  "split_cycles": 0,
+                  "trial_days": 0
+                },
+                "units_per_sale": 1,
+                "value": 358.8
+              }
+            },
+            "provider": "guru",
+            "subscriber": {
+              "address": "",
+              "address_city": "",
+              "address_comp": "",
+              "address_country": "BR",
+              "address_district": "",
+              "address_number": "",
+              "address_state": "",
+              "address_zip_code": "",
+              "doc": "24879984825",
+              "email": "willneverforever@gmail.com",
+              "id": "a07dade5-4e11-4ed3-8b45-d0c72fd5a223",
+              "name": "Flavio G.",
+              "phone_local_code": "55",
+              "phone_number": "11914619969"
+            },
+            "subscription_code": "sub_E0vJHjg3iu9xfxuo",
+            "trial_days": 0,
+            "trial_finished_at": null,
+            "trial_started_at": null,
+            "webhook_type": "subscription"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/e1d46e27-6199-4dbe-8df3-20c85f3c2daa",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-01T19:29:44.943Z",
+      "createdAt": "2025-12-01T19:29:44.943Z",
+      "role": "workflow:owner",
+      "workflowId": "ShkdmVe2UFq8T1o4",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-01T19:30:34.188Z",
+  "versionId": "46a44f4f-510e-47e4-b9a8-3d1290b5c317"
+}

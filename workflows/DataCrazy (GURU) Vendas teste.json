@@ -1,0 +1,956 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook Vendas": {
+      "main": [
+        [
+          {
+            "node": "Tradutor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config IDs": {
+      "main": [
+        [
+          {
+            "node": "Buscar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tradutor": {
+      "main": [
+        [
+          {
+            "node": "Config IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Lead": {
+      "main": [
+        [
+          {
+            "node": "Lead Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Lead": {
+      "main": [
+        [
+          {
+            "node": "Buscar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Lead": {
+      "main": [
+        [
+          {
+            "node": "Buscar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negocio": {
+      "main": [
+        [
+          {
+            "node": "Verificar Duplicidade",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Existe?": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Negócio Existe?": {
+      "main": [
+        [
+          {
+            "node": "Mover Etapa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Negocio": {
+      "main": [
+        [
+          {
+            "node": "Buscar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Duplicidade": {
+      "main": [
+        [
+          {
+            "node": "Negócio Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Produto": {
+      "main": [
+        [
+          {
+            "node": "Verificar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Produto": {
+      "main": [
+        [
+          {
+            "node": "Produto Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Produto Existe?": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Produto": {
+      "main": [
+        [
+          {
+            "node": "Preparar Vínculo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Produto": {
+      "main": [
+        [
+          {
+            "node": "Preparar Vínculo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Vínculo": {
+      "main": [
+        [
+          {
+            "node": "Vincular Produto ao Negócio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mover Etapa": {
+      "main": [
+        [
+          {
+            "node": "Buscar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-04T14:02:31.108Z",
+  "id": "kpJUU33eXAUX96t9",
+  "isArchived": false,
+  "meta": null,
+  "name": "DataCrazy (GURU) Vendas teste",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1760,
+        -80
+      ],
+      "id": "674c04f9-e967-43ec-a5c5-13f217bd57bf",
+      "name": "Webhook Vendas",
+      "webhookId": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- CONFIGURAÇÃO DE IDS DO DATACRAZY ---\n\nconst stageMap = {\n  \"PopUp\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\",\n  \"Compras aprovadas\": \"e1e614ae-99ac-4723-ad5a-470b6eea237c\",\n  \"Abandono de carrinho\": \"264d5e74-f2d3-4988-ae73-7fd4fda13a51\",\n  \"Cartão recusado\": \"d403d222-7b77-4854-bfc4-4c3dae4934f2\",\n  \"Compras em aberto\": \"acea8ffb-c33c-454d-9deb-fe1ff5d56419\",\n  \"Compras expiradas\": \"14f9a756-1195-4599-ae7f-eb0f24292b55\",\n  \"Reembolso/Chargeback\": \"e0966ce2-e082-46f0-b916-19ec1d44f357\",\n  \"Assinaturas ativas\": \"fd3dcb52-1729-411a-9fbe-9bec65b4f601\",\n  \"Assinaturas canceladas\": \"12538e5a-06c2-47e6-ae72-d8e5f23e87cb\",\n  \"Assinaturas em atraso\": \"b57974de-72d7-4f1e-9ef8-14bc9c3ff646\",\n  \"Lista Geral\": \"02ab964b-bb09-45d2-9252-47de1bd42bc8\" // Fallback\n};\n\n// --- 2. TRATAMENTO INTELIGENTE DE TELEFONE ---\nconst body = items[0].json.body || {};\nconst contact = body.contact || {};\n\n// Pega o DDI e o Numero, garantindo que não sejam nulos\nconst ddiGuru = contact.phone_local_code ? String(contact.phone_local_code) : \"\";\nconst numGuru = contact.phone_number ? String(contact.phone_number) : \"\";\n\n// Remove tudo que não é número (tira +, -, espaço, parênteses)\nlet phoneClean = (ddiGuru + numGuru).replace(/\\D/g, '');\n\n// CORREÇÕES AUTOMÁTICAS PARA BRASIL:\n// Se o número tiver 10 ou 11 dígitos, é porque falta o DDI 55. Adiciona.\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n\n// Se o usuário digitou 55 duas vezes (ex: DDI 55 e Numero 551199...), corrige.\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); // Remove o primeiro 55\n}\n\n// Adiciona o + na frente para ficar no padrão internacional (E.164)\nconst finalPhone = \"+\" + phoneClean;\n\n\n// --- 3. RETORNO FINAL ---\nconst origemTexto = items[0].json.origem_datacrazy || \"Lista Geral\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    targetStageId: stageMap[origemTexto] || stageMap[\"Lista Geral\"],\n    // Aqui vai a nova variável limpa:\n    telefoneFormatado: finalPhone \n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1312,
+        -80
+      ],
+      "id": "07db91e9-5798-4f5e-ab92-72094d346ec7",
+      "name": "Config IDs"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa o corpo dos dados vindos da Guru\nconst body = items[0].json.body || {};\nconst status = body.status ? body.status.toLowerCase() : '';\n\n// Tenta pegar o motivo da recusa com segurança\nconst motivoRecusa = body.payment?.refuse_reason || '';\nconst motivoRecusaLower = motivoRecusa.toLowerCase();\n\nlet origem = \"Lista Geral\"; // Padrão de segurança\n\n//LÓGICA DE TRADUÇÃO (VENDAS)\n\n// 1. Compras Aprovadas\nif (status === 'approved' || status === 'completed') {\n  origem = \"Compras aprovadas\";\n}\n\n// 2. Abandono de Carrinho\nelse if (status === 'abandoned') {\n  origem = \"Abandono de carrinho\";\n}\n\n// 3. Compras em Aberto (Pix gerado / Aguardando)\nelse if (status === 'waiting_payment' || status === 'pending' || status === 'billet_printed') {\n  origem = \"Compras em aberto\";\n}\n\n// 4. Compras Expiradas\nelse if (status === 'expired') {\n  origem = \"Compras expiradas\";\n}\n\n// 5. Reembolso / Chargeback\nelse if (status === 'refunded' || status === 'chargeback' || status === 'chargedback') {\n  origem = \"Reembolso/Chargeback\";\n}\n\n// 6. Assinaturas em Atraso\nelse if (status === 'delayed' || status === 'late') {\n  origem = \"Assinaturas em atraso\";\n}\n\n// 7. Cartão Recusado\n// Se for 'canceled' E tiver palavras chave de erro bancário no motivo\nelse if (status === 'refused' || (status === 'canceled' && (\n    motivoRecusaLower.includes('saldo') ||\n    motivoRecusaLower.includes('bloqueado') ||\n    motivoRecusaLower.includes('inválido') ||\n    motivoRecusaLower.includes('não autorizada') ||\n    motivoRecusaLower.includes('erro') ||\n    motivoRecusaLower.includes('security') ||\n    motivoRecusaLower.includes('problema') ||\n    motivoRecusaLower.includes('não suportada')\n  ))) {\n  origem = \"Cartão recusado\";\n}\n\n// 8. Assinaturas Canceladas (Cancelamento manual sem erro de cartão)\nelse if (status === 'canceled') {\n   // Se chegou aqui, é cancelado mas não caiu no filtro de cartão acima\n   origem = \"Assinaturas canceladas\";\n}\n\n// 9. Popup\nelse if (status === 'popup') {\n  origem = \"Popup\";\n}\n\n// Retorna os dados prontos\nreturn {\n  json: {\n    ...items[0].json,\n    origem_datacrazy: origem\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1536,
+        -80
+      ],
+      "id": "c0a58890-5dbc-4f5f-b6c8-97db2cb00ce8",
+      "name": "Tradutor"
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Webhook Vendas').item.json.body.contact.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -1088,
+        -80
+      ],
+      "id": "e9570f29-3372-4ae7-997c-c5c840dbf25d",
+      "name": "Buscar Lead",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $('Buscar Lead').item.json.data[0].id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }} {{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"tags\": [\n    {\n      \"id\": [\n        \"teste\"\n      ]\n    }\n  ],\n  \"address\": {\n    \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n    \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n    \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n    \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n    \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n    \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -640,
+        -176
+      ],
+      "id": "59daebce-01a5-42a1-a987-001e591aff48",
+      "name": "Atualizar Lead"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }} {{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"tags\": [\n    {\n      \"id\": [\n        \"teste\"\n      ]\n    }\n  ],\n  \"address\": {\n    \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n    \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n    \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n    \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n    \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n    \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -640,
+        16
+      ],
+      "id": "4b4c086a-5985-4c14-9fde-d455b80484ae",
+      "name": "Criar Lead"
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Webhook Vendas').item.json.body.contact.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -416,
+        -80
+      ],
+      "id": "cc2e6815-c472-499a-89ea-b5545ec17b6a",
+      "name": "Buscar Negocio",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.data[0].id }}",
+              "rightValue": "Is Not Empty",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -864,
+        -80
+      ],
+      "id": "36723022-f016-4b62-acdd-168def591a1a",
+      "name": "Lead Existe?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.existe }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        48,
+        -80
+      ],
+      "id": "d20f9dbb-35be-4d33-97f0-19a53d16b91d",
+      "name": "Negócio Existe?"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "leadId",
+              "value": "={{ $('Verificar Duplicidade').item.json.leadId }}"
+            },
+            {
+              "name": "stageId",
+              "value": "={{ $('Config IDs').item.json.targetStageId }}"
+            },
+            {
+              "name": "attendantId"
+            },
+            {
+              "name": "externalId",
+              "value": "={{ $('Webhook Vendas').item.json.body.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        272,
+        16
+      ],
+      "id": "5aff75b1-2a37-4067-a403-5a8b4c6a06a3",
+      "name": "Criar Negocio"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa os dados do Webhook\nconst body = $('Webhook Vendas').item.json.body;\n\n// LÓGICA DE ID ALVO (A Inteligência do Order Bump)\nlet idParaBuscar = body.id; // Padrão: busca pelo próprio ID\n\n// Se for Order Bump e tiver o ID da transação pai, buscamos pelo Pai!\nif (body.last_transaction && body.last_transaction.id) {\n    idParaBuscar = body.last_transaction.id;\n}\n\n// Busca na lista de negócios do cliente\nconst negociosEncontrados = items[0].json.data || [];\n\n// Procura: Existe algum negócio no CRM cujo externalId seja igual ao ID que definimos acima?\nconst negocioEncontrado = negociosEncontrados.find(n => String(n.externalId) === String(idParaBuscar));\n\n// Lógica de recuperar o Lead ID (Mantém igual)\nlet leadId = null;\nif ($('Criar Lead').isExecuted) {\n    leadId = $('Criar Lead').item.json.id;\n} else if ($('Atualizar Lead').isExecuted) {\n    leadId = $('Atualizar Lead').item.json.id;\n}\n\nreturn {\n  json: {\n    // Se achou o negócio pai, retorna TRUE. Assim o fluxo pula a criação e vai só vincular o produto.\n    existe: !!negocioEncontrado,\n    \n    // Manda o ID do negócio pai (para adicionarmos o produto nele)\n    existingBusinessId: negocioEncontrado ? negocioEncontrado.id : null,\n    \n    leadId: leadId,\n    \n    // Debug: pra você saber se ele detectou que era OB\n    tipo: (body.last_transaction && body.last_transaction.id) ? \"Order Bump (Vinculado)\" : \"Venda Principal\"\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        -80
+      ],
+      "id": "50f9076c-63d5-472b-879d-e5c2e21c94da",
+      "name": "Verificar Duplicidade"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/products",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Webhook Vendas').item.json.body.product.name }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        496,
+        -80
+      ],
+      "id": "4668131b-5534-4d1d-a383-fc3844b63f48",
+      "name": "Buscar Produto",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// O ID do produto na Guru será nosso SKU\nconst skuGuru = $('Webhook Vendas').item.json.body.product.id;\nconst listaProdutos = items[0].json.data || [];\n\n// Procura se existe algum produto com esse SKU\nconst produtoEncontrado = listaProdutos.find(p => String(p.id_sku) === String(skuGuru));\n\nreturn {\n  json: {\n    existe: !!produtoEncontrado,\n    // Guarda o ID se achou\n    existingProductId: produtoEncontrado ? produtoEncontrado.id : null,\n    sku: skuGuru\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        -80
+      ],
+      "id": "c3b9e561-fd0d-4faa-8c8c-6224f9471367",
+      "name": "Verificar Produto"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.existe }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        -80
+      ],
+      "id": "f0d80477-2cb5-4e2b-9853-d21596bd0c4d",
+      "name": "Produto Existe?"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.g1.datacrazy.io/api/v1/products/{{ $json.existingProductId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook Vendas').item.json.body.product.name }}"
+            },
+            {
+              "name": "id_sku",
+              "value": "={{ $('Webhook Vendas').item.json.body.product.id }}"
+            },
+            {
+              "name": "price",
+              "value": "={{ $('Webhook Vendas').item.json.body.product.unit_value }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1168,
+        -176
+      ],
+      "id": "c2ed9e18-935a-4ce3-b083-b5d48ddf89be",
+      "name": "Atualizar Produto"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/products",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Webhook Vendas').item.json.body.product.name }}\",\n  \"id_sku\": \"{{ $('Webhook Vendas').item.json.body.product.id }}\",\n  \"price\": {{ $('Webhook Vendas').item.json.body.product.unit_value }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1168,
+        16
+      ],
+      "id": "311ced4b-42a1-4c38-988c-d7c73faf047d",
+      "name": "Criar Produto"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- 1. RESGATAR ID DO NEGÓCIO ---\nlet businessId = null;\n\nif ($('Criar Negocio').isExecuted) {\n    // Cenário A: Criamos um negócio novo agora\n    businessId = $('Criar Negocio').item.json.id;\n} else {\n    // Cenário B: O negócio já existia (O IF pulou o Criar)\n    // Buscamos o ID que guardamos lá no passo \"Verificar Duplicidade\"\n    businessId = $('Verificar Duplicidade').item.json.existingBusinessId;\n}\n\n// --- 2. RESGATAR ID DO PRODUTO ---\nlet productId = null;\n\nif ($('Criar Produto').isExecuted) {\n    // Cenário A: Produto Novo\n    productId = $('Criar Produto').item.json.id;\n} else if ($('Atualizar Produto').isExecuted) {\n    // Cenário B: Produto Atualizado\n    productId = $('Atualizar Produto').item.json.id;\n} else {\n    // Cenário C: Produto já existia e não mexemos (raro, mas seguro ter)\n    productId = $('Verificar Produto').item.json.existingProductId;\n}\n\n// Retorna tudo pronto para o HTTP Request final\nreturn {\n    json: {\n        finalBusinessId: businessId,\n        finalProductId: productId,\n        // Já deixamos o preço calculado aqui também\n        price: $('Webhook Vendas').item.json.body.product.unit_value\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1392,
+        -80
+      ],
+      "id": "c6bc71d8-61ff-426f-97d3-570d35f30ea4",
+      "name": "Preparar Vínculo"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $json.finalBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"shipping\": 0,\n  \"discount\": 0,\n  \"addition\": 0,\n  \"products\": [\n    {\n      \"quantity\": 1,\n      \"price\": {{ $json.price }},\n      \"total\": {{ $json.price }},\n      \"product\": {\n        \"id\": \"{{ $json.finalProductId }}\",\n        \"id_sku\": \"{{ $('Webhook Vendas').item.json.body.product.id }}\",\n        \"name\": \"{{ $('Webhook Vendas').item.json.body.product.name }}\",\n        \"price\": {{ $json.price }},\n        \"quantity\": 1,\n        \"total\": {{ $json.price }}\n      }\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1616,
+        -80
+      ],
+      "id": "a812a1d5-0da9-42c0-8283-2f98fe7f5901",
+      "name": "Vincular Produto ao Negócio"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $('Config IDs').item.json.targetStageId }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        272,
+        -176
+      ],
+      "id": "e1a9228b-b9d3-4e5f-bbe7-e9ec7660ff32",
+      "name": "Mover Etapa"
+    }
+  ],
+  "pinData": {
+    "Webhook Vendas": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+            "content-length": "4297",
+            "content-type": "application/json",
+            "x-forwarded-for": "35.237.237.157",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "35.237.237.157",
+            "x-request-id": "a083ec48-7a25-455b-b493-c197e6585a4a",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "affiliations": [],
+            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+            "checkout_url": "https://pagar.treinadorsergiobertoluci.com.br/subscribe/sergio-bertoluci-sb-ao-extremo-ultima-black-friday-ads",
+            "contact": {
+              "id": "9af2bd4f-bf4e-49ed-8dce-ea7d04674437",
+              "name": "Patricia Armstrong",
+              "company_name": "",
+              "email": "armstrong.patricia@gmail.com",
+              "doc": "91705762972",
+              "phone_number": "41996676015",
+              "phone_local_code": "55",
+              "address": "",
+              "address_number": "",
+              "address_comp": "",
+              "address_district": "",
+              "address_city": "",
+              "address_state": "",
+              "address_state_full_name": "",
+              "address_country": "BR",
+              "address_zip_code": "",
+              "lead": []
+            },
+            "contracts": [],
+            "dates": {
+              "canceled_at": null,
+              "confirmed_at": "2025-12-04T21:43:19Z",
+              "created_at": "2025-12-05T00:43:17Z",
+              "expires_at": null,
+              "ordered_at": "2025-12-04T21:43:17Z",
+              "unavailable_until": "2026-01-03T21:43:19Z",
+              "updated_at": "2025-12-04T21:44:02Z",
+              "warranty_until": "2026-01-03T21:43:19Z"
+            },
+            "ecommerces": [],
+            "extras": {
+              "accepted_terms_url": 0,
+              "accepted_privacy_policy_url": 0
+            },
+            "id": "a083ebf3-22f9-458c-b5ca-1e587e78a81e",
+            "infrastructure": {
+              "ip": "2804:7f2:c00a:2b70:ec96:5bb6:a0c0:28a4",
+              "city": "curitiba",
+              "host": "pagar.treinadorsergiobertoluci.com.br",
+              "ga_id": "GA1.1.438860363.1764094405",
+              "region": "pr",
+              "country": "BR",
+              "user_agent": "Mozilla/5.0 (Linux; Android 12; M2003J15SC Build/SP1A.210812.016; ) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/142.0.7444.179 Mobile Safari/537.36 MetaIAB Facebook",
+              "city_lat_long": "-25.426899,-49.265198",
+              "facebook_browser_id": "fb.2.1764094405173.1730707719"
+            },
+            "invoice": [],
+            "is_order_bump": 1,
+            "is_reissue": 0,
+            "items": [
+              {
+                "id": "1744810968",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9eb08c37-a422-4c8e-b131-c397736ea10c.png",
+                "internal_id": "9eb08bcd-49aa-48f2-a9b2-10f5f87c5f36",
+                "marketplace_id": "1744810968",
+                "marketplace_name": "pagarme2",
+                "name": "[OB] Cardápio Bertoluci",
+                "offer": {
+                  "id": "a05b5a5f-20ae-402e-b16d-4c0c20dd52d1",
+                  "name": "Cardápio | Sérgio Bertoluci | [OB]"
+                },
+                "producer": {
+                  "contact_email": null,
+                  "marketplace_id": "1650295901",
+                  "name": "Weburn Empreendimento Digitais S.a."
+                },
+                "qty": 1,
+                "total_value": 24.7,
+                "type": "product",
+                "unit_value": 24.7
+              }
+            ],
+            "last_transaction": {
+              "id": "a083eaf1-ff00-40c8-afec-42b5aa3083d6",
+              "url": "https://digitalmanager.guru/admin/transactions/pagarme2/ch_lodZzWMSl9IGqQ2j"
+            },
+            "payment": {
+              "affiliate_value": 0,
+              "acquirer": {
+                "code": "0000",
+                "message": "Transação aprovada com sucesso",
+                "name": "pagarme",
+                "nsu": "4198939445",
+                "tid": "4198939445"
+              },
+              "can_try_again": 1,
+              "coupon": null,
+              "currency": "BRL",
+              "discount_value": 0,
+              "gross": 24.7,
+              "installments": {
+                "value": 2.06,
+                "qty": 12,
+                "interest": 0.02
+              },
+              "marketplace_id": "ch_rWpA932CMyFL6eOx",
+              "marketplace_name": "pagarme2",
+              "marketplace_value": 0.7,
+              "method": "credit_card",
+              "net": 24.02,
+              "processing_times": {
+                "started_at": "2025-12-04T21:43:17.473Z",
+                "finished_at": "2025-12-04T21:43:19.420Z",
+                "delay_in_seconds": 1
+              },
+              "refund_reason": "",
+              "refuse_reason": "Transação aprovada com sucesso (0000)",
+              "tax": {
+                "value": 0,
+                "rate": 0
+              },
+              "total": 24.72,
+              "credit_card": {
+                "brand": "elo",
+                "expiration_month": 8,
+                "expiration_year": 2033,
+                "first_digits": "651652",
+                "id": "card_wgmzBwtoefRpK7pv",
+                "last_digits": "8838"
+              }
+            },
+            "product": {
+              "group": {
+                "id": "9b1fbad5-a47f-4d7e-8fd5-f2228e5d643c",
+                "name": "Sérgio Bertoluci | Novo"
+              },
+              "id": "1744810968",
+              "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9eb08c37-a422-4c8e-b131-c397736ea10c.png",
+              "internal_id": "9eb08bcd-49aa-48f2-a9b2-10f5f87c5f36",
+              "marketplace_id": "1744810968",
+              "marketplace_name": "pagarme2",
+              "name": "[OB] Cardápio Bertoluci",
+              "offer": {
+                "id": "a05b5a5f-20ae-402e-b16d-4c0c20dd52d1",
+                "name": "Cardápio | Sérgio Bertoluci | [OB]"
+              },
+              "producer": {
+                "marketplace_id": "1650295901",
+                "name": "Weburn Empreendimento Digitais S.a.",
+                "contact_email": ""
+              },
+              "qty": 1,
+              "total_value": 24.7,
+              "type": "product",
+              "unit_value": 24.7
+            },
+            "self_attribution": null,
+            "shipment": {
+              "carrier": "",
+              "service": "",
+              "tracking": "",
+              "value": 0,
+              "status": "",
+              "delivery_time": ""
+            },
+            "shipping": {
+              "name": "Standard",
+              "value": 0
+            },
+            "source": {
+              "source": null,
+              "checkout_source": null,
+              "utm_source": null,
+              "utm_campaign": null,
+              "utm_medium": null,
+              "utm_content": null,
+              "utm_term": null,
+              "pptc": []
+            },
+            "status": "approved",
+            "subscription": [],
+            "type": "producer",
+            "webhook_type": "transaction"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-04T14:02:31.108Z",
+      "createdAt": "2025-12-04T14:02:31.108Z",
+      "role": "workflow:owner",
+      "workflowId": "kpJUU33eXAUX96t9",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-12-05T19:28:02.080Z",
+  "versionId": "f79a526f-f684-4bce-bdda-8cb8127ce413"
+}

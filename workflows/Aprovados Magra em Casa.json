@@ -1,0 +1,759 @@
+{
+  "active": true,
+  "connections": {
+    "HTTP Request38": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request65",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch21": {
+      "main": [
+        [
+          {
+            "node": "Wait62",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait61",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait60",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait60": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request109",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait61": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request108",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait62": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request107",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request65": {
+      "main": [
+        [
+          {
+            "node": "Switch21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request38",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca no painel": {
+      "main": [
+        [
+          {
+            "node": "Foi pago?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "busca na clint": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Foi pago?": {
+      "main": [
+        [
+          {
+            "node": "busca na clint",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Busca no painel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-26T17:48:08.292Z",
+  "id": "cLXoyyNcHztxLwoE",
+  "isArchived": false,
+  "meta": null,
+  "name": "Aprovados Magra em Casa",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"nome_produto\": \"Programa magra em casa\"\n    },\n    \"qual_tratamento\": \"\",\n    \"ja_usou_alguma_medic\": \"\",\n    \"nascimento\": \"{{ $json.body.uYH8ZM }}\",\n    \"peso\": \"{{ $json.body.peso }}\",\n    \"altura\": \"{{ $json.body.altura }}\",\n    \"maior_peso_que_ja_te\": \"{{ $json.body.maior_peso }}\",\n    \"quantos_quilos_quer\": \"{{ $json.body.quilos_a_perder }}\",\n    \"foi_diagnosticada\": \"{{ $json.body['saude_mental'] }}, {{ $json.body['coracao_circulacao'] }}, {{ $json.body.disturbios_abdominais }}, {{ $json.body['response.outros'] }}\",\n    \"fez_cirurgia\": \"{{ $json.body['responses.opcoes_HjqcuV'] }}\",\n    \"usou_medicamento\": \"{{ $json.body.lFsfFW }}\",\n    \"esta_gravida\": \"\",\n    \"alergico_a_medicamen\": \"{{ $json.body['responses.alergia'] }}\", \n    \"tem_duvidas\": \"{{ $json.body.Bmgln3 }}\"\n  },\n  \"origin_id\": \"89d0e85a-e3d2-4037-817e-4b75fe35f89b\",\n  \"name\": \"{{ $json.body.nome }}\",\n  \"phone\": \"{{ $json.body.phone }}\",\n  \"email\": \"{{ $json.body.email }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5936,
+        1136
+      ],
+      "id": "22c8ca0b-5c2e-45f5-ab94-3c2552652469",
+      "name": "HTTP Request38"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"InLead - Magra em casa\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5712,
+        1136
+      ],
+      "id": "ed49a5b2-ea31-4b54-b3f7-cf9b8ec502d8",
+      "name": "HTTP Request65"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Ester\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        944
+      ],
+      "id": "84a27262-1bfc-4772-b294-28e7bee567b8",
+      "name": "HTTP Request107"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "ee57917e-c292-49e0-9e94-431c6412eeae",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bb940cd5-d346-4d65-8c55-a217c13a873f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Ester"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fd073c1e-88ac-40a1-b7d4-a45f60a84980",
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "ac79c561-1936-4afb-8282-8c0a242fca7e",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Jacira"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ba487cb7-816a-4382-a797-214b788aa581",
+                    "leftValue": "={{ $('HTTP Request38').item.json.data.user_id }}",
+                    "rightValue": "12b99bcf-1105-4342-842f-89be0cc19d6c",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Erika"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -5488,
+        1120
+      ],
+      "id": "a2eb07dd-ed6a-4b96-923a-f6df97805166",
+      "name": "Switch21"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        1328
+      ],
+      "id": "a32f3204-3e3b-43d6-8876-c9b98341b1fe",
+      "name": "Wait60",
+      "webhookId": "cb5b9ab2-bc5c-499f-b635-f6a7f3cf4ed0"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        1136
+      ],
+      "id": "7944942d-1832-45e1-b8a9-4ed84912bdd8",
+      "name": "Wait61",
+      "webhookId": "f44844e1-69ae-4e46-a545-d716b8db42cb"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -5264,
+        944
+      ],
+      "id": "7f54336e-fc7c-492b-a85e-8aedf947293c",
+      "name": "Wait62",
+      "webhookId": "6caf0a8b-06c3-42f7-9119-a6de4bc0e138"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Jacira\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        1136
+      ],
+      "id": "426120f6-5990-402d-823c-e6413236cffb",
+      "name": "HTTP Request108"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request38').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Erika\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5040,
+        1328
+      ],
+      "id": "df58abcc-d105-44d6-ab84-b5271d849f6b",
+      "name": "HTTP Request109"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "7e273df0-48e2-43ae-8c53-503ba10fe816",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -6544,
+        1136
+      ],
+      "id": "79541311-dd2c-4dc9-9d9e-6fb4bd194a7d",
+      "name": "Webhook",
+      "webhookId": "7e273df0-48e2-43ae-8c53-503ba10fe816",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://api.barte.com/v1/charges",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "PAID"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-Token-Api",
+              "value": "d8ed7ea3-c0c8-4d79-88d0-21649ff414c1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5984,
+        1600
+      ],
+      "id": "35c8c565-1311-4362-b0a9-4777d8f5dd26",
+      "name": "Busca no painel",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "url": "https://api.clint.digital/v1/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "200"
+            },
+            {
+              "name": "offset",
+              "value": "0"
+            },
+            {
+              "name": "page",
+              "value": "1"
+            },
+            {
+              "name": "email",
+              "value": "nutricionistajulia@hotmail.com"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5488,
+        1600
+      ],
+      "id": "c86297fe-f7a6-426a-821f-e0175b4e0c9f",
+      "name": "busca na clint"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data[0].id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"Aprovado - Magra em casa\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5264,
+        1600
+      ],
+      "id": "c6d5bfc6-c9aa-4611-894a-997f8bae97f0",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ae2665e1-db44-4966-ad0a-3386660e1395",
+              "leftValue": "={{ $json.content[0].status }}",
+              "rightValue": "PAID",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -5776,
+        1600
+      ],
+      "id": "fa5e88d9-c288-4624-9438-a05771a38fdc",
+      "name": "Foi pago?"
+    },
+    {
+      "parameters": {
+        "url": "https://api.barte.com/v1/charges",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "customerDocument",
+              "value": "={{ $json.body.customerDocument }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-Token-Api",
+              "value": "d8ed7ea3-c0c8-4d79-88d0-21649ff414c1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -6288,
+        1600
+      ],
+      "id": "3d5e9a4b-4524-49cc-9f23-57a3632bde3b",
+      "name": "Busca no painel1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "853d8234-b9cb-4efc-a0b4-8d39d85eb1b7-cobranca",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -6528,
+        1600
+      ],
+      "id": "eca03213-d234-4024-9d94-64d4d50f8181",
+      "name": "Webhook1",
+      "webhookId": "853d8234-b9cb-4efc-a0b4-8d39d85eb1b7"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "853d8234-b9cb-4efc-a0b4-8d39d85eb1b7-assinaturas",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -6528,
+        1392
+      ],
+      "id": "ded1c035-5b6e-4693-aa8e-2497bd87dd9e",
+      "name": "Webhook2",
+      "webhookId": "853d8234-b9cb-4efc-a0b4-8d39d85eb1b7"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+            "content-length": "1216",
+            "accept": "*/*",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+            "content-type": "application/x-www-form-urlencoded",
+            "origin": "https://questionario.magraemcasa.com.br",
+            "priority": "u=1, i",
+            "referer": "https://questionario.magraemcasa.com.br/",
+            "sec-ch-ua": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?1",
+            "sec-ch-ua-platform": "\"Android\"",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "no-cors",
+            "sec-fetch-site": "cross-site",
+            "x-forwarded-for": "179.106.165.141",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "179.106.165.141"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "tracking.screen": "427x950",
+            "tracking.platform": "Linux armv81",
+            "score": "19",
+            "responses": "A|E|Refluxo frequente |A|B|A|B",
+            "nome": "Dany Vieira Silva ",
+            "NWYTHU": "Minas Gerais ",
+            "HTY3lt": "clicked",
+            "opcoes_y7B91j": "A",
+            "score.opcoes_y7B91j": "10",
+            "responses.opcoes_y7B91j": "A|*|*",
+            "wXZQNf": "clicked",
+            "kEa3Tf": "loaded",
+            "KUZzqo": "clicked",
+            "opcoes_x6kzFO": "E",
+            "score.opcoes_x6kzFO": "3",
+            "responses.opcoes_x6kzFO": "*|*|*|*|E",
+            "SYppLu": "clicked",
+            "jAWXNa": "clicked",
+            "uYH8ZM": "05/10/1978",
+            "botao_msZXJg": "clicked",
+            "peso": "98",
+            "altura": "171",
+            "IGlTon": "clicked",
+            "maior_peso": "98",
+            "quilos_a_perder": "20",
+            "g7ITsz": "clicked",
+            "botao_1qyaDZ": "clicked",
+            "phone": "(37) 99123-3058",
+            "email": "danyvieira-17@hotmail.com",
+            "botao_08wEn6": "clicked",
+            "disturbios_abdominais": "Refluxo frequente ",
+            "score.disturbios_abdominais": "0",
+            "responses.disturbios_abdominais": "*|*|*|Refluxo frequente ",
+            "botao_w2xY6x": "clicked",
+            "idhdEp": "loaded",
+            "opcoes_7y3GXB": "A",
+            "score.opcoes_7y3GXB": "1",
+            "responses.opcoes_7y3GXB": "A",
+            "opcoes_0tHHHW": "B",
+            "score.opcoes_0tHHHW": "2",
+            "responses.opcoes_0tHHHW": "*|B",
+            "opcoes_o8jauv": "B",
+            "score.opcoes_o8jauv": "2",
+            "responses.opcoes_o8jauv": "*|B",
+            "opcoes_FOe4OK": "A",
+            "score.opcoes_FOe4OK": "1",
+            "responses.opcoes_FOe4OK": "A",
+            "analisando_seu_perfil_com_base_em_suas_respostas": "loaded",
+            "opcoes_cJqAp4": "B",
+            "score.opcoes_cJqAp4": "2",
+            "responses.opcoes_cJqAp4": "B",
+            "botao_Roni3J": "clicked",
+            "code": "8VJ4nr"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/6a62d1f7-fe49-48c4-b175-596c994b3396",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-26T17:48:08.292Z",
+      "createdAt": "2025-11-26T17:48:08.292Z",
+      "role": "workflow:owner",
+      "workflowId": "cLXoyyNcHztxLwoE",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-12-03T12:40:56.891Z",
+  "versionId": "513dced2-a843-42ed-b038-737ff945ac5b"
+}

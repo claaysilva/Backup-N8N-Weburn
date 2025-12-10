@@ -1,0 +1,2247 @@
+{
+  "active": false,
+  "connections": {
+    "Monta link da fatura": {
+      "main": [
+        [
+          {
+            "node": "Create link switchy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook da Clint": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca os Dados do Contato na Guru": {
+      "main": [
+        [
+          {
+            "node": "Busca a Última Transação na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Busca a Última Transação na Guru": {
+      "main": [
+        [
+          {
+            "node": "Monta link da fatura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create link switchy": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template1": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template3": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template4": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template2": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template6": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Send template2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "Send template4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "Send template6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait7": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template8": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait8": {
+      "main": [
+        [
+          {
+            "node": "Send template8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait9": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template10": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait10": {
+      "main": [
+        [
+          {
+            "node": "Send template10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait11": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "Prepara Envio6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template12": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait12": {
+      "main": [
+        [
+          {
+            "node": "Send template12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template5": {
+      "main": [
+        [
+          {
+            "node": "Wait7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template7": {
+      "main": [
+        [
+          {
+            "node": "Wait9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template9": {
+      "main": [
+        [
+          {
+            "node": "Wait11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send template11": {
+      "main": [
+        [
+          {
+            "node": "FIM (Botão Clicado)5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio1": {
+      "main": [
+        [
+          {
+            "node": "Send template1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio2": {
+      "main": [
+        [
+          {
+            "node": "Send template3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio5": {
+      "main": [
+        [
+          {
+            "node": "Send template9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio4": {
+      "main": [
+        [
+          {
+            "node": "Send template7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio3": {
+      "main": [
+        [
+          {
+            "node": "Send template5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepara Envio6": {
+      "main": [
+        [
+          {
+            "node": "Send template11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Send template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Busca os Dados do Contato na Guru",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "FIM (Botão Clicado)6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-17T11:10:28.045Z",
+  "id": "UtKHwYnfm0cpSEDA",
+  "isArchived": true,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Funil Pix / Boleto copy",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "956be347-49f8-428d-8982-1fefac10c1c5",
+              "name": "link_fatura_final",
+              "value": "=https://{{ $json.data[0].infrastructure.host }}/invoice/{{ $json.data[0].id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        736
+      ],
+      "id": "9cea3864-b460-49e2-8328-14f5bfb3f705",
+      "name": "Monta link da fatura"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "85fc1d70-4588-4986-bc4f-d55bbd1a456b",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -320,
+        832
+      ],
+      "id": "0b3ee181-7b86-46fc-a51b-69a890008246",
+      "name": "Webhook da Clint",
+      "webhookId": "85fc1d70-4588-4986-bc4f-d55bbd1a456b"
+    },
+    {
+      "parameters": {
+        "url": "https://digitalmanager.guru/api/v2/contacts",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $json.body.contact.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        128,
+        736
+      ],
+      "id": "8b2fd186-71db-4974-ab49-169e4d632952",
+      "name": "Busca os Dados do Contato na Guru"
+    },
+    {
+      "parameters": {
+        "url": "=https://digitalmanager.guru/api/v2/contacts/{{ $json.data[0].id }}/transactions",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer a0148ac0-73ea-432e-8358-10d323ff0044|0Xj1cU07zLr0FaSdWkf41Gdj4bAOhx1cSa5xnWJX16df9f03"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        352,
+        736
+      ],
+      "id": "0e090306-849b-4788-83e6-1bb1c6e3a15b",
+      "name": "Busca a Última Transação na Guru"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "aba32da4-c9e6-4565-9001-08ec9c90be28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"link\": {\n    \"url\": \"{{ $json.link_fatura_final }}\",\n    \"title\": \"{{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }} - {{ $('Busca a Última Transação na Guru').item.json.data[0].items[0].name }}\",\n    \"domain\": \"link.chatweburn.com\",\n    \"tags\": [\n      \"whatsapp\",\n      \"funil clint\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        736
+      ],
+      "id": "9d15dfee-7182-411a-afe9-cca3220ab29b",
+      "name": "Create link switchy"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee1f9d62-7d25-4029-9143-a3c05fc9547d",
+              "name": "Nome",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "186aca19-8485-4bc9-9e9e-f311639f5673",
+              "name": "Metodo de Pagamento",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data[0].payment.method }}",
+              "type": "string"
+            },
+            {
+              "id": "9b7348c2-b586-4d79-a4ec-771bfee8f70e",
+              "name": "Nome Produto",
+              "value": "={{ $('Busca a Última Transação na Guru').item.json.data.find(item => item.is_order_bump === 0).items[0].offer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "f02876a4-8e90-4419-9378-35ef69eee7c6",
+              "name": "link_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "40441c29-dd02-4f6b-bdb0-23ccfafb1a5c",
+              "name": "Phone",
+              "value": "={{ $('Busca os Dados do Contato na Guru').item.json.data[0].phone_full_number }}",
+              "type": "string"
+            },
+            {
+              "id": "5536395f-5531-4849-ab91-c6df7a8e6fdf",
+              "name": "workflowId",
+              "value": "={{ $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "50f3510f-506a-4eff-a71f-25f7487d828a",
+              "name": "Data de Expiração",
+              "value": "={{ new Date($('Busca a Última Transação na Guru').item.json.data[0].dates.expires_at).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) }}",
+              "type": "string"
+            },
+            {
+              "id": "6251c900-c13c-4c92-908d-7a9b17cbacf2",
+              "name": "Hora de Expiração",
+              "value": "={{ new Date($('Busca a Última Transação na Guru').item.json.data[0].dates.expires_at).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1024,
+        736
+      ],
+      "id": "bfbfdeff-1d8b-4210-a992-f0d7ad4af87a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg1|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $json['Nome Produto'] }}"
+                  },
+                  {
+                    "text": "={{ $json[\"Data de Expiração\"] }}"
+                  },
+                  {
+                    "text": "={{ $json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "f1b69c68-1ef8-4491-a6fd-2ed0e7ce9ed6"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        736
+      ],
+      "id": "a1073bdd-3565-4751-a73e-f0bd896c8916",
+      "name": "Send template",
+      "webhookId": "f1b69c68-1ef8-4491-a6fd-2ed0e7ce9ed6",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeAmount": 150,
+        "resumeUnit": "minutes",
+        "options": {},
+        "path": "dcfd5e1e-368d-4170-964d-633b80a6a69b"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1920,
+        736
+      ],
+      "id": "af6f1a75-05be-4af4-9e5a-ddfc94b25f2c",
+      "name": "Wait1",
+      "webhookId": "dcfd5e1e-368d-4170-964d-633b80a6a69b"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2144,
+        736
+      ],
+      "id": "6d7f6877-588c-4329-b8aa-85ab030f80e8",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg2|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Nome Produto'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "1efbddba-b7e8-4bfd-a179-1151d6f4d00f"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2592,
+        640
+      ],
+      "id": "7831a9cc-6d77-40b9-a087-396f3bfbce30",
+      "name": "Send template1",
+      "webhookId": "1efbddba-b7e8-4bfd-a179-1151d6f4d00f",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1248,
+        736
+      ],
+      "id": "e311b8ee-ad1c-4593-8cde-535203a2b9db",
+      "name": "Prepara Envio"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "54559656-b655-4de3-8b77-2b070cc7e20f"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        2592,
+        832
+      ],
+      "id": "2940d74a-36ae-49a5-8a34-72b880b15d86",
+      "name": "Send template2",
+      "webhookId": "54559656-b655-4de3-8b77-2b070cc7e20f",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeAmount": 20,
+        "options": {},
+        "path": "6bf06b41-844a-4a0b-a431-da30b1c039ff"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2816,
+        640
+      ],
+      "id": "e41f13f4-de8a-4096-8fe2-13b0bf26cdb6",
+      "name": "Wait2",
+      "webhookId": "6bf06b41-844a-4a0b-a431-da30b1c039ff"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3040,
+        640
+      ],
+      "id": "7f5fca24-8da1-405e-b5d7-30343ad7ab84",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg3|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "760d4ed1-52d3-4377-a8e2-8c90b245e69f"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3488,
+        544
+      ],
+      "id": "25af3426-a695-4c9a-a459-6c330d16b935",
+      "name": "Send template3",
+      "webhookId": "760d4ed1-52d3-4377-a8e2-8c90b245e69f",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "6078fe54-d9d8-404b-9ebc-69b5987aaa42"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3488,
+        736
+      ],
+      "id": "09c3bcc6-e2ff-4919-aff3-f0b86e6bc798",
+      "name": "Send template4",
+      "webhookId": "6078fe54-d9d8-404b-9ebc-69b5987aaa42",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeAmount": 25,
+        "options": {},
+        "path": "a473d893-662e-49e1-9dc2-bffd7ff5d5f7"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3712,
+        544
+      ],
+      "id": "f754c154-9638-4ff0-a4da-142622a1e441",
+      "name": "Wait3",
+      "webhookId": "a473d893-662e-49e1-9dc2-bffd7ff5d5f7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3936,
+        544
+      ],
+      "id": "c08c9ad7-fb98-4559-9710-06d83bb7d1f0",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg4|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $('Prepara Envio').item.json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "8a941543-5cad-4cf5-9d2d-a9cef655f1c1"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        4384,
+        448
+      ],
+      "id": "ac61c641-950f-4be2-84cf-593bf5df2699",
+      "name": "Send template5",
+      "webhookId": "8a941543-5cad-4cf5-9d2d-a9cef655f1c1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "c0207d9f-e21a-44d4-b108-20eb8c417add"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        4384,
+        640
+      ],
+      "id": "05af355d-2a45-438b-a343-91a4ffc2e02c",
+      "name": "Send template6",
+      "webhookId": "c0207d9f-e21a-44d4-b108-20eb8c417add",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2816,
+        832
+      ],
+      "id": "0c1a5b35-bbd5-4ca2-92a4-671584a82540",
+      "name": "FIM (Botão Clicado)"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3712,
+        736
+      ],
+      "id": "b19083a7-f581-4414-a9ec-cec9b50b452e",
+      "name": "FIM (Botão Clicado)1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4608,
+        640
+      ],
+      "id": "82721b58-84c1-4f80-b08b-29b34340e103",
+      "name": "FIM (Botão Clicado)2"
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "path": "f67424b9-d332-4d4e-a342-1974562accfc"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2368,
+        832
+      ],
+      "id": "0c2d4710-4e09-4cce-afb6-991e0cfb3ad9",
+      "name": "Wait4",
+      "webhookId": "f67424b9-d332-4d4e-a342-1974562accfc"
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "path": "c0e819f5-0ad3-4d08-9517-546fd3e0e25f"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3264,
+        736
+      ],
+      "id": "edc59025-1759-4435-b360-435000257411",
+      "name": "Wait5",
+      "webhookId": "c0e819f5-0ad3-4d08-9517-546fd3e0e25f"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "path": "92de77ab-d7fe-4045-bf09-19e6be31dead"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4160,
+        640
+      ],
+      "id": "2339b814-8d80-4c48-8b92-83d66fa635f8",
+      "name": "Wait6",
+      "webhookId": "92de77ab-d7fe-4045-bf09-19e6be31dead"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeUnit": "days",
+        "options": {},
+        "path": "a7decf8d-ff30-4bf2-9b44-44b8b3b43720"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4608,
+        448
+      ],
+      "id": "92c7063d-9fca-4f63-9ea0-e04a025aa7e2",
+      "name": "Wait7",
+      "webhookId": "a7decf8d-ff30-4bf2-9b44-44b8b3b43720"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4832,
+        448
+      ],
+      "id": "cae68e6a-d77a-4b06-8247-8c0466f72bf7",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg5|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Data de Expiração'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $('Prepara Envio').item.json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "a401182d-b9b1-4a38-bc5a-6b034cef4fa8"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        5280,
+        352
+      ],
+      "id": "a42a2abc-c294-4b49-b6da-94fbd9905864",
+      "name": "Send template7",
+      "webhookId": "a401182d-b9b1-4a38-bc5a-6b034cef4fa8",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "c41d59a4-d236-4771-b1a4-ee659cf24ac4"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        5280,
+        544
+      ],
+      "id": "c24c6af8-e5ba-44e6-bf37-c9ac1e5b8500",
+      "name": "Send template8",
+      "webhookId": "c41d59a4-d236-4771-b1a4-ee659cf24ac4",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5504,
+        544
+      ],
+      "id": "43944496-950a-4bab-ab49-238621d3ced9",
+      "name": "FIM (Botão Clicado)3"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "path": "3b0c0fdd-793c-46e0-9fc1-fd8119ac06d8"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5056,
+        544
+      ],
+      "id": "b738c5e9-63a9-4173-8670-32c93b067cf2",
+      "name": "Wait8",
+      "webhookId": "3b0c0fdd-793c-46e0-9fc1-fd8119ac06d8"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeUnit": "days",
+        "options": {},
+        "path": "096bcdfd-cd8b-4d94-9c07-c91e965c2bee"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5504,
+        352
+      ],
+      "id": "f898aa8f-e641-403a-9736-aeb12afed8ff",
+      "name": "Wait9",
+      "webhookId": "096bcdfd-cd8b-4d94-9c07-c91e965c2bee"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5728,
+        352
+      ],
+      "id": "b2b096e3-734e-4bf1-a55f-e3fcf88f4579",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg6|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $('Prepara Envio').item.json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "c5399379-5e55-4d0a-8ab1-cfe9d7eeefc9"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        6176,
+        256
+      ],
+      "id": "9a903fb4-4169-4cd1-8744-98e4bc32474f",
+      "name": "Send template9",
+      "webhookId": "c5399379-5e55-4d0a-8ab1-cfe9d7eeefc9",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "7de352e5-5f9e-4f00-88fa-cdb659ec83b2"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        6176,
+        448
+      ],
+      "id": "20398343-dc44-4ef5-9a49-193af833333b",
+      "name": "Send template10",
+      "webhookId": "7de352e5-5f9e-4f00-88fa-cdb659ec83b2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        6400,
+        448
+      ],
+      "id": "7e9c660a-2b3c-407b-ada4-6222ba646d11",
+      "name": "FIM (Botão Clicado)4"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "path": "8ceef4f1-a2d5-4d71-a863-14a0aad28100"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5952,
+        448
+      ],
+      "id": "502c5622-0ef2-4fc9-9a81-da22a6efdb4e",
+      "name": "Wait10",
+      "webhookId": "8ceef4f1-a2d5-4d71-a863-14a0aad28100"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeUnit": "days",
+        "options": {},
+        "path": "aeac965f-9612-429e-a426-30b8487977d5"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        6400,
+        256
+      ],
+      "id": "f16c6aed-716a-463f-a655-8eff4b33241c",
+      "name": "Wait11",
+      "webhookId": "aeac965f-9612-429e-a426-30b8487977d5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3e87afd-25bc-4067-8fc3-f4fe39dcc740",
+              "leftValue": "={{ $json.headers }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        6624,
+        256
+      ],
+      "id": "2c2a3cb9-3a0d-46ce-a158-e0ffef51b0d9",
+      "name": "If6"
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg7|pt_BR",
+        "components": {
+          "component": [
+            {
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "text": "={{ $('Edit Fields').item.json.Nome }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Nome Produto'] }}"
+                  },
+                  {
+                    "text": "={{ $('Edit Fields').item.json['Metodo de Pagamento'] }}"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "button",
+              "sub_type": "url",
+              "buttonParameters": {
+                "parameter": {
+                  "type": "text",
+                  "text": "={{ $('Edit Fields').item.json.link_id }}"
+                }
+              }
+            },
+            {
+              "type": "button",
+              "index": 1,
+              "buttonParameters": {
+                "parameter": {
+                  "payload": "={{ $('Prepara Envio').item.json.resumeUrl }}"
+                }
+              }
+            }
+          ]
+        },
+        "path": "ed7d8c23-69e5-48ac-8628-450d9991a0b7"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        7072,
+        160
+      ],
+      "id": "05a577bd-f07c-4b1e-a552-983f953cfedb",
+      "name": "Send template11",
+      "webhookId": "ed7d8c23-69e5-48ac-8628-450d9991a0b7",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "569361946259055",
+        "recipientPhoneNumber": "={{ $('Edit Fields').item.json.Phone }}",
+        "template": "funil_pix_boleto_n8n_msg|pt_BR",
+        "path": "c062cab4-0bcb-4777-a7d6-d104319f7294"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        7072,
+        352
+      ],
+      "id": "0082bae7-6ebd-4e62-a0e4-e64abce592af",
+      "name": "Send template12",
+      "webhookId": "c062cab4-0bcb-4777-a7d6-d104319f7294",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "R7BPwhn8HvkKXHFG",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        7296,
+        256
+      ],
+      "id": "9b9df5d0-36a8-4a4a-a78c-8379adcc58ab",
+      "name": "FIM (Botão Clicado)5"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "path": "162f98e7-e02f-4f24-a642-5fc82bdd0759"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        6848,
+        352
+      ],
+      "id": "23b81de8-f1a8-4614-bc2a-9f7b48491d1a",
+      "name": "Wait12",
+      "webhookId": "162f98e7-e02f-4f24-a642-5fc82bdd0759"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2368,
+        640
+      ],
+      "id": "9aab81ca-1b65-4131-946e-5f8cd57ab60b",
+      "name": "Prepara Envio1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3264,
+        544
+      ],
+      "id": "b0281565-f4b4-4051-ac86-a86f1c24326c",
+      "name": "Prepara Envio2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4160,
+        448
+      ],
+      "id": "3ce8bab4-4a4f-478f-b321-ab5dfffca9fc",
+      "name": "Prepara Envio3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5056,
+        352
+      ],
+      "id": "81c4edbd-1613-4dbb-98e0-ea8f05d4393b",
+      "name": "Prepara Envio4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5952,
+        256
+      ],
+      "id": "4edae9bc-8382-415f-9df9-50929c1cb001",
+      "name": "Prepara Envio5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46b760ea-d737-4367-aef7-bd80d06511d8",
+              "name": "resumeUrl",
+              "value": "={{ $execution.resumeUrl }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        6848,
+        160
+      ],
+      "id": "a030ebb3-f2cf-4d4d-97b2-cae9606e8c78",
+      "name": "Prepara Envio6"
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "minutes",
+        "path": "9b6c685a-9bd5-48bf-9bb9-328d6a9e0618"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1472,
+        736
+      ],
+      "id": "9dd709e6-20dd-4d56-8592-846ece392736",
+      "name": "Wait",
+      "webhookId": "9b6c685a-9bd5-48bf-9bb9-328d6a9e0618"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9dced621-2801-49f2-b7b8-79ed0f259112",
+              "leftValue": "={{ $json.body.is_order_bump }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -96,
+        832
+      ],
+      "id": "59d98e2d-6fd0-462d-83b1-c9526cf02888",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        128,
+        928
+      ],
+      "id": "8a7acad5-cc88-44ae-a670-d3915aa80d75",
+      "name": "FIM (Botão Clicado)6"
+    }
+  ],
+  "pinData": {
+    "Webhook da Clint": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+            "content-length": "4087",
+            "content-type": "application/json",
+            "x-forwarded-for": "35.237.87.68",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-real-ip": "35.237.87.68",
+            "x-request-id": "a01ea060-8144-4ab7-b959-0e56f3cae2dc",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "affiliations": [],
+            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+            "checkout_url": "https://pagar.thalitatoniatti.com.br/subscribe/thalita-toniatti-pre-black-friday-is",
+            "contact": {
+              "id": "9fd64782-7ec0-400f-9346-8e2d02616255",
+              "name": "Clayton Silva",
+              "company_name": "",
+              "email": "clayton@weburn.com.br",
+              "doc": "70551672137",
+              "phone_number": "38998626001",
+              "phone_local_code": "55",
+              "address": "",
+              "address_number": "",
+              "address_comp": "",
+              "address_district": "",
+              "address_city": "",
+              "address_state": "",
+              "address_state_full_name": "",
+              "address_country": "BR",
+              "address_zip_code": "",
+              "lead": []
+            },
+            "contracts": [],
+            "dates": {
+              "canceled_at": null,
+              "confirmed_at": null,
+              "created_at": "2025-10-15T16:12:52Z",
+              "expires_at": "2025-10-20T03:00:00Z",
+              "ordered_at": "2025-10-15T13:12:52Z",
+              "unavailable_until": null,
+              "updated_at": "2025-10-15T16:12:52Z",
+              "warranty_until": null
+            },
+            "ecommerces": [],
+            "extras": {
+              "accepted_terms_url": 0,
+              "accepted_privacy_policy_url": 0
+            },
+            "id": "a01ea034-ea25-4419-a387-b200d6f88656",
+            "infrastructure": {
+              "ip": "138.122.54.126",
+              "city": "pirapora",
+              "host": "pagar.thalitatoniatti.com.br",
+              "ga_id": "",
+              "region": "mg",
+              "country": "BR",
+              "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+              "city_lat_long": "-17.348706,-44.946627",
+              "facebook_browser_id": ""
+            },
+            "invoice": [],
+            "is_order_bump": 1,
+            "is_reissue": 0,
+            "items": [
+              {
+                "id": "1756403285",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9fbe738f-9111-4165-99ef-4aee46bd2457.png",
+                "internal_id": "9fbe7365-6cc1-4d4c-aa91-871960aac4fb",
+                "marketplace_id": "1756403285",
+                "marketplace_name": "pagarme",
+                "name": "[OB] Camila Padilha",
+                "offer": {
+                  "id": "9fbe7365-94d6-43d3-ace8-fe1e879d57a5",
+                  "name": "Mapa do Emagrecimento com Elástico [OB] [ORG]"
+                },
+                "producer": {
+                  "contact_email": null,
+                  "marketplace_id": "1650295901",
+                  "name": "Weburn Empreendimento Digitais S.a."
+                },
+                "qty": 1,
+                "total_value": 35.64,
+                "type": "product",
+                "unit_value": 35.64
+              }
+            ],
+            "last_transaction": {
+              "id": "a01e9fe8-a044-4508-9063-3be15205815f",
+              "url": "https://digitalmanager.guru/admin/transactions/pagarme/4136731791"
+            },
+            "payment": {
+              "affiliate_value": 0,
+              "acquirer": {
+                "code": "",
+                "message": "",
+                "name": "pagarme",
+                "nsu": "",
+                "tid": 4136731941
+              },
+              "can_try_again": 1,
+              "coupon": null,
+              "currency": "BRL",
+              "discount_value": 0,
+              "gross": 35.64,
+              "installments": {
+                "value": 35.64,
+                "qty": 1,
+                "interest": 0
+              },
+              "marketplace_id": "4136731941",
+              "marketplace_name": "pagarme",
+              "marketplace_value": 0,
+              "method": "pix",
+              "net": 35.64,
+              "processing_times": {
+                "started_at": "2025-10-15T13:12:52.928Z",
+                "finished_at": "2025-10-15T13:12:53.873Z",
+                "delay_in_seconds": 0
+              },
+              "refund_reason": "",
+              "refuse_reason": "",
+              "tax": {
+                "value": 0,
+                "rate": 0
+              },
+              "total": 35.64,
+              "pix": {
+                "qrcode": {
+                  "signature": "00020101021226820014br.gov.bcb.pix2560pix.stone.com.br/pix/v2/35af5ef1-6917-4c45-9fa4-b9c9c2cac624520400005303986540535.645802BR5913PAGAR.ME S.A.6014RIO DE JANEIRO62290525d980a421ec24a046a1d9ab320630493E0",
+                  "url": "https://pagar.camilapadilha.com.br/api/checkout/invoices/a01ea034-ea25-4419-a387-b200d6f88656/qrcodes/pix"
+                },
+                "expiration_date": "2025-10-20"
+              }
+            },
+            "product": {
+              "id": "1756403285",
+              "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9fbe738f-9111-4165-99ef-4aee46bd2457.png",
+              "internal_id": "9fbe7365-6cc1-4d4c-aa91-871960aac4fb",
+              "marketplace_id": "1756403285",
+              "marketplace_name": "pagarme",
+              "name": "[OB] Camila Padilha",
+              "offer": {
+                "id": "9fbe7365-94d6-43d3-ace8-fe1e879d57a5",
+                "name": "Mapa do Emagrecimento com Elástico [OB] [ORG]"
+              },
+              "producer": {
+                "marketplace_id": "1650295901",
+                "name": "Weburn Empreendimento Digitais S.a.",
+                "contact_email": ""
+              },
+              "qty": 1,
+              "total_value": 35.64,
+              "type": "product",
+              "unit_value": 35.64
+            },
+            "self_attribution": null,
+            "shipment": {
+              "carrier": "",
+              "service": "",
+              "tracking": "",
+              "value": 0,
+              "status": "",
+              "delivery_time": ""
+            },
+            "shipping": {
+              "name": "Standard",
+              "value": 0
+            },
+            "source": {
+              "source": null,
+              "checkout_source": null,
+              "utm_source": null,
+              "utm_campaign": null,
+              "utm_medium": null,
+              "utm_content": null,
+              "utm_term": null,
+              "pptc": []
+            },
+            "status": "waiting_payment",
+            "subscription": [],
+            "type": "producer",
+            "webhook_type": "transaction"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/40e09e93-d27c-40ea-be7d-34c3cf969537",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-17T11:10:28.045Z",
+      "createdAt": "2025-10-17T11:10:28.045Z",
+      "role": "workflow:owner",
+      "workflowId": "UtKHwYnfm0cpSEDA",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-17T14:56:27.409Z",
+  "versionId": "d9054e93-bcc1-4a31-8a4b-ff18288a1fda"
+}

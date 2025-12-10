@@ -1,0 +1,2742 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Redis Get",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request10",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request12",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request14",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request16",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request18",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request20",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request22",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request24",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request26",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request28",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request34",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request32",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request6": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request8": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request10": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request12": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request14": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request16": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request18": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request20": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request22": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request24": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request26": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request28": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request30": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request32": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request34": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        []
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Get": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Set": {
+      "main": [
+        [
+          {
+            "node": "IF 1 em 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF 1 em 4": {
+      "main": [
+        [
+          {
+            "node": "Caminho Alternativo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Caminho Padrão",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Redis Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Get1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Set1": {
+      "main": [
+        [
+          {
+            "node": "IF 1 em ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF 1 em ": {
+      "main": [
+        [
+          {
+            "node": "Caminho Alternativo1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Caminho Padrão1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Redis Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Caminho Padrão": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request36": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Caminho Alternativo": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request36",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request39": {
+      "main": [
+        []
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request41",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request40",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request39",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Teste DataCrazy1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-11T19:56:52.706Z",
+  "id": "ZaSlmOStUJjAvcbS",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Popup Black 2025 copy",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"nome_produto\": \"teste nome produto\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"80259131-ce2c-4ca9-8251-3a957c7b59e9\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3584,
+        1680
+      ],
+      "id": "c7858f8e-6fdb-48f2-b837-13ddf2dfec56",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "0d86d1da-d752-4288-9606-5cd17566426d",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -3904,
+        1648
+      ],
+      "id": "e33e7db7-cfb3-41ba-8cca-ef5b62a3611f",
+      "name": "Webhook",
+      "webhookId": "0d86d1da-d752-4288-9606-5cd17566426d"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Bárbara - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "cdb6007b-685b-4c49-b9db-752a52f87223"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Bárbara Isabel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "878a239c-921e-474d-8d7d-07214ac1fb6a",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Paulo Muzy - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Paulo Muzy"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "553e4dc3-1e1c-4fbe-8e4e-dd020bb8757d",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Weburn - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "WeBurn"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "9a1bba47-3dd6-4ba0-88f5-b8e52d39c03c",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Kaká - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Treinador Kaka"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "22e45490-f66f-406e-b7a6-a5780be13883",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Mecabo - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Tiago Mecabo"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b5339752-714c-4e0e-ad86-26f6e4a7ce73",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Thiago Pugliesi - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Thiago Pugliesi"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "48c03bd2-2964-44f6-a17e-3991af226a07",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Sérgio - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Sergio Bertoluci"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "21cf4a7c-7fa7-4c49-a704-b23a3ef34155",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Q48 - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Q48"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d2eee3cd-5237-4fc1-a773-73bca89ae79e",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Lucas - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Lucas Lacerda"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7601ffcb-42b6-4413-b8f0-ec3a7c45fc42",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Camila Sachs - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Camila Sachs"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8d19cb6c-e2e1-4fa9-99ca-add7b4eac096",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Taty - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Taty Lisboa"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0d19548d-f381-4d94-8f37-5a4a393a0987",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Camila Padilha - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Camila Padilha"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "61fc3009-564c-45f5-9cba-c58674cc6406",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Angélica - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Angélica "
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0c0cfd9b-71ca-4c6e-a509-f6b0b7f994e1",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Thalita - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Thalita Toniatti"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "23fc81e7-eb2e-4ea0-bcf3-1ae13450704d",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Bárbara Gestante - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Bárbara Gestante"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4dacff8f-9330-46c6-a831-9d53a2aa2894",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Barakat - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Barakat"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d850ef01-7436-44d5-b508-818562a715ae",
+                    "leftValue": "={{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Patrícia - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Patrícia"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2381ce37-e691-4ff7-abb8-d2f95d5f2e97",
+                    "leftValue": "{{ $json.body['contact[tags]'] }}",
+                    "rightValue": "Strider - Black Friday",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Strider"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -2832,
+        544
+      ],
+      "id": "9adb4a50-98f6-43e9-977c-a650ef7de499",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"teste produto\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3312,
+        1680
+      ],
+      "id": "b6da048e-e59a-4395-a89b-52ae95d2c636",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"80259131-ce2c-4ca9-8251-3a957c7b59e9\",\n  \"name\": \"{{ $('Webhook').item.json.body[\"contact[first_name]\"] }}\",\n  \"phone\": \"{{ $('Webhook').item.json.body[\"contact[phone]\"] }}\",\n  \"email\": \"{{ $('Webhook').item.json.body[\"contact[email]\"] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -864,
+        -432
+      ],
+      "id": "9a17b12e-63cb-4524-9449-2487d066742a",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -640,
+        -432
+      ],
+      "id": "e428b3c7-abab-44f1-9e58-0a7aa39666a5",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        -128
+      ],
+      "id": "6dca4e4c-eaa6-42be-8128-fa1bac73b0a0",
+      "name": "HTTP Request4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        -128
+      ],
+      "id": "708ac670-17a4-42ca-8721-89202ce533a3",
+      "name": "HTTP Request5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        64
+      ],
+      "id": "de27cabb-68df-4840-911e-d543fbe50193",
+      "name": "HTTP Request6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        64
+      ],
+      "id": "47cfa0df-89f8-4de2-97a9-23cc1ed5da54",
+      "name": "HTTP Request7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        640
+      ],
+      "id": "a32b12aa-1475-42f7-9eba-b780cd076165",
+      "name": "HTTP Request8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        640
+      ],
+      "id": "c419ca74-dee4-460b-a067-e54eb21cb5ae",
+      "name": "HTTP Request9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1024
+      ],
+      "id": "77e90a80-1e41-47de-9e1d-c8a661b4e631",
+      "name": "HTTP Request10"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1024
+      ],
+      "id": "09efa5a6-25f4-4e61-9600-0967470a6a4c",
+      "name": "HTTP Request11"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        256
+      ],
+      "id": "0579e103-1536-49b2-940b-68df0a30552b",
+      "name": "HTTP Request12"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        256
+      ],
+      "id": "fce305d4-4d9f-4318-bc00-da8ff08ab7a4",
+      "name": "HTTP Request13"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1792
+      ],
+      "id": "56a8e712-5dd8-4c22-93b4-0cff986fab7e",
+      "name": "HTTP Request14"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1792
+      ],
+      "id": "12b9c17f-1f95-4445-b70f-ab2d77326e7d",
+      "name": "HTTP Request15"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        2560
+      ],
+      "id": "f0c41785-ec1b-4953-9ecc-59dfa1f21ff6",
+      "name": "HTTP Request16"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        2560
+      ],
+      "id": "3df43a0d-df26-46d8-9891-20f8d60b251e",
+      "name": "HTTP Request17"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        2752
+      ],
+      "id": "a100d8ab-f4f1-4ac8-bf54-14467fcf5253",
+      "name": "HTTP Request18"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        2752
+      ],
+      "id": "f50170a7-305a-4af1-ac4c-9ffe19eed03f",
+      "name": "HTTP Request19"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        448
+      ],
+      "id": "f14280f6-4c35-4664-882b-4ff8d9b0525e",
+      "name": "HTTP Request20"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        448
+      ],
+      "id": "3ef94780-5475-4405-9a74-8263210c066b",
+      "name": "HTTP Request21"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        832
+      ],
+      "id": "575b1f1d-6891-46d9-b2b3-5cb2480847eb",
+      "name": "HTTP Request22"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        832
+      ],
+      "id": "1d960c45-298a-4838-9346-c8c64a55868d",
+      "name": "HTTP Request23"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1600
+      ],
+      "id": "1f896af0-2dbc-49b2-b75d-0ab1e10bdba3",
+      "name": "HTTP Request24"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1600
+      ],
+      "id": "53ec8d05-440e-4d01-bcc1-d649e2e470a5",
+      "name": "HTTP Request25"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        2368
+      ],
+      "id": "049dca40-504d-486b-be77-e94b84ff28c3",
+      "name": "HTTP Request26"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        2368
+      ],
+      "id": "0ea9a9c2-c6e4-41c5-adf0-be6ae4d94b5d",
+      "name": "HTTP Request27"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1216
+      ],
+      "id": "a2e8e0a0-4eef-4892-8e88-84f78d3e6f14",
+      "name": "HTTP Request28"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1216
+      ],
+      "id": "15f07eda-13a4-4903-a7b4-1029aec65e0d",
+      "name": "HTTP Request29"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1408
+      ],
+      "id": "ba2b2941-e60f-4179-ad94-a697d9150b19",
+      "name": "HTTP Request30"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1408
+      ],
+      "id": "a094ee8d-6736-458a-b720-b45cb8cf4440",
+      "name": "HTTP Request31"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        2176
+      ],
+      "id": "4cb2321e-635c-4f8d-8b78-ff8c9b223c21",
+      "name": "HTTP Request32"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        2176
+      ],
+      "id": "79c023d6-7464-43ba-88f2-1dbe5b94ca3c",
+      "name": "HTTP Request33"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"65a7b7dd-737e-480e-8de4-cd73efb79615\",\n  \"name\": \"{{ $json.body['contact[first_name]'] }}\",\n  \"phone\": \"{{ $json.body['contact[phone]'] }}\",\n  \"email\": \"{{ $json.body['contact[email]'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1376,
+        1984
+      ],
+      "id": "18cff3c4-db74-4eb1-a2ba-dc7f75d6fd09",
+      "name": "HTTP Request34"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1152,
+        1984
+      ],
+      "id": "89fe0eab-70df-461a-adbe-751c0ce0876f",
+      "name": "HTTP Request35"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "lead_counter",
+        "key": "lead_counter",
+        "keyType": "string",
+        "options": {
+          "dotNotation": true
+        }
+      },
+      "id": "75412fa6-6949-4043-99e3-557314739205",
+      "name": "Redis Get",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2048,
+        -528
+      ],
+      "credentials": {
+        "redis": {
+          "id": "vj7YYjGfCioGuVL1",
+          "name": "Redis N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "lead_counter",
+        "value": "={{ $json.count }}",
+        "keyType": "string"
+      },
+      "id": "e98eb476-cd20-415c-ac68-f2f974257ce1",
+      "name": "Redis Set",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1552,
+        -528
+      ],
+      "credentials": {
+        "redis": {
+          "id": "vj7YYjGfCioGuVL1",
+          "name": "Redis N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.redirect }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "6bf0f0b9-cce0-4c1a-8023-540d5821d235",
+      "name": "IF 1 em 4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1344,
+        -528
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e25cca36-99eb-48a8-93e6-ffb5ad98b526",
+      "name": "Caminho Alternativo",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        -624
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8448fb2a-8506-402f-bb38-048ff2c4893d",
+      "name": "Caminho Padrão",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        -416
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let count = parseInt($json[\"lead_counter\"] || \"0\");\n\nconst isFourth = (count + 1) % 4 === 0;\n\nreturn [\n  {\n    json: {\n      count: count + 1,\n      redirect: isFourth\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1808,
+        -528
+      ],
+      "id": "d3f6d2a5-0216-4edb-98c5-07a524681cda",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "lead_counter",
+        "key": "lead_counter",
+        "keyType": "string",
+        "options": {
+          "dotNotation": true
+        }
+      },
+      "id": "8d858245-2091-4bc8-b229-32405ca1d7ac",
+      "name": "Redis Get1",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        592,
+        208
+      ],
+      "credentials": {
+        "redis": {
+          "id": "vj7YYjGfCioGuVL1",
+          "name": "Redis N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "lead_counter",
+        "value": "={{ $json.count }}",
+        "keyType": "string"
+      },
+      "id": "f951438b-e713-405e-8d4d-adaa539bda0d",
+      "name": "Redis Set1",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        208
+      ],
+      "credentials": {
+        "redis": {
+          "id": "vj7YYjGfCioGuVL1",
+          "name": "Redis N8N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.redirect }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "0328721c-efa2-4613-914a-b57405601ac6",
+      "name": "IF 1 em ",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "bbf6fb51-f2bf-44b7-a031-8e6233eb3b59",
+      "name": "Caminho Alternativo1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        112
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9b387fe8-cbb2-4043-a02e-cd2f490403f1",
+      "name": "Caminho Padrão1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1488,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let count = parseInt($json[\"lead_counter\"] || \"0\");\n\nconst isFourth = (count + 1) % 4 === 0;\n\nreturn [\n  {\n    json: {\n      count: count + 1,\n      redirect: isFourth\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        832,
+        208
+      ],
+      "id": "c5eee2e7-0a92-4dab-b465-64480184c685",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.clint.digital/v1/deals",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"newKey\": \"New Value\"\n    },\n    \"organization\": {\n      \"newKey\": \"New Value\"\n    }\n  },\n  \"origin_id\": \"80259131-ce2c-4ca9-8251-3a957c7b59e9\",\n  \"name\": \"{{ $('Webhook').item.json.body[\"contact[first_name]\"] }}\",\n  \"phone\": \"{{ $('Webhook').item.json.body[\"contact[phone]\"] }}\",\n  \"email\": \"{{ $('Webhook').item.json.body[\"contact[email]\"] }}\",\n  \"user_id\":\"03bb36ff-0b89-4067-83c4-5a9c535c8533\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -896,
+        -624
+      ],
+      "id": "593aafe2-2efb-4585-abd4-2e22ec96d751",
+      "name": "HTTP Request36"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/contacts/{{ $json.data.contact_id }}/tags",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  \"{{ $('Switch').item.json.body['contact[tags]'] }}\"\n]",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -688,
+        -624
+      ],
+      "id": "1c649744-5970-4982-bb8c-340215267ce1",
+      "name": "HTTP Request37"
+    },
+    {
+      "parameters": {
+        "url": "https://api.clint.digital/v1/users",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -928,
+        -1056
+      ],
+      "id": "c7993aa8-b5c9-4a0b-a486-8ff38980dfec",
+      "name": "HTTP Request38"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Ester\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2448,
+        1536
+      ],
+      "id": "68434270-3b10-4a2b-ab03-950ae73c63af",
+      "name": "HTTP Request39"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('HTTP Request').item.json.data.user_id }}",
+                    "rightValue": "ee57917e-c292-49e0-9e94-431c6412eeae",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bb940cd5-d346-4d65-8c55-a217c13a873f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Ester"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fd073c1e-88ac-40a1-b7d4-a45f60a84980",
+                    "leftValue": "={{ $('HTTP Request').item.json.data.user_id }}",
+                    "rightValue": "ac79c561-1936-4afb-8282-8c0a242fca7e",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Jacira"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ba487cb7-816a-4382-a797-214b788aa581",
+                    "leftValue": "={{ $('HTTP Request').item.json.data.user_id }}",
+                    "rightValue": "12b99bcf-1105-4342-842f-89be0cc19d6c",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Erika"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -3088,
+        1664
+      ],
+      "id": "cbaac123-d844-4139-8c5e-93ffe16a5184",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Jacira\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2448,
+        1728
+      ],
+      "id": "f2863945-9858-4002-a189-4cc5294ed78a",
+      "name": "HTTP Request40"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.clint.digital/v1/deals/{{ $('HTTP Request').item.json.data.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-token",
+              "value": "U2FsdGVkX18IOzL3xpZGGQJIE88Ce3FAmL5UUfJiuCr+bsEswEj8Vd82k+EpoI74UapQ2nXeApBwhbWcDOm/tA=="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"fields\": {\n    \"contact\": {\n      \"dono_popup\": \"Erika\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2448,
+        1904
+      ],
+      "id": "2ad686e2-53c7-4d54-874b-d2175863e92f",
+      "name": "HTTP Request41"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2704,
+        1904
+      ],
+      "id": "80187e16-93f6-4199-ab94-59fafb95f834",
+      "name": "Wait",
+      "webhookId": "ae49d9cb-2e00-4cd5-b9b0-b165daba444e"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2704,
+        1728
+      ],
+      "id": "1cd18971-bcdd-48c3-af64-c45c43bb3b99",
+      "name": "Wait1",
+      "webhookId": "9a016582-801c-49a4-ab6d-d8eefcd5bd36"
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2704,
+        1536
+      ],
+      "id": "c9fda355-7959-431c-b9f9-02ae009d08fd",
+      "name": "Wait2",
+      "webhookId": "79685d6b-3235-4a15-82a3-41fa35372476"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "9ed56f59-4f32-4ba6-9dc1-7283e891283e",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -4416,
+        736
+      ],
+      "id": "1d70a3f0-960a-4ac9-a1af-df6d4b75bf6f",
+      "name": "Webhook1",
+      "webhookId": "9ed56f59-4f32-4ba6-9dc1-7283e891283e",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.datacrazy.io/v1/crm/api/crm/integrations/webhook/business/517f7766-7a2b-47f3-b620-a40a3c4012ac",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Email",
+              "value": "={{ $json.body[\"contact[email]\"] }}"
+            },
+            {
+              "name": "Nome",
+              "value": "={{ $json.body[\"contact[first_name]\"] }}"
+            },
+            {
+              "name": "Telefone",
+              "value": "={{ $json.body[\"contact[phone]\"] }}"
+            },
+            {
+              "name": "Tag",
+              "value": "={{ $json.body[\"contact[tags]\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -4240,
+        160
+      ],
+      "id": "8075ccda-ec92-41ba-aa22-a523f05e6b4e",
+      "name": "Teste DataCrazy1"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "64b3ab42-f04b-4700-a6aa-7e01bb09d8d7",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -4576,
+        160
+      ],
+      "id": "edcef2ec-f2d5-4024-b5d7-4abb67adc596",
+      "name": "Webhook2",
+      "webhookId": "64b3ab42-f04b-4700-a6aa-7e01bb09d8d7"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "GuzzleHttp/7",
+            "content-length": "316",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "54.225.1.90",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-real-ip": "54.225.1.90",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "contact[id]": "1957505",
+            "contact[email]": "clayton@weburn.com.br",
+            "contact[first_name]": "Clayton teste n8n",
+            "contact[last_name]": "",
+            "contact[phone]": "(38) 99862-6001",
+            "contact[orgname]": "",
+            "contact[customer_acct_name]": "",
+            "contact[tags]": "Sérgio - Black Friday",
+            "contact[ip4]": "138.122.55.213",
+            "seriesid": "532"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/64b3ab42-f04b-4700-a6aa-7e01bb09d8d7",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook2": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "GuzzleHttp/7",
+            "content-length": "316",
+            "content-type": "application/x-www-form-urlencoded",
+            "x-forwarded-for": "54.225.1.90",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "cbd1a77a7869",
+            "x-real-ip": "54.225.1.90",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "contact[id]": "1957505",
+            "contact[email]": "clayton@weburn.com.br",
+            "contact[first_name]": "Clayton teste n8n",
+            "contact[last_name]": "",
+            "contact[phone]": "(38) 99862-6001",
+            "contact[orgname]": "",
+            "contact[customer_acct_name]": "",
+            "contact[tags]": "Sérgio - Black Friday",
+            "contact[ip4]": "138.122.55.213",
+            "seriesid": "532"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/64b3ab42-f04b-4700-a6aa-7e01bb09d8d7",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-11T19:56:52.706Z",
+      "createdAt": "2025-11-11T19:56:52.706Z",
+      "role": "workflow:owner",
+      "workflowId": "ZaSlmOStUJjAvcbS",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-18T15:28:42.708Z",
+  "versionId": "890d9fd3-3451-4258-9760-9ed58b5acb0d"
+}

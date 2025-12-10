@@ -1,0 +1,79 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-31T14:57:30.627Z",
+  "id": "AdrO8SFGkqWPz4eV",
+  "isArchived": false,
+  "meta": null,
+  "name": "Funil Freemium (Fluxo não assinantes)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e308bb68-fa17-41d5-b752-e007eb00fce7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://painel-weburn.entregadigital.app.br/api/v1/external/appusers/all",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer WvWlpsjUcCnAjqJ4JnozYV12IMuIiyHFVxFMnFT6DKGCrS4FOekLZzwGriAeTVsb"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f8c4bd99-775d-4865-b208-982545b2d0b0",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-10-31T14:57:30.627Z",
+      "createdAt": "2025-10-31T14:57:30.627Z",
+      "role": "workflow:owner",
+      "workflowId": "AdrO8SFGkqWPz4eV",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-31T15:07:23.206Z",
+  "versionId": "25afeac3-eebf-4a98-96e8-046ea178852e"
+}

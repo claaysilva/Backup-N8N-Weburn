@@ -1,0 +1,1122 @@
+{
+  "active": false,
+  "connections": {
+    "Config IDs": {
+      "main": [
+        [
+          {
+            "node": "Sorteador Atendentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tradutor": {
+      "main": [
+        [
+          {
+            "node": "Config IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Lead": {
+      "main": [
+        [
+          {
+            "node": "Lead Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Lead": {
+      "main": [
+        [
+          {
+            "node": "É Order Bump?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Lead": {
+      "main": [
+        [
+          {
+            "node": "É Order Bump?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negocio": {
+      "main": [
+        [
+          {
+            "node": "Verificar Duplicidade",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Existe?": {
+      "main": [
+        [
+          {
+            "node": "Preparar Tags",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Buscar Lead Telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Negócio Existe?": {
+      "main": [
+        [
+          {
+            "node": "Mover Etapa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Duplicidade": {
+      "main": [
+        [
+          {
+            "node": "Negócio Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Negocio": {
+      "main": [
+        [
+          {
+            "node": "Buscar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Produto": {
+      "main": [
+        [
+          {
+            "node": "Verificar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Produto": {
+      "main": [
+        [
+          {
+            "node": "Produto Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Produto Existe?": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Produto": {
+      "main": [
+        [
+          {
+            "node": "Ler Detalhes Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Criar Produto": {
+      "main": [
+        [
+          {
+            "node": "Preparar Vínculo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Vínculo": {
+      "main": [
+        [
+          {
+            "node": "Vincular Produto ao Negócio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mover Etapa": {
+      "main": [
+        [
+          {
+            "node": "Buscar Produto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Detalhes Negocio": {
+      "main": [
+        [
+          {
+            "node": "Preparar Vínculo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Lead Telefone": {
+      "main": [
+        [
+          {
+            "node": "Telefone Existe?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telefone Existe?": {
+      "main": [
+        [
+          {
+            "node": "Preparar Tags",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tradutor Assinaturas": {
+      "main": [
+        [
+          {
+            "node": "Config IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Tags": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar Pai": {
+      "main": [
+        [
+          {
+            "node": "Buscar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "É Order Bump?": {
+      "main": [
+        [
+          {
+            "node": "Esperar Pai",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Buscar Negocio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sorteador Atendentes": {
+      "main": [
+        [
+          {
+            "node": "Buscar Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vincular Produto ao Negócio": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ (excluir fila)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RabbitMQ Trigger (assinantes)": {
+      "main": [
+        [
+          {
+            "node": "Tradutor Assinaturas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RabbitMQ Trigger (vendas)": {
+      "main": [
+        [
+          {
+            "node": "Tradutor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T13:11:25.716Z",
+  "id": "UeuH1IjdF9ICKkRK",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "teste rebbit DataCrazy (GURU Vendas + Assinaturas)",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "//  CONFIGURAÇÃO DE IDS DO DATACRAZY \n\nconst stageMap = {\n  \"PopUp\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\",\n  \"Compras aprovadas\": \"e1e614ae-99ac-4723-ad5a-470b6eea237c\",\n  \"Abandono de carrinho\": \"264d5e74-f2d3-4988-ae73-7fd4fda13a51\",\n  \"Cartão recusado\": \"d403d222-7b77-4854-bfc4-4c3dae4934f2\",\n  \"Compras em aberto\": \"acea8ffb-c33c-454d-9deb-fe1ff5d56419\",\n  \"Compras expiradas\": \"14f9a756-1195-4599-ae7f-eb0f24292b55\",\n  \"Reembolso/Chargeback\": \"e0966ce2-e082-46f0-b916-19ec1d44f357\",\n  \"Assinaturas ativas\": \"fd3dcb52-1729-411a-9fbe-9bec65b4f601\",\n  \"Assinaturas canceladas\": \"12538e5a-06c2-47e6-ae72-d8e5f23e87cb\",\n  \"Assinaturas em atraso\": \"b57974de-72d7-4f1e-9ef8-14bc9c3ff646\",\n  \"Lista Geral\": \"02ab964b-bb09-45d2-9252-47de1bd42bc8\" // Fallback\n};\n\n//  2. TRATAMENTO INTELIGENTE DE TELEFONE\nconst body = items[0].json.body || {};\nconst contact = body.contact || {};\n\n// Pega o DDI e o Numero, garantindo que não sejam nulos\nconst ddiGuru = contact.phone_local_code ? String(contact.phone_local_code) : \"\";\nconst numGuru = contact.phone_number ? String(contact.phone_number) : \"\";\n\n// Remove tudo que não é número (tira +, -, espaço, parênteses)\nlet phoneClean = (ddiGuru + numGuru).replace(/\\D/g, '');\n\n// CORREÇÕES AUTOMÁTICAS PARA BRASIL:\n// Se o número tiver 10 ou 11 dígitos, é porque falta o DDI 55. Adiciona.\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n\n// Se o usuário digitou 55 duas vezes (ex: DDI 55 e Numero 551199...), corrige.\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); // Remove o primeiro 55\n}\n\n// Adiciona o + na frente para ficar no padrão internacional (E.164)\nconst finalPhone = \"+\" + phoneClean;\n\n\n//  3. RETORNO FINAL \nconst origemTexto = items[0].json.origem_datacrazy || \"Lista Geral\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    targetStageId: stageMap[origemTexto] || stageMap[\"Lista Geral\"],\n    // Aqui vai a nova variável limpa:\n    telefoneFormatado: finalPhone \n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -208,
+        -80
+      ],
+      "id": "c9f2038d-cefa-4036-bcc3-481611e04fce",
+      "name": "Config IDs"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa o corpo dos dados vindos da Guru\nconst body = items[0].json.body || {};\nconst status = body.status ? body.status.toLowerCase() : '';\n\n// Tenta pegar o motivo da recusa\n// Se não existir, define como string vazia para não dar erro\nconst motivoRecusa = body.payment?.refuse_reason ? body.payment.refuse_reason.toLowerCase() : '';\n\nlet origem = \"Lista Geral\"; // Padrão de segurança\n\n// LÓGICA DE TRADUÇÃO INTELIGENTE \n\n// 1. Compras Aprovadas (Prioridade Máxima)\nif (status === 'approved' || status === 'completed') {\n  origem = \"Compras aprovadas\";\n}\n\n// 2. Abandono de Carrinho\nelse if (status === 'abandoned') {\n  origem = \"Abandono de carrinho\";\n}\n\n// 3. Compras em Aberto (Pix/Boleto aguardando)\nelse if (status === 'waiting_payment' || status === 'pending' || status === 'billet_printed') {\n  origem = \"Compras em aberto\";\n}\n\n// 4. Compras Expiradas\nelse if (status === 'expired') {\n  origem = \"Compras expiradas\";\n}\n\n// 5. Reembolso / Chargeback\nelse if (status === 'refunded' || status === 'chargeback' || status === 'chargedback') {\n  origem = \"Reembolso/Chargeback\";\n}\n\n// 6. Assinaturas em Atraso \nelse if (status === 'delayed' || status === 'past_due' || status === 'late') {\n  origem = \"Assinaturas em atraso\";\n}\n\n// 7. Cartão Recusado (A Lógica \"Pega Tudo\")\n// Se for 'refused' OU ('canceled' E tiver qualquer texto de motivo escrito)\nelse if (status === 'refused' || (status === 'canceled' && motivoRecusa.length > 2)) {\n  origem = \"Cartão recusado\";\n}\n\n// 8. Assinaturas Canceladas (Cancelamento manual sem motivo de erro bancário)\nelse if (status === 'canceled') {\n    // Se caiu aqui, é porque o motivoRecusa estava vazio\n    origem = \"Assinaturas canceladas\";\n}\n\n// Retorno Final\nreturn {\n  json: {\n    ...items[0].json,\n    body: body,\n    origem_datacrazy: origem\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -432,
+        -176
+      ],
+      "id": "3315a1d6-98fe-474d-ad06-db65cc667e07",
+      "name": "Tradutor"
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $json.body.contact.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        224,
+        -80
+      ],
+      "id": "a37bfdf7-147a-4b71-998a-434263c69062",
+      "name": "Buscar Lead",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.leadId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }} {{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"tags\": {{ JSON.stringify($json.tagsFinais) }},\n  \"address\": {\n    \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n    \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n    \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n    \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n    \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n    \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1344,
+        -176
+      ],
+      "id": "a468dc2d-554d-41f3-ad58-24b85dca4ec2",
+      "name": "Atualizar Lead"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }}{{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"address\": {\n  \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n  \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n  \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n  \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n  \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n  \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  },\n  \"attendant\": {\n        \"id\": \"{{ $('Sorteador Atendentes').item.json.atendente.id }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1344,
+        48
+      ],
+      "id": "d8fa73a9-6b74-4c04-9f25-e10e7ebcc84d",
+      "name": "Criar Lead",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.body.contact.email }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2016,
+        -80
+      ],
+      "id": "dee8f4b2-d6a1-425d-98cd-1f546b53e87e",
+      "name": "Buscar Negocio",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.data[0].id }}",
+              "rightValue": "Is Not Empty",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        -80
+      ],
+      "id": "4c3be78d-3470-4443-b653-1d869946a73b",
+      "name": "Lead Existe?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.existe }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2464,
+        -80
+      ],
+      "id": "0452052e-214b-4b2e-92cf-c728cf2e87bb",
+      "name": "Negócio Existe?"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "leadId",
+              "value": "={{ $('Verificar Duplicidade').item.json.leadId }}"
+            },
+            {
+              "name": "stageId",
+              "value": "={{ $('Config IDs').item.json.targetStageId }}"
+            },
+            {
+              "name": "attendantId",
+              "value": "={{ $('Sorteador Atendentes').item.json.atendente.id }}"
+            },
+            {
+              "name": "externalId",
+              "value": "={{ $('Config IDs').item.json.body.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2688,
+        16
+      ],
+      "id": "0ee191cf-db15-43e2-b31b-6c395d3e0d28",
+      "name": "Criar Negocio"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa dados consolidados\nconst body = $('Config IDs').item.json.body;\n\n// 1. Identifica os IDs\nconst idAtual = body.id; // O ID deste evento específico (OB)\nlet idPai = null;        // O ID da transação principal (se houver)\n\nif (body.last_transaction && body.last_transaction.id) {\n    idPai = body.last_transaction.id;\n}\n\n// 2. Dados para busca secundária\nconst nomeProdutoRaw = body.product ? body.product.name : '';\nconst nomeProduto = nomeProdutoRaw.toLowerCase().trim();\n\n// Lista de negócios trazida do CRM\nconst negociosEncontrados = items[0].json.data || [];\nlet negocioEncontrado = null;\n\n// --- TENTATIVA 1: Buscar pelo ID do PAI (Prioridade: Agrupar) ---\n// Queremos colocar o OB dentro do negócio principal\nif (idPai) {\n    negocioEncontrado = negociosEncontrados.find(n => String(n.externalId) === String(idPai));\n}\n\n// --- TENTATIVA 2: Buscar pelo PRÓPRIO ID (A Trava de Segurança) ---\n// Se não achou o pai, verifica se este OB já foi criado como um negócio avulso antes.\n// Isso impede que ele seja criado 10 vezes se o pai não for encontrado.\nif (!negocioEncontrado) {\n    negocioEncontrado = negociosEncontrados.find(n => String(n.externalId) === String(idAtual));\n}\n\n// --- TENTATIVA 3: Pelo Nome do Produto (Último recurso) ---\nif (!negocioEncontrado && nomeProduto.length > 2) {\n    negocioEncontrado = negociosEncontrados.find(n => {\n        if (!n.title) return false;\n        const titulo = n.title.toLowerCase();\n        return titulo.includes(nomeProduto) || nomeProduto.includes(titulo);\n    });\n}\n\n// --- TENTATIVA 4: PopUp (Negócio Aberto sem ID) ---\nif (!negocioEncontrado) {\n    const candidatos = negociosEncontrados.filter(n => !n.externalId && n.status === 'in_process');\n    candidatos.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));\n    if (candidatos.length > 0) negocioEncontrado = candidatos[0];\n}\n\n// Lógica de Lead ID\nlet leadId = null;\ntry { if ($('Criar Lead').isExecuted) leadId = $('Criar Lead').item.json.id; } catch(e){}\ntry { if ($('Atualizar Lead').isExecuted) leadId = $('Atualizar Lead').item.json.id; } catch(e){}\n\nreturn {\n  json: {\n    existe: !!negocioEncontrado,\n    existingBusinessId: negocioEncontrado ? negocioEncontrado.id : null,\n    leadId: leadId,\n    tipo: (body.last_transaction && body.last_transaction.id) ? \"Order Bump\" : \"Principal\"\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        -80
+      ],
+      "id": "5387df5a-2419-407e-ac46-5b59490effbd",
+      "name": "Verificar Duplicidade"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/products",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.body.product.name }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2912,
+        -80
+      ],
+      "id": "ed72a96b-2770-42cf-8a82-9cb142d58753",
+      "name": "Buscar Produto",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "//  Pegar do Config IDs \nconst body = $('Config IDs').item.json.body;\nconst skuGuru = body.product.id;\n\nconst listaProdutos = items[0].json.data || [];\n\n// Procura se existe algum produto com esse SKU\nconst produtoEncontrado = listaProdutos.find(p => String(p.id_sku) === String(skuGuru));\n\nreturn {\n  json: {\n    existe: !!produtoEncontrado,\n    existingProductId: produtoEncontrado ? produtoEncontrado.id : null,\n    sku: skuGuru\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3136,
+        -80
+      ],
+      "id": "45ec31e0-94d4-450f-9c21-a07226e40dba",
+      "name": "Verificar Produto"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.existe }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3360,
+        -80
+      ],
+      "id": "855da1a0-bce6-4fc7-83b6-d7d7a51471b0",
+      "name": "Produto Existe?"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.g1.datacrazy.io/api/v1/products/{{ $json.existingProductId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Config IDs').item.json.body.product.name }}"
+            },
+            {
+              "name": "id_sku",
+              "value": "={{ $('Config IDs').item.json.body.product.id }}"
+            },
+            {
+              "name": "price",
+              "value": "={{ $('Config IDs').item.json.body.product.unit_value }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        3584,
+        -176
+      ],
+      "id": "8012f55f-1337-45e9-84b0-b3cc2f03f0c5",
+      "name": "Atualizar Produto"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.g1.datacrazy.io/api/v1/products",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.product.name }}\",\n  \"id_sku\": \"{{ $('Config IDs').item.json.body.product.id }}\",\n  \"price\": {{ $('Config IDs').item.json.body.product.unit_value }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        3808,
+        16
+      ],
+      "id": "3a264839-87e9-40b3-ac8f-8aaf2849cae1",
+      "name": "Criar Produto"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- DADOS DE ENTRADA (Fonte da Verdade) ---\nconst dadosGuru = $('Config IDs').item.json.body;\n\n// --- 1. RESGATAR ID DO NEGÓCIO ---\nlet businessId = null;\nlet produtosAtuais = []; // Começa vazio\n\n// Tenta ver se criamos um negócio novo\ntry {\n    if ($('Criar Negocio').isExecuted) {\n        businessId = $('Criar Negocio').item.json.id;\n    }\n} catch (error) { }\n\n// Se não achou ID no passo anterior, é porque o negócio já existia\nif (!businessId) {\n    businessId = $('Verificar Duplicidade').item.json.existingBusinessId;\n    \n    // Tenta ler os produtos antigos\n    try {\n        const nodeDetalhes = $('Ler Detalhes Negocio');\n        \n        if (nodeDetalhes && nodeDetalhes.item) {\n            const dadosNegocio = nodeDetalhes.item.json;\n            \n            if (dadosNegocio && dadosNegocio.products) {\n                // Mapeia para o formato que a API exige no envio\n                produtosAtuais = dadosNegocio.products.map(item => {\n                    const prodReal = item.product || item; \n                    return {\n                        product: {\n                            id: prodReal.id,\n                            id_sku: prodReal.id_sku,\n                            name: prodReal.name,\n                            price: item.price,\n                            quantity: item.quantity,\n                            total: item.total\n                        },\n                        quantity: item.quantity,\n                        price: item.price,\n                        total: item.total\n                    };\n                });\n            }\n        }\n    } catch (error) { }\n}\n\n// --- 2. RESGATAR ID DO PRODUTO (NOVO OU EXISTENTE) ---\nlet produtoNovoId = null;\n\ntry { if ($('Criar Produto').isExecuted) produtoNovoId = $('Criar Produto').item.json.id; } catch(e) {}\n\nif (!produtoNovoId) {\n    try { if ($('Atualizar Produto').isExecuted) produtoNovoId = $('Atualizar Produto').item.json.id; } catch(e) {}\n}\n\nif (!produtoNovoId) {\n    produtoNovoId = $('Verificar Produto').item.json.existingProductId;\n}\n\n// --- 3. MONTAR NOVO ITEM ---\nconst precoUnitario = dadosGuru.product.unit_value || 0;\n\nconst novoItem = {\n    product: {\n        id: produtoNovoId,\n        id_sku: dadosGuru.product.id,\n        name: dadosGuru.product.name,\n        price: precoUnitario,\n        quantity: 1,\n        total: precoUnitario\n    },\n    quantity: 1,\n    price: precoUnitario,\n    total: precoUnitario\n};\n\n// --- 4. VERIFICAÇÃO FINAL (EVITAR DUPLICIDADE) ---\n// Só adiciona na lista se NÃO existir ninguém com o mesmo SKU\nconst jaExiste = produtosAtuais.some(item => \n    String(item.product.id_sku) === String(novoItem.product.id_sku)\n);\n\nif (!jaExiste) {\n    produtosAtuais.push(novoItem);\n}\n\nreturn {\n    json: {\n        finalBusinessId: businessId,\n        listaProdutosFinal: produtosAtuais\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4032,
+        -80
+      ],
+      "id": "3f172ee1-21b1-4e31-ab5a-c154eed15afe",
+      "name": "Preparar Vínculo"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $json.finalBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"shipping\": 0,\n  \"discount\": 0,\n  \"addition\": 0,\n  \"products\": {{ JSON.stringify($json.listaProdutosFinal) }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        4256,
+        -80
+      ],
+      "id": "19a8234f-613f-4d24-a943-44a7826b840a",
+      "name": "Vincular Produto ao Negócio"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $('Config IDs').item.json.targetStageId }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2688,
+        -176
+      ],
+      "id": "1e7ff48d-91ea-43fb-81f3-ec0d7f561b48",
+      "name": "Mover Etapa"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        3808,
+        -176
+      ],
+      "id": "fb7307ef-f500-4ca1-ae9f-ea5e0b29f1f7",
+      "name": "Ler Detalhes Negocio"
+    },
+    {
+      "parameters": {
+        "url": "https://api.g1.datacrazy.io/api/v1/leads",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "search",
+              "value": "={{ $('Config IDs').item.json.telefoneFormatado }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        672,
+        -16
+      ],
+      "id": "1514aa9e-589d-4f2d-800a-912581eb6a8a",
+      "name": "Buscar Lead Telefone",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.data[0].id }}",
+              "rightValue": "Is Not Empty",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        896,
+        -16
+      ],
+      "id": "7f3f5be7-2b02-4d13-90a9-595272604f04",
+      "name": "Telefone Existe?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa o corpo do webhook\nconst body = items[0].json.content.body || {};\n\n// 1. NORMALIZAÇÃO DE CONTATO (Transforma Assinatura em Venda)\nif (body.subscriber) {\n    body.contact = body.subscriber;\n    // Garante telefones no lugar certo para o higienizador\n    body.contact.phone_local_code = body.subscriber.phone_local_code; \n    body.contact.phone_number = body.subscriber.phone_number;\n}\n\n// 2. NORMALIZAÇÃO DE PRODUTO (CORREÇÃO DO PREÇO)\n// Se não tiver unit_value (padrão Vendas), tenta pegar de offer.value (padrão Assinatura)\nif (body.product) {\n    if (body.product.unit_value === undefined) {\n        // Tenta pegar de offer.value, se não existir, tenta value, se não, 0\n        const offerValue = body.product.offer ? body.product.offer.value : undefined;\n        body.product.unit_value = offerValue !== undefined ? offerValue : (body.product.value || 0);\n    }\n}\n\n// Usa ID da transação se houver, senão usa da assinatura\nconst idTransacao = body.last_transaction ? body.last_transaction.id : body.id;\nbody.id = idTransacao; \n\n// 3. STATUS\nconst status = body.last_status ? body.last_status.toLowerCase() : (body.status || '').toLowerCase();\nlet origem = \"Lista Geral\";\n\nif (status === 'active' || status === 'activated') origem = \"Assinaturas ativas\";\nelse if (status.includes('cancel')) origem = \"Assinaturas canceladas\";\nelse if (status.includes('delay') || status.includes('past_due')) origem = \"Assinaturas em atraso\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    body: body, // Body atualizado com unit_value\n    origem_datacrazy: origem\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -432,
+        16
+      ],
+      "id": "85836202-85e7-4687-8a3a-e8c5bb8f8899",
+      "name": "Tradutor Assinaturas"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Identifica a Nova Tag (Vinda da Guru)\n// Usa o Config IDs como fonte segura\nconst novaTag = $('Config IDs').item.json.origem_datacrazy;\n\nlet tagsAtuais = [];\nlet leadId = null;\n\n// --- FUNÇÃO AUXILIAR PARA LER OS DADOS ---\n// O DataCrazy retorna { count: 1, data: [ { id: \"...\" } ] }\nfunction extrairDados(nodeName) {\n    try {\n        // Verifica se o nó rodou e tem itens\n        if ($(nodeName).isExecuted && $(nodeName).item) {\n            const json = $(nodeName).item.json;\n            \n            // Verifica se tem a lista 'data' e se ela não está vazia\n            if (json.data && Array.isArray(json.data) && json.data.length > 0) {\n                return {\n                    id: json.data[0].id,\n                    tags: json.data[0].tags || []\n                };\n            }\n        }\n    } catch (e) {}\n    return null;\n}\n\n// --- TENTATIVA A: Pegar do Buscar por E-mail ---\nconst dadosEmail = extrairDados('Buscar Lead');\nif (dadosEmail) {\n    leadId = dadosEmail.id;\n    tagsAtuais = dadosEmail.tags;\n}\n\n// --- TENTATIVA B: Pegar do Buscar por Telefone (Se falhou o A) ---\nif (!leadId) {\n    const dadosTelefone = extrairDados('Buscar Lead Telefone');\n    if (dadosTelefone) {\n        leadId = dadosTelefone.id;\n        tagsAtuais = dadosTelefone.tags;\n    }\n}\n\n// 3. Formatar a Lista para o DataCrazy\nlet listaIds = [];\n\nif (Array.isArray(tagsAtuais)) {\n    tagsAtuais.forEach(tagObj => {\n        // O DataCrazy as vezes retorna array de IDs ou ID único dentro do objeto da tag\n        if (tagObj.id && Array.isArray(tagObj.id)) {\n            listaIds.push(...tagObj.id);\n        } else if (tagObj.id) {\n             listaIds.push(tagObj.id);\n        }\n    });\n}\n\n// Adiciona a nova tag (se ela já não estiver lá)\nif (novaTag && !listaIds.includes(novaTag)) {\n    listaIds.push(novaTag);\n}\n\n// 4. RETORNO FINAL\n// Se não achou ID nenhum (lead novo), leadId será null, o que é correto para o fluxo seguir.\nreturn {\n  json: {\n    leadId: leadId, \n    tagsFinais: [ { \"id\": listaIds } ]\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        -176
+      ],
+      "id": "2ba8e108-7a09-424d-b4fb-374558da54c2",
+      "name": "Preparar Tags"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1808,
+        -176
+      ],
+      "id": "9bc99c5f-3bca-48c6-ac34-2d334b7c585e",
+      "name": "Esperar Pai",
+      "webhookId": "4340ff73-cafe-4d8b-a553-84cb50e521a3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ !!$('Config IDs').item.json.body.last_transaction?.id }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1568,
+        -80
+      ],
+      "id": "dac13b01-d2cd-4d6f-b2ed-97bc9f871efc",
+      "name": "É Order Bump?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- CONFIGURAÇÃO DA ROLETA ---\n// Basta alterar o valor de 'peso'. A soma não precisa dar 100, o sistema calcula a proporção.\nconst equipe = [\n    { \n        name: \"Erika\", \n        id: \"ffa0859f-3300-4cd0-9e2d-997e2951f34e\", \n        peso: 25 // 25% de chance\n    },\n    { \n        name: \"Jacira\", \n        id: \"fd0d06b4-ef33-438e-826b-c27f1ee8131a\", \n        peso: 25 // 25% de chance\n    },\n    { \n        name: \"Matheus Donha\", \n        id: \"e718891f-d45e-4b9f-9411-fe123a9eb238\", \n        peso: 25 // 25% de chance\n    },\n    { \n        name: \"Ester Rosa\", \n        id: \"86ef09b7-d185-4d3a-940b-6c501dbf9bd6\", \n        peso: 25 // 25% de chance\n    }\n];\n\n// --- LÓGICA DO SORTEIO (NÃO MEXER) ---\n// 1. Calcula o peso total\nconst totalPeso = equipe.reduce((sum, atendente) => sum + atendente.peso, 0);\n\n// 2. Gera um número aleatório entre 0 e o peso total\nlet numeroSorteado = Math.random() * totalPeso;\n\n// 3. Descobre quem é o dono desse número\nlet escolhido = null;\n\nfor (const atendente of equipe) {\n    if (numeroSorteado < atendente.peso) {\n        escolhido = atendente;\n        break;\n    }\n    numeroSorteado -= atendente.peso;\n}\n\n// Fallback de segurança (caso raro de erro matemático)\nif (!escolhido) escolhido = equipe[0];\n\n// --- RETORNO ---\nreturn {\n    json: {\n        ...items[0].json, // Mantém os dados anteriores\n        atendente: {\n            id: escolhido.id,\n            nome: escolhido.name,\n            debug_peso_usado: escolhido.peso\n        }\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        -80
+      ],
+      "id": "f3d84793-92cd-402c-84c9-24b7f29e1ff4",
+      "name": "Sorteador Atendentes"
+    },
+    {
+      "parameters": {
+        "operation": "deleteMessage"
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        4464,
+        -80
+      ],
+      "id": "b6497520-9b5a-45f2-8e2f-a996f8bfd9b2",
+      "name": "RabbitMQ (excluir fila)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "datacrazyassinantes",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "laterMessageNode",
+          "jsonParseBody": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        16
+      ],
+      "id": "c340fb98-d2c7-47d3-9006-9273720c37de",
+      "name": "RabbitMQ Trigger (assinantes)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "datacrazyvendas",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "laterMessageNode",
+          "jsonParseBody": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        -176
+      ],
+      "id": "a4b12687-609e-4bdd-945e-4224c9bb1a9b",
+      "name": "RabbitMQ Trigger (vendas)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T13:11:25.716Z",
+      "createdAt": "2025-12-11T13:11:25.716Z",
+      "role": "workflow:owner",
+      "workflowId": "UeuH1IjdF9ICKkRK",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-12-11T14:42:58.880Z",
+  "versionId": "68d4a9ce-c228-4343-96d5-8c638a360607"
+}

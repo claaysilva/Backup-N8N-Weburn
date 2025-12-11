@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "Webhook Vendas": {
-      "main": [
-        [
-          {
-            "node": "Tradutor",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Config IDs": {
       "main": [
         [
@@ -260,17 +249,6 @@
         ]
       ]
     },
-    "Webhook Assinantes": {
-      "main": [
-        [
-          {
-            "node": "Tradutor Assinaturas",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Tradutor Assinaturas": {
       "main": [
         [
@@ -332,6 +310,28 @@
           }
         ]
       ]
+    },
+    "RabbitMQ Trigger (vendas)": {
+      "main": [
+        [
+          {
+            "node": "Tradutor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RabbitMQ Trigger (assinantes)": {
+      "main": [
+        [
+          {
+            "node": "Tradutor Assinaturas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-01T19:31:10.355Z",
@@ -342,28 +342,12 @@
   "nodes": [
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2.1,
-      "position": [
-        -656,
-        -176
-      ],
-      "id": "8667ef1a-bbb6-4a1c-898c-0fa55c548d52",
-      "name": "Webhook Vendas",
-      "webhookId": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817"
-    },
-    {
-      "parameters": {
         "jsCode": "//  CONFIGURAÇÃO DE IDS DO DATACRAZY \n\nconst stageMap = {\n  \"PopUp\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\",\n  \"Compras aprovadas\": \"e1e614ae-99ac-4723-ad5a-470b6eea237c\",\n  \"Abandono de carrinho\": \"264d5e74-f2d3-4988-ae73-7fd4fda13a51\",\n  \"Cartão recusado\": \"d403d222-7b77-4854-bfc4-4c3dae4934f2\",\n  \"Compras em aberto\": \"acea8ffb-c33c-454d-9deb-fe1ff5d56419\",\n  \"Compras expiradas\": \"14f9a756-1195-4599-ae7f-eb0f24292b55\",\n  \"Reembolso/Chargeback\": \"e0966ce2-e082-46f0-b916-19ec1d44f357\",\n  \"Assinaturas ativas\": \"fd3dcb52-1729-411a-9fbe-9bec65b4f601\",\n  \"Assinaturas canceladas\": \"12538e5a-06c2-47e6-ae72-d8e5f23e87cb\",\n  \"Assinaturas em atraso\": \"b57974de-72d7-4f1e-9ef8-14bc9c3ff646\",\n  \"Lista Geral\": \"02ab964b-bb09-45d2-9252-47de1bd42bc8\" // Fallback\n};\n\n//  2. TRATAMENTO INTELIGENTE DE TELEFONE\nconst body = items[0].json.body || {};\nconst contact = body.contact || {};\n\n// Pega o DDI e o Numero, garantindo que não sejam nulos\nconst ddiGuru = contact.phone_local_code ? String(contact.phone_local_code) : \"\";\nconst numGuru = contact.phone_number ? String(contact.phone_number) : \"\";\n\n// Remove tudo que não é número (tira +, -, espaço, parênteses)\nlet phoneClean = (ddiGuru + numGuru).replace(/\\D/g, '');\n\n// CORREÇÕES AUTOMÁTICAS PARA BRASIL:\n// Se o número tiver 10 ou 11 dígitos, é porque falta o DDI 55. Adiciona.\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n\n// Se o usuário digitou 55 duas vezes (ex: DDI 55 e Numero 551199...), corrige.\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); // Remove o primeiro 55\n}\n\n// Adiciona o + na frente para ficar no padrão internacional (E.164)\nconst finalPhone = \"+\" + phoneClean;\n\n\n//  3. RETORNO FINAL \nconst origemTexto = items[0].json.origem_datacrazy || \"Lista Geral\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    targetStageId: stageMap[origemTexto] || stageMap[\"Lista Geral\"],\n    // Aqui vai a nova variável limpa:\n    telefoneFormatado: finalPhone \n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -208,
+        -512,
         -80
       ],
       "id": "2a5fe366-9d70-4b0e-b1f3-e5db1f149eae",
@@ -376,7 +360,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -432,
+        -736,
         -176
       ],
       "id": "cf3d5428-c632-43ae-a9f0-ff5386342a90",
@@ -408,7 +392,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        224,
+        -64,
         -80
       ],
       "id": "a3eec1ad-2ae3-45aa-8274-16c719d6174a",
@@ -437,7 +421,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        1344,
+        1056,
         -176
       ],
       "id": "fb41350d-586d-4551-8e9c-8dd86a8d000c",
@@ -464,7 +448,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        1344,
+        1056,
         48
       ],
       "id": "620c018c-d177-4291-88c2-37205eff0807",
@@ -497,7 +481,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        2016,
+        1728,
         -80
       ],
       "id": "39459936-2b53-4749-9656-5e2e8aa2e3a2",
@@ -533,7 +517,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        448,
+        160,
         -80
       ],
       "id": "1a9bf48a-1625-4a68-8f8b-a971306fc944",
@@ -566,7 +550,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2464,
+        2176,
         -80
       ],
       "id": "3054e3b7-4668-46f3-b07b-17442885615b",
@@ -611,7 +595,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        2688,
+        2400,
         16
       ],
       "id": "ff77e1da-1507-43bc-84d2-a0b3dbe1398f",
@@ -624,7 +608,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2240,
+        1952,
         -80
       ],
       "id": "8fbec474-a865-4d2e-9a78-eff5fc723eae",
@@ -656,7 +640,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        2912,
+        2624,
         -80
       ],
       "id": "5458ea9a-ac07-4725-b3e9-2221043676da",
@@ -671,7 +655,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3136,
+        2848,
         -80
       ],
       "id": "dbe9d5b8-ff92-4c80-8b73-b0ba478f5864",
@@ -704,7 +688,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3360,
+        3072,
         -80
       ],
       "id": "ce6d299b-598f-4701-ac55-b3dc7afc140c",
@@ -745,7 +729,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        3584,
+        3296,
         -176
       ],
       "id": "7180bfe3-2a1a-4e1d-be64-11e3d56fcca8",
@@ -772,7 +756,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        3808,
+        3520,
         16
       ],
       "id": "4deef639-6ce8-433d-b050-d8d1c90684d1",
@@ -785,7 +769,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        4032,
+        3744,
         -80
       ],
       "id": "2b86c1d2-f5fa-4903-a457-6581d58a63d1",
@@ -812,7 +796,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        4256,
+        3968,
         -80
       ],
       "id": "21eac245-8f24-48cc-8d09-bcfca545dfad",
@@ -839,7 +823,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        2688,
+        2400,
         -176
       ],
       "id": "4d36e456-5ff3-440a-ae6b-c5d8734afb67",
@@ -862,7 +846,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        3808,
+        3520,
         -176
       ],
       "id": "7fff2864-9325-41ba-897e-aef6d81b30cd",
@@ -894,7 +878,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        672,
+        384,
         -16
       ],
       "id": "66ebd47f-aa4a-460b-a9d0-8777ec82ece5",
@@ -930,27 +914,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        896,
+        608,
         -16
       ],
       "id": "cd2cf62a-a274-4191-9f27-3784362bd5bc",
       "name": "Telefone Existe?"
-    },
-    {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "e1d46e27-6199-4dbe-8df3-20c85f3c2daa-assinantes",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2.1,
-      "position": [
-        -656,
-        16
-      ],
-      "id": "7c96bb43-e57e-443e-b812-99d3d4d89acb",
-      "name": "Webhook Assinantes",
-      "webhookId": "e1d46e27-6199-4dbe-8df3-20c85f3c2daa"
     },
     {
       "parameters": {
@@ -959,7 +927,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -432,
+        -736,
         16
       ],
       "id": "2fedd144-3fa5-4ac8-9c8b-4efaa072f584",
@@ -972,7 +940,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1120,
+        832,
         -176
       ],
       "id": "f631a718-a8c1-42ea-81e7-6d5fb0c2610d",
@@ -985,8 +953,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1808,
-        -176
+        1504,
+        -160
       ],
       "id": "db9efcfa-51df-46a1-b9fa-3b53302dca11",
       "name": "Esperar Pai",
@@ -1019,7 +987,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1568,
+        1280,
         -80
       ],
       "id": "c13d9517-8d4a-47e4-bb87-e58378aaf21a",
@@ -1032,562 +1000,76 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        0,
+        -288,
         -80
       ],
       "id": "8e044877-0269-4c5c-852e-f2197a074d84",
       "name": "Sorteador Atendentes"
+    },
+    {
+      "parameters": {
+        "queue": "datacrazyassinantes",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "laterMessageNode",
+          "jsonParseBody": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        16
+      ],
+      "id": "b451db28-73ca-4ad9-a5fe-63258e02679c",
+      "name": "RabbitMQ Trigger (assinantes)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "datacrazyvendas",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "laterMessageNode",
+          "jsonParseBody": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        -176
+      ],
+      "id": "aad8b0b3-fdda-4550-9bba-22f77ae025f2",
+      "name": "RabbitMQ Trigger (vendas)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
     }
   ],
-  "pinData": {
-    "Webhook Vendas": [
-      {
-        "json": {
-          "headers": {
-            "host": "webh.weburn.com.br",
-            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
-            "content-length": "4882",
-            "content-type": "application/json",
-            "x-forwarded-for": "35.231.123.178",
-            "x-forwarded-host": "webh.weburn.com.br",
-            "x-forwarded-port": "443",
-            "x-forwarded-proto": "https",
-            "x-forwarded-server": "55a0ea0d2a2a",
-            "x-real-ip": "35.231.123.178",
-            "x-request-id": "a08d9fe9-b044-4af9-bdfc-5c609ae7f0dc",
-            "accept-encoding": "gzip"
-          },
-          "params": {},
-          "query": {},
-          "body": {
-            "affiliations": [],
-            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
-            "checkout_url": "https://pagar.treinadorsergiobertoluci.com.br/subscribe/sergio-bertoluci-sb-ao-extremo-ultima-black-friday-is-erika-domingues",
-            "contact": {
-              "id": "a08d9e85-3aa4-40d5-ace7-be8ff556a7aa",
-              "name": "Idelbrando Pereira",
-              "company_name": "",
-              "email": "idelbrando.adventista@gmail.com",
-              "doc": "30733625843",
-              "phone_number": "1175459448",
-              "phone_local_code": "55",
-              "address": "",
-              "address_number": "",
-              "address_comp": "",
-              "address_district": "",
-              "address_city": "",
-              "address_state": "",
-              "address_state_full_name": "",
-              "address_country": "BR",
-              "address_zip_code": "",
-              "lead": []
-            },
-            "contracts": [],
-            "dates": {
-              "canceled_at": null,
-              "confirmed_at": "2025-12-09T17:28:03Z",
-              "created_at": "2025-12-09T17:25:03Z",
-              "expires_at": null,
-              "ordered_at": "2025-12-09T17:23:44Z",
-              "unavailable_until": "2026-01-08T17:28:03Z",
-              "updated_at": "2025-12-09T17:28:46Z",
-              "warranty_until": "2026-01-08T17:28:03Z"
-            },
-            "ecommerces": [],
-            "extras": {
-              "accepted_terms_url": 0,
-              "accepted_privacy_policy_url": 0
-            },
-            "id": "a08d9e0c-d051-4602-a613-924001a07abc",
-            "infrastructure": {
-              "ip": "2804:18:1140:e3a3:187f:9966:956f:ea8f",
-              "city": "sao paulo",
-              "host": "pagar.treinadorsergiobertoluci.com.br",
-              "ga_id": "",
-              "region": "sp",
-              "country": "BR",
-              "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
-              "city_lat_long": "-23.555771,-46.639557",
-              "facebook_browser_id": ""
-            },
-            "invoice": {
-              "charge_at": "2025-12-09",
-              "created_at": "2025-12-09T17:28:05Z",
-              "cycle": 1,
-              "discount_value": 0,
-              "id": "in_kC7v6jLkg7vmLW1dk",
-              "increment_value": 0,
-              "period_end": "2035-12-09",
-              "period_start": "2025-12-09",
-              "status": "paid",
-              "tax_value": 0,
-              "tries": 0,
-              "try": 0,
-              "type": "cycle",
-              "value": 358.8
-            },
-            "is_order_bump": 0,
-            "is_reissue": 0,
-            "items": [
-              {
-                "id": "1762285533",
-                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a048fb4c-fba1-4be5-add5-b1b38f319d1e.png",
-                "internal_id": "a0476851-bec6-4d42-9a51-946aba57473f",
-                "marketplace_id": "1762285533",
-                "marketplace_name": "pagarme2",
-                "name": "Sérgio Bertoluci | Última Black Friday (IS)",
-                "offer": {
-                  "id": "a0476a65-aaa3-4420-8e38-243c79486c6b",
-                  "name": "Sérgio Bertoluci | SB Ao Extremo | Última Black Friday | [IS] [Erika Domingues]"
-                },
-                "producer": {
-                  "contact_email": "suporte@weburn.com.br",
-                  "marketplace_id": "26849805000106",
-                  "name": "Weburn"
-                },
-                "qty": 1,
-                "total_value": 358.8,
-                "type": "plan",
-                "unit_value": 358.8
-              }
-            ],
-            "last_transaction": [],
-            "payment": {
-              "affiliate_value": 0,
-              "acquirer": {
-                "code": "0000",
-                "message": "Transação aprovada com sucesso",
-                "name": "pagarme",
-                "nsu": "4204670679",
-                "tid": "4204670679"
-              },
-              "can_try_again": 1,
-              "coupon": null,
-              "currency": "BRL",
-              "discount_value": 0,
-              "gross": 358.8,
-              "installments": {
-                "value": 29.9,
-                "qty": 12,
-                "interest": 0
-              },
-              "marketplace_id": "ch_n5WavD2T54Ug3Gom",
-              "marketplace_name": "pagarme2",
-              "marketplace_value": 6.64,
-              "method": "credit_card",
-              "net": 352.16,
-              "processing_times": {
-                "started_at": "2025-12-09T17:27:53.850Z",
-                "finished_at": "2025-12-09T17:28:03.752Z",
-                "delay_in_seconds": 9
-              },
-              "refund_reason": "",
-              "refuse_reason": "Transação aprovada com sucesso (0000)",
-              "tax": {
-                "value": 0,
-                "rate": 0
-              },
-              "total": 358.8,
-              "credit_card": {
-                "brand": "visa",
-                "expiration_month": 12,
-                "expiration_year": 2029,
-                "first_digits": "410863",
-                "id": "card_n2x9kP8Cw6cgnroB",
-                "last_digits": "2762"
-              }
-            },
-            "product": {
-              "group": {
-                "id": "9b1fbad5-a47f-4d7e-8fd5-f2228e5d643c",
-                "name": "Sérgio Bertoluci | Novo"
-              },
-              "id": "1762285533",
-              "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a048fb4c-fba1-4be5-add5-b1b38f319d1e.png",
-              "internal_id": "a0476851-bec6-4d42-9a51-946aba57473f",
-              "marketplace_id": "1762285533",
-              "marketplace_name": "pagarme2",
-              "name": "Sérgio Bertoluci | Última Black Friday (IS)",
-              "offer": {
-                "id": "a0476a65-aaa3-4420-8e38-243c79486c6b",
-                "name": "Sérgio Bertoluci | SB Ao Extremo | Última Black Friday | [IS] [Erika Domingues]"
-              },
-              "producer": {
-                "marketplace_id": "26849805000106",
-                "name": "Weburn",
-                "contact_email": "suporte@weburn.com.br"
-              },
-              "qty": 1,
-              "total_value": 358.8,
-              "type": "plan",
-              "unit_value": 358.8
-            },
-            "self_attribution": null,
-            "shipment": {
-              "carrier": "",
-              "service": "",
-              "tracking": "",
-              "value": 0,
-              "status": "",
-              "delivery_time": ""
-            },
-            "shipping": {
-              "name": "Standard",
-              "value": 0
-            },
-            "source": {
-              "source": null,
-              "checkout_source": null,
-              "utm_source": null,
-              "utm_campaign": null,
-              "utm_medium": null,
-              "utm_content": null,
-              "utm_term": null,
-              "pptc": []
-            },
-            "status": "approved",
-            "subscription": {
-              "can_cancel": 1,
-              "canceled_at": null,
-              "charged_every_days": 3650,
-              "charged_times": 1,
-              "id": "sub_iWtUW0x1fqLUnSon",
-              "internal_id": "a08d9f9a-5d22-46e5-b80b-a1d93b10ddfd",
-              "last_status": "active",
-              "last_status_at": "2025-12-09T17:28:05Z",
-              "name": "Sérgio Bertoluci | Última Black Friday (IS)",
-              "started_at": "2025-12-09T17:28:05Z",
-              "subscription_code": "sub_iWtUW0x1fqLUnSon",
-              "trial_days": 0,
-              "trial_finished_at": null,
-              "trial_started_at": null
-            },
-            "type": "producer",
-            "webhook_type": "transaction"
-          },
-          "webhookUrl": "https://webh.weburn.com.br/webhook/f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
-          "executionMode": "production"
-        }
-      }
-    ],
-    "Webhook Assinantes": [
-      {
-        "json": {
-          "headers": {
-            "host": "webh.weburn.com.br",
-            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
-            "content-length": "6452",
-            "content-type": "application/json",
-            "x-forwarded-for": "35.237.161.55",
-            "x-forwarded-host": "webh.weburn.com.br",
-            "x-forwarded-port": "443",
-            "x-forwarded-proto": "https",
-            "x-forwarded-server": "55a0ea0d2a2a",
-            "x-real-ip": "35.237.161.55",
-            "x-request-id": "a08b1fb3-00ea-425f-8671-3140c3d9604c",
-            "accept-encoding": "gzip"
-          },
-          "params": {},
-          "query": {},
-          "body": {
-            "affiliations": null,
-            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
-            "cancel_at_cycle_end": 0,
-            "cancel_reason": "",
-            "cancelled_by": {
-              "name": "",
-              "email": "",
-              "date": ""
-            },
-            "charged_every_days": 365,
-            "charged_times": 1,
-            "contracts": [],
-            "current_invoice": {
-              "charge_at": "2025-12-06",
-              "code": "in_sMGmhGTQPArsghmcx",
-              "created_at": 1764960230,
-              "cycle": 1,
-              "days_until_payment": 2,
-              "discount_value": 0,
-              "id": "a085aec2-b726-4269-a2ea-1058f2bec276",
-              "increment_value": 0,
-              "paid_at": "2025-12-08",
-              "payment_attempts": 0,
-              "payment_url": "https://clkdmg.site/pay/a085aec2-b726-4269-a2ea-1058f2bec276/invoice",
-              "period_end": "2026-12-05",
-              "period_start": "2025-12-05",
-              "status": "paid",
-              "subscription_id": "a085aec2-b5db-4898-9fd9-e31c13a6ecd8",
-              "tax_value": 0,
-              "transaction_was_reissued": 0,
-              "type": "cycle",
-              "updated_at": 1765193768,
-              "value": 97
-            },
-            "dates": {
-              "canceled_at": null,
-              "cycle_end_date": "2026-12-05",
-              "cycle_start_date": "2025-12-05",
-              "last_status_at": "2025-12-08T11:38:34Z",
-              "next_cycle_at": "2026-12-06",
-              "started_at": "2025-12-05T18:43:50Z"
-            },
-            "id": "sub_RKeQesZBt1XHVm8T",
-            "internal_id": "a085aec2-b5db-4898-9fd9-e31c13a6ecd8",
-            "last_status": "active",
-            "last_transaction": {
-              "affiliations": [],
-              "checkout_url": "https://pagar.tiagomecabo.com.br/subscribe/tiago-mecabo-protocolo-corra-mais-rapido-ads",
-              "contact": {
-                "id": "a085ae94-9d5a-473a-833c-bdf2a4e1941b",
-                "name": "Marcelo Granado Queiroz",
-                "company_name": "",
-                "email": "granado.marcelo@gmail.com",
-                "doc": "14914708876",
-                "phone_number": "65992468688",
-                "phone_local_code": "55",
-                "address": "",
-                "address_number": "",
-                "address_comp": "",
-                "address_district": "",
-                "address_city": "",
-                "address_state": "",
-                "address_state_full_name": "",
-                "address_country": "BR",
-                "address_zip_code": "",
-                "lead": []
-              },
-              "dates": {
-                "canceled_at": null,
-                "confirmed_at": "2025-12-08T11:32:59Z",
-                "created_at": "2025-12-05T18:43:20Z",
-                "expires_at": "2025-12-06T03:00:00Z",
-                "ordered_at": "2025-12-05T18:41:32Z",
-                "unavailable_until": "2025-12-08T11:33:42Z",
-                "updated_at": "2025-12-08T11:33:42Z",
-                "warranty_until": "2026-01-07T11:32:59Z"
-              },
-              "ecommerces": [],
-              "extras": {
-                "accepted_terms_url": 0,
-                "accepted_privacy_policy_url": 0
-              },
-              "id": "a085adef-d4f1-4dbe-9a71-5f3b9c8a8b01",
-              "infrastructure": {
-                "ip": "2804:389:a2ac:4033:984e:972:8efa:1d00",
-                "city": "brasilia",
-                "host": "pagar.tiagomecabo.com.br",
-                "ga_id": "GA1.1.2020331814.1763945607",
-                "region": "df",
-                "country": "BR",
-                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/22G100 Instagram 408.1.0.45.70 (iPhone15,4; iOS 18_6_2; en_US; en; scale=3.00; 1179x2556; IABMV/1; 833451024) Safari/604.1",
-                "city_lat_long": "-15.797515,-47.891887",
-                "facebook_browser_id": "fb.2.1764724682558.2128020541"
-              },
-              "invoice": {
-                "charge_at": "2025-12-06",
-                "created_at": "2025-12-05T18:43:50Z",
-                "cycle": 1,
-                "discount_value": 0,
-                "id": "in_sMGmhGTQPArsghmcx",
-                "increment_value": 0,
-                "period_end": "2026-12-05",
-                "period_start": "2025-12-05",
-                "status": "paid",
-                "tax_value": 0,
-                "tries": 0,
-                "try": 0,
-                "type": "cycle",
-                "value": 97
-              },
-              "payment": {
-                "affiliate_value": 0,
-                "acquirer": {
-                  "code": "0",
-                  "message": "boleto",
-                  "name": "198",
-                  "nsu": "4199967300",
-                  "tid": "4199967300"
-                },
-                "can_try_again": 1,
-                "coupon": null,
-                "currency": "BRL",
-                "discount_value": 0,
-                "gross": 97,
-                "installments": {
-                  "value": 97,
-                  "qty": 1,
-                  "interest": 0
-                },
-                "marketplace_id": "ch_7aDxDDJiVEs32xkO",
-                "marketplace_name": "pagarme2",
-                "marketplace_value": 2.7,
-                "method": "billet",
-                "net": 94.3,
-                "processing_times": {
-                  "started_at": "2025-12-05T18:43:45.969Z",
-                  "finished_at": "2025-12-05T18:43:47.730Z",
-                  "delay_in_seconds": 1
-                },
-                "refund_reason": "",
-                "refuse_reason": " (0)",
-                "tax": {
-                  "value": 0,
-                  "rate": 0
-                },
-                "total": 97,
-                "billet": {
-                  "line": "19790000056523355030392452390195112870000009700",
-                  "url": "https://api.pagar.me/1/boletos/live_cmit7qyweoebd0lm5clkz3o2a",
-                  "expiration_date": "2025-12-06"
-                }
-              },
-              "product": {
-                "group": {
-                  "id": "9e74c04f-93ab-4037-a895-070df33ecb2d",
-                  "name": "Tiago Mecabo"
-                },
-                "id": "1758027046",
-                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9fe445f2-f502-48f3-8b5c-6cd5a7af2182.png",
-                "internal_id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
-                "marketplace_id": "1758027046",
-                "marketplace_name": "pagarme2",
-                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
-                "offer": {
-                  "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
-                  "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]"
-                },
-                "producer": {
-                  "marketplace_id": "1650295901",
-                  "name": "Weburn Empreendimento Digitais S.a.",
-                  "contact_email": ""
-                },
-                "qty": 1,
-                "total_value": 97,
-                "type": "plan",
-                "unit_value": 97
-              },
-              "shipment": {
-                "carrier": "",
-                "service": "",
-                "tracking": "",
-                "value": 0,
-                "status": "",
-                "delivery_time": ""
-              },
-              "shipping": {
-                "name": "Standard",
-                "value": 0
-              },
-              "source": {
-                "source": null,
-                "checkout_source": null,
-                "utm_source": null,
-                "utm_campaign": null,
-                "utm_medium": null,
-                "utm_content": null,
-                "utm_term": null,
-                "pptc": []
-              },
-              "status": "approved",
-              "type": "producer",
-              "self_attribution": null
-            },
-            "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
-            "next_cycle_installments": 1,
-            "next_cycle_value": 97,
-            "next_product": {
-              "id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
-              "marketplace_id": "1758027046",
-              "marketplace_name": "pagarme2",
-              "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
-              "offer": {
-                "cash_discount": 0,
-                "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
-                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]",
-                "plan": {
-                  "cycles": 0,
-                  "discount": {
-                    "value": 0,
-                    "cycles": 0
-                  },
-                  "increment": {
-                    "value": 0,
-                    "cycles": 0
-                  },
-                  "interval": 1,
-                  "interval_type": "year",
-                  "provider": "guru",
-                  "split_cycles": 0,
-                  "trial_days": 0
-                },
-                "units_per_sale": 1,
-                "value": 97
-              }
-            },
-            "payment_method": "billet",
-            "product": {
-              "group": {
-                "id": "9e74c04f-93ab-4037-a895-070df33ecb2d",
-                "name": "Tiago Mecabo"
-              },
-              "id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
-              "marketplace_id": "1758027046",
-              "marketplace_name": "pagarme2",
-              "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
-              "offer": {
-                "cash_discount": 0,
-                "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
-                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]",
-                "plan": {
-                  "cycles": 0,
-                  "discount": {
-                    "value": 0,
-                    "cycles": 0
-                  },
-                  "increment": {
-                    "value": 0,
-                    "cycles": 0
-                  },
-                  "interval": 1,
-                  "interval_type": "year",
-                  "provider": "guru",
-                  "split_cycles": 0,
-                  "trial_days": 0
-                },
-                "units_per_sale": 1,
-                "value": 97
-              }
-            },
-            "provider": "guru",
-            "subscriber": {
-              "address": "",
-              "address_city": "",
-              "address_comp": "",
-              "address_country": "BR",
-              "address_district": "",
-              "address_number": "",
-              "address_state": "",
-              "address_zip_code": "",
-              "doc": "14914708876",
-              "email": "granado.marcelo@gmail.com",
-              "id": "a085ae94-9d5a-473a-833c-bdf2a4e1941b",
-              "name": "Marcelo Granado Queiroz",
-              "phone_local_code": "55",
-              "phone_number": "65992468688"
-            },
-            "subscription_code": "sub_RKeQesZBt1XHVm8T",
-            "trial_days": 0,
-            "trial_finished_at": null,
-            "trial_started_at": null,
-            "webhook_type": "subscription"
-          },
-          "webhookUrl": "https://webh.weburn.com.br/webhook/e1d46e27-6199-4dbe-8df3-20c85f3c2daa-assinantes",
-          "executionMode": "production"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
@@ -1603,6 +1085,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-12-10T14:11:25.921Z",
-  "versionId": "cf6e5ce3-507e-43ea-92ed-44cec28dca6a"
+  "updatedAt": "2025-12-11T14:49:42.550Z",
+  "versionId": "d3f2c1f1-00e8-4959-a7bf-8562a15921b8"
 }

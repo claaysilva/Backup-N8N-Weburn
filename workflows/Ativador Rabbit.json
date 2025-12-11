@@ -1,0 +1,692 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook Vendas": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ (Fila Vendas)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Assinantes": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ (Fila Assinaturas)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-11T14:14:38.617Z",
+  "id": "8V8kLBagcokMOtsM",
+  "isArchived": false,
+  "meta": null,
+  "name": "Ativador Rabbit",
+  "nodes": [
+    {
+      "parameters": {
+        "queue": "datacrazyvendas",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        -304,
+        -96
+      ],
+      "id": "9bd40053-2d75-4007-a30c-615efeb3d11e",
+      "name": "RabbitMQ (Fila Vendas)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "datacrazyassinantes",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "xqueue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        -304,
+        128
+      ],
+      "id": "9e07f110-414c-4557-9f61-5f4cd875121a",
+      "name": "RabbitMQ (Fila Assinaturas)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -528,
+        -96
+      ],
+      "id": "2159673c-e375-4650-8ac9-ed6f142ae710",
+      "name": "Webhook Vendas",
+      "webhookId": "f46f3eb9-06b1-4d72-8ff0-1e2de6c08817"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "e1d46e27-6199-4dbe-8df3-20c85f3c2daa-assinantes",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -528,
+        128
+      ],
+      "id": "5fcdf388-0955-4c3e-bd61-495cb86594cf",
+      "name": "Webhook Assinantes",
+      "webhookId": "e1d46e27-6199-4dbe-8df3-20c85f3c2daa"
+    }
+  ],
+  "pinData": {
+    "Webhook Vendas": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+            "content-length": "4882",
+            "content-type": "application/json",
+            "x-forwarded-for": "35.231.123.178",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "35.231.123.178",
+            "x-request-id": "a08d9fe9-b044-4af9-bdfc-5c609ae7f0dc",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "affiliations": [],
+            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+            "checkout_url": "https://pagar.treinadorsergiobertoluci.com.br/subscribe/sergio-bertoluci-sb-ao-extremo-ultima-black-friday-is-erika-domingues",
+            "contact": {
+              "id": "a08d9e85-3aa4-40d5-ace7-be8ff556a7aa",
+              "name": "Idelbrando Pereira",
+              "company_name": "",
+              "email": "idelbrando.adventista@gmail.com",
+              "doc": "30733625843",
+              "phone_number": "1175459448",
+              "phone_local_code": "55",
+              "address": "",
+              "address_number": "",
+              "address_comp": "",
+              "address_district": "",
+              "address_city": "",
+              "address_state": "",
+              "address_state_full_name": "",
+              "address_country": "BR",
+              "address_zip_code": "",
+              "lead": []
+            },
+            "contracts": [],
+            "dates": {
+              "canceled_at": null,
+              "confirmed_at": "2025-12-09T17:28:03Z",
+              "created_at": "2025-12-09T17:25:03Z",
+              "expires_at": null,
+              "ordered_at": "2025-12-09T17:23:44Z",
+              "unavailable_until": "2026-01-08T17:28:03Z",
+              "updated_at": "2025-12-09T17:28:46Z",
+              "warranty_until": "2026-01-08T17:28:03Z"
+            },
+            "ecommerces": [],
+            "extras": {
+              "accepted_terms_url": 0,
+              "accepted_privacy_policy_url": 0
+            },
+            "id": "a08d9e0c-d051-4602-a613-924001a07abc",
+            "infrastructure": {
+              "ip": "2804:18:1140:e3a3:187f:9966:956f:ea8f",
+              "city": "sao paulo",
+              "host": "pagar.treinadorsergiobertoluci.com.br",
+              "ga_id": "",
+              "region": "sp",
+              "country": "BR",
+              "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36",
+              "city_lat_long": "-23.555771,-46.639557",
+              "facebook_browser_id": ""
+            },
+            "invoice": {
+              "charge_at": "2025-12-09",
+              "created_at": "2025-12-09T17:28:05Z",
+              "cycle": 1,
+              "discount_value": 0,
+              "id": "in_kC7v6jLkg7vmLW1dk",
+              "increment_value": 0,
+              "period_end": "2035-12-09",
+              "period_start": "2025-12-09",
+              "status": "paid",
+              "tax_value": 0,
+              "tries": 0,
+              "try": 0,
+              "type": "cycle",
+              "value": 358.8
+            },
+            "is_order_bump": 0,
+            "is_reissue": 0,
+            "items": [
+              {
+                "id": "1762285533",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a048fb4c-fba1-4be5-add5-b1b38f319d1e.png",
+                "internal_id": "a0476851-bec6-4d42-9a51-946aba57473f",
+                "marketplace_id": "1762285533",
+                "marketplace_name": "pagarme2",
+                "name": "Sérgio Bertoluci | Última Black Friday (IS)",
+                "offer": {
+                  "id": "a0476a65-aaa3-4420-8e38-243c79486c6b",
+                  "name": "Sérgio Bertoluci | SB Ao Extremo | Última Black Friday | [IS] [Erika Domingues]"
+                },
+                "producer": {
+                  "contact_email": "suporte@weburn.com.br",
+                  "marketplace_id": "26849805000106",
+                  "name": "Weburn"
+                },
+                "qty": 1,
+                "total_value": 358.8,
+                "type": "plan",
+                "unit_value": 358.8
+              }
+            ],
+            "last_transaction": [],
+            "payment": {
+              "affiliate_value": 0,
+              "acquirer": {
+                "code": "0000",
+                "message": "Transação aprovada com sucesso",
+                "name": "pagarme",
+                "nsu": "4204670679",
+                "tid": "4204670679"
+              },
+              "can_try_again": 1,
+              "coupon": null,
+              "currency": "BRL",
+              "discount_value": 0,
+              "gross": 358.8,
+              "installments": {
+                "value": 29.9,
+                "qty": 12,
+                "interest": 0
+              },
+              "marketplace_id": "ch_n5WavD2T54Ug3Gom",
+              "marketplace_name": "pagarme2",
+              "marketplace_value": 6.64,
+              "method": "credit_card",
+              "net": 352.16,
+              "processing_times": {
+                "started_at": "2025-12-09T17:27:53.850Z",
+                "finished_at": "2025-12-09T17:28:03.752Z",
+                "delay_in_seconds": 9
+              },
+              "refund_reason": "",
+              "refuse_reason": "Transação aprovada com sucesso (0000)",
+              "tax": {
+                "value": 0,
+                "rate": 0
+              },
+              "total": 358.8,
+              "credit_card": {
+                "brand": "visa",
+                "expiration_month": 12,
+                "expiration_year": 2029,
+                "first_digits": "410863",
+                "id": "card_n2x9kP8Cw6cgnroB",
+                "last_digits": "2762"
+              }
+            },
+            "product": {
+              "group": {
+                "id": "9b1fbad5-a47f-4d7e-8fd5-f2228e5d643c",
+                "name": "Sérgio Bertoluci | Novo"
+              },
+              "id": "1762285533",
+              "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a048fb4c-fba1-4be5-add5-b1b38f319d1e.png",
+              "internal_id": "a0476851-bec6-4d42-9a51-946aba57473f",
+              "marketplace_id": "1762285533",
+              "marketplace_name": "pagarme2",
+              "name": "Sérgio Bertoluci | Última Black Friday (IS)",
+              "offer": {
+                "id": "a0476a65-aaa3-4420-8e38-243c79486c6b",
+                "name": "Sérgio Bertoluci | SB Ao Extremo | Última Black Friday | [IS] [Erika Domingues]"
+              },
+              "producer": {
+                "marketplace_id": "26849805000106",
+                "name": "Weburn",
+                "contact_email": "suporte@weburn.com.br"
+              },
+              "qty": 1,
+              "total_value": 358.8,
+              "type": "plan",
+              "unit_value": 358.8
+            },
+            "self_attribution": null,
+            "shipment": {
+              "carrier": "",
+              "service": "",
+              "tracking": "",
+              "value": 0,
+              "status": "",
+              "delivery_time": ""
+            },
+            "shipping": {
+              "name": "Standard",
+              "value": 0
+            },
+            "source": {
+              "source": null,
+              "checkout_source": null,
+              "utm_source": null,
+              "utm_campaign": null,
+              "utm_medium": null,
+              "utm_content": null,
+              "utm_term": null,
+              "pptc": []
+            },
+            "status": "approved",
+            "subscription": {
+              "can_cancel": 1,
+              "canceled_at": null,
+              "charged_every_days": 3650,
+              "charged_times": 1,
+              "id": "sub_iWtUW0x1fqLUnSon",
+              "internal_id": "a08d9f9a-5d22-46e5-b80b-a1d93b10ddfd",
+              "last_status": "active",
+              "last_status_at": "2025-12-09T17:28:05Z",
+              "name": "Sérgio Bertoluci | Última Black Friday (IS)",
+              "started_at": "2025-12-09T17:28:05Z",
+              "subscription_code": "sub_iWtUW0x1fqLUnSon",
+              "trial_days": 0,
+              "trial_finished_at": null,
+              "trial_started_at": null
+            },
+            "type": "producer",
+            "webhook_type": "transaction"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Webhook Assinantes": [
+      {
+        "json": {
+          "headers": {
+            "host": "webh.weburn.com.br",
+            "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+            "content-length": "6452",
+            "content-type": "application/json",
+            "x-forwarded-for": "35.237.161.55",
+            "x-forwarded-host": "webh.weburn.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "55a0ea0d2a2a",
+            "x-real-ip": "35.237.161.55",
+            "x-request-id": "a08b1fb3-00ea-425f-8671-3140c3d9604c",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "affiliations": null,
+            "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+            "cancel_at_cycle_end": 0,
+            "cancel_reason": "",
+            "cancelled_by": {
+              "name": "",
+              "email": "",
+              "date": ""
+            },
+            "charged_every_days": 365,
+            "charged_times": 1,
+            "contracts": [],
+            "current_invoice": {
+              "charge_at": "2025-12-06",
+              "code": "in_sMGmhGTQPArsghmcx",
+              "created_at": 1764960230,
+              "cycle": 1,
+              "days_until_payment": 2,
+              "discount_value": 0,
+              "id": "a085aec2-b726-4269-a2ea-1058f2bec276",
+              "increment_value": 0,
+              "paid_at": "2025-12-08",
+              "payment_attempts": 0,
+              "payment_url": "https://clkdmg.site/pay/a085aec2-b726-4269-a2ea-1058f2bec276/invoice",
+              "period_end": "2026-12-05",
+              "period_start": "2025-12-05",
+              "status": "paid",
+              "subscription_id": "a085aec2-b5db-4898-9fd9-e31c13a6ecd8",
+              "tax_value": 0,
+              "transaction_was_reissued": 0,
+              "type": "cycle",
+              "updated_at": 1765193768,
+              "value": 97
+            },
+            "dates": {
+              "canceled_at": null,
+              "cycle_end_date": "2026-12-05",
+              "cycle_start_date": "2025-12-05",
+              "last_status_at": "2025-12-08T11:38:34Z",
+              "next_cycle_at": "2026-12-06",
+              "started_at": "2025-12-05T18:43:50Z"
+            },
+            "id": "sub_RKeQesZBt1XHVm8T",
+            "internal_id": "a085aec2-b5db-4898-9fd9-e31c13a6ecd8",
+            "last_status": "active",
+            "last_transaction": {
+              "affiliations": [],
+              "checkout_url": "https://pagar.tiagomecabo.com.br/subscribe/tiago-mecabo-protocolo-corra-mais-rapido-ads",
+              "contact": {
+                "id": "a085ae94-9d5a-473a-833c-bdf2a4e1941b",
+                "name": "Marcelo Granado Queiroz",
+                "company_name": "",
+                "email": "granado.marcelo@gmail.com",
+                "doc": "14914708876",
+                "phone_number": "65992468688",
+                "phone_local_code": "55",
+                "address": "",
+                "address_number": "",
+                "address_comp": "",
+                "address_district": "",
+                "address_city": "",
+                "address_state": "",
+                "address_state_full_name": "",
+                "address_country": "BR",
+                "address_zip_code": "",
+                "lead": []
+              },
+              "dates": {
+                "canceled_at": null,
+                "confirmed_at": "2025-12-08T11:32:59Z",
+                "created_at": "2025-12-05T18:43:20Z",
+                "expires_at": "2025-12-06T03:00:00Z",
+                "ordered_at": "2025-12-05T18:41:32Z",
+                "unavailable_until": "2025-12-08T11:33:42Z",
+                "updated_at": "2025-12-08T11:33:42Z",
+                "warranty_until": "2026-01-07T11:32:59Z"
+              },
+              "ecommerces": [],
+              "extras": {
+                "accepted_terms_url": 0,
+                "accepted_privacy_policy_url": 0
+              },
+              "id": "a085adef-d4f1-4dbe-9a71-5f3b9c8a8b01",
+              "infrastructure": {
+                "ip": "2804:389:a2ac:4033:984e:972:8efa:1d00",
+                "city": "brasilia",
+                "host": "pagar.tiagomecabo.com.br",
+                "ga_id": "GA1.1.2020331814.1763945607",
+                "region": "df",
+                "country": "BR",
+                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/22G100 Instagram 408.1.0.45.70 (iPhone15,4; iOS 18_6_2; en_US; en; scale=3.00; 1179x2556; IABMV/1; 833451024) Safari/604.1",
+                "city_lat_long": "-15.797515,-47.891887",
+                "facebook_browser_id": "fb.2.1764724682558.2128020541"
+              },
+              "invoice": {
+                "charge_at": "2025-12-06",
+                "created_at": "2025-12-05T18:43:50Z",
+                "cycle": 1,
+                "discount_value": 0,
+                "id": "in_sMGmhGTQPArsghmcx",
+                "increment_value": 0,
+                "period_end": "2026-12-05",
+                "period_start": "2025-12-05",
+                "status": "paid",
+                "tax_value": 0,
+                "tries": 0,
+                "try": 0,
+                "type": "cycle",
+                "value": 97
+              },
+              "payment": {
+                "affiliate_value": 0,
+                "acquirer": {
+                  "code": "0",
+                  "message": "boleto",
+                  "name": "198",
+                  "nsu": "4199967300",
+                  "tid": "4199967300"
+                },
+                "can_try_again": 1,
+                "coupon": null,
+                "currency": "BRL",
+                "discount_value": 0,
+                "gross": 97,
+                "installments": {
+                  "value": 97,
+                  "qty": 1,
+                  "interest": 0
+                },
+                "marketplace_id": "ch_7aDxDDJiVEs32xkO",
+                "marketplace_name": "pagarme2",
+                "marketplace_value": 2.7,
+                "method": "billet",
+                "net": 94.3,
+                "processing_times": {
+                  "started_at": "2025-12-05T18:43:45.969Z",
+                  "finished_at": "2025-12-05T18:43:47.730Z",
+                  "delay_in_seconds": 1
+                },
+                "refund_reason": "",
+                "refuse_reason": " (0)",
+                "tax": {
+                  "value": 0,
+                  "rate": 0
+                },
+                "total": 97,
+                "billet": {
+                  "line": "19790000056523355030392452390195112870000009700",
+                  "url": "https://api.pagar.me/1/boletos/live_cmit7qyweoebd0lm5clkz3o2a",
+                  "expiration_date": "2025-12-06"
+                }
+              },
+              "product": {
+                "group": {
+                  "id": "9e74c04f-93ab-4037-a895-070df33ecb2d",
+                  "name": "Tiago Mecabo"
+                },
+                "id": "1758027046",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/9fe445f2-f502-48f3-8b5c-6cd5a7af2182.png",
+                "internal_id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
+                "marketplace_id": "1758027046",
+                "marketplace_name": "pagarme2",
+                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
+                "offer": {
+                  "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
+                  "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]"
+                },
+                "producer": {
+                  "marketplace_id": "1650295901",
+                  "name": "Weburn Empreendimento Digitais S.a.",
+                  "contact_email": ""
+                },
+                "qty": 1,
+                "total_value": 97,
+                "type": "plan",
+                "unit_value": 97
+              },
+              "shipment": {
+                "carrier": "",
+                "service": "",
+                "tracking": "",
+                "value": 0,
+                "status": "",
+                "delivery_time": ""
+              },
+              "shipping": {
+                "name": "Standard",
+                "value": 0
+              },
+              "source": {
+                "source": null,
+                "checkout_source": null,
+                "utm_source": null,
+                "utm_campaign": null,
+                "utm_medium": null,
+                "utm_content": null,
+                "utm_term": null,
+                "pptc": []
+              },
+              "status": "approved",
+              "type": "producer",
+              "self_attribution": null
+            },
+            "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
+            "next_cycle_installments": 1,
+            "next_cycle_value": 97,
+            "next_product": {
+              "id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
+              "marketplace_id": "1758027046",
+              "marketplace_name": "pagarme2",
+              "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
+              "offer": {
+                "cash_discount": 0,
+                "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
+                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]",
+                "plan": {
+                  "cycles": 0,
+                  "discount": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "increment": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "interval": 1,
+                  "interval_type": "year",
+                  "provider": "guru",
+                  "split_cycles": 0,
+                  "trial_days": 0
+                },
+                "units_per_sale": 1,
+                "value": 97
+              }
+            },
+            "payment_method": "billet",
+            "product": {
+              "group": {
+                "id": "9e74c04f-93ab-4037-a895-070df33ecb2d",
+                "name": "Tiago Mecabo"
+              },
+              "id": "9fe441c3-e0d1-422b-8a10-c98f2ca655f6",
+              "marketplace_id": "1758027046",
+              "marketplace_name": "pagarme2",
+              "name": "Tiago Mecabo | Protocolo Corra Mais Rápido",
+              "offer": {
+                "cash_discount": 0,
+                "id": "9fe441c3-f706-4534-9c65-454f4ba0f3b0",
+                "name": "Tiago Mecabo | Protocolo Corra Mais Rápido [ADS]",
+                "plan": {
+                  "cycles": 0,
+                  "discount": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "increment": {
+                    "value": 0,
+                    "cycles": 0
+                  },
+                  "interval": 1,
+                  "interval_type": "year",
+                  "provider": "guru",
+                  "split_cycles": 0,
+                  "trial_days": 0
+                },
+                "units_per_sale": 1,
+                "value": 97
+              }
+            },
+            "provider": "guru",
+            "subscriber": {
+              "address": "",
+              "address_city": "",
+              "address_comp": "",
+              "address_country": "BR",
+              "address_district": "",
+              "address_number": "",
+              "address_state": "",
+              "address_zip_code": "",
+              "doc": "14914708876",
+              "email": "granado.marcelo@gmail.com",
+              "id": "a085ae94-9d5a-473a-833c-bdf2a4e1941b",
+              "name": "Marcelo Granado Queiroz",
+              "phone_local_code": "55",
+              "phone_number": "65992468688"
+            },
+            "subscription_code": "sub_RKeQesZBt1XHVm8T",
+            "trial_days": 0,
+            "trial_finished_at": null,
+            "trial_started_at": null,
+            "webhook_type": "subscription"
+          },
+          "webhookUrl": "https://webh.weburn.com.br/webhook/e1d46e27-6199-4dbe-8df3-20c85f3c2daa-assinantes",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-11T14:14:38.617Z",
+      "createdAt": "2025-12-11T14:14:38.617Z",
+      "role": "workflow:owner",
+      "workflowId": "8V8kLBagcokMOtsM",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-12-11T14:49:55.340Z",
+  "versionId": "890f091e-19e6-4896-8880-91a474506852"
+}

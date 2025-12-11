@@ -332,6 +332,17 @@
           }
         ]
       ]
+    },
+    "Vincular Produto ao Negócio": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ (excluir fila)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-12-01T19:31:10.355Z",
@@ -342,7 +353,7 @@
   "nodes": [
     {
       "parameters": {
-        "jsCode": "//  CONFIGURAÇÃO DE IDS DO DATACRAZY \n\nconst stageMap = {\n  \"PopUp\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\",\n  \"Compras aprovadas\": \"e1e614ae-99ac-4723-ad5a-470b6eea237c\",\n  \"Abandono de carrinho\": \"264d5e74-f2d3-4988-ae73-7fd4fda13a51\",\n  \"Cartão recusado\": \"d403d222-7b77-4854-bfc4-4c3dae4934f2\",\n  \"Compras em aberto\": \"acea8ffb-c33c-454d-9deb-fe1ff5d56419\",\n  \"Compras expiradas\": \"14f9a756-1195-4599-ae7f-eb0f24292b55\",\n  \"Reembolso/Chargeback\": \"e0966ce2-e082-46f0-b916-19ec1d44f357\",\n  \"Assinaturas ativas\": \"fd3dcb52-1729-411a-9fbe-9bec65b4f601\",\n  \"Assinaturas canceladas\": \"12538e5a-06c2-47e6-ae72-d8e5f23e87cb\",\n  \"Assinaturas em atraso\": \"b57974de-72d7-4f1e-9ef8-14bc9c3ff646\",\n  \"Lista Geral\": \"02ab964b-bb09-45d2-9252-47de1bd42bc8\" // Fallback\n};\n\n//  2. TRATAMENTO INTELIGENTE DE TELEFONE\nconst body = items[0].json.body || {};\nconst contact = body.contact || {};\n\n// Pega o DDI e o Numero, garantindo que não sejam nulos\nconst ddiGuru = contact.phone_local_code ? String(contact.phone_local_code) : \"\";\nconst numGuru = contact.phone_number ? String(contact.phone_number) : \"\";\n\n// Remove tudo que não é número (tira +, -, espaço, parênteses)\nlet phoneClean = (ddiGuru + numGuru).replace(/\\D/g, '');\n\n// CORREÇÕES AUTOMÁTICAS PARA BRASIL:\n// Se o número tiver 10 ou 11 dígitos, é porque falta o DDI 55. Adiciona.\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n\n// Se o usuário digitou 55 duas vezes (ex: DDI 55 e Numero 551199...), corrige.\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); // Remove o primeiro 55\n}\n\n// Adiciona o + na frente para ficar no padrão internacional (E.164)\nconst finalPhone = \"+\" + phoneClean;\n\n\n//  3. RETORNO FINAL \nconst origemTexto = items[0].json.origem_datacrazy || \"Lista Geral\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    targetStageId: stageMap[origemTexto] || stageMap[\"Lista Geral\"],\n    // Aqui vai a nova variável limpa:\n    telefoneFormatado: finalPhone \n  }\n};"
+        "jsCode": "//  CONFIGURAÇÃO DE IDS DO DATACRAZY \n\nconst stageMap = {\n  \"PopUp\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\",\n  \"Compras aprovadas\": \"e1e614ae-99ac-4723-ad5a-470b6eea237c\",\n  \"Abandono de carrinho\": \"264d5e74-f2d3-4988-ae73-7fd4fda13a51\",\n  \"Cartão recusado\": \"d403d222-7b77-4854-bfc4-4c3dae4934f2\",\n  \"Compras em aberto\": \"acea8ffb-c33c-454d-9deb-fe1ff5d56419\",\n  \"Compras expiradas\": \"14f9a756-1195-4599-ae7f-eb0f24292b55\",\n  \"Reembolso/Chargeback\": \"e0966ce2-e082-46f0-b916-19ec1d44f357\",\n  \"Assinaturas ativas\": \"fd3dcb52-1729-411a-9fbe-9bec65b4f601\",\n  \"Assinaturas canceladas\": \"12538e5a-06c2-47e6-ae72-d8e5f23e87cb\",\n  \"Assinaturas em atraso\": \"b57974de-72d7-4f1e-9ef8-14bc9c3ff646\",\n  \"Lista Geral\": \"02ab964b-bb09-45d2-9252-47de1bd42bc8\" // Fallback\n};\n\n//  2. TRATAMENTO INTELIGENTE DE TELEFONE\nconst body = items[0].json.body || {};\nconst contact = body.contact || {};\n\n// Pega o DDI e o Numero, garantindo que não sejam nulos\nconst ddiGuru = contact.phone_local_code ? String(contact.phone_local_code) : \"\";\nconst numGuru = contact.phone_number ? String(contact.phone_number) : \"\";\n\n// Remove tudo que não é número (tira +, -, espaço, parênteses)\nlet phoneClean = (ddiGuru + numGuru).replace(/\\D/g, '');\n\n// CORREÇÕES AUTOMÁTICAS PARA BRASIL:\n// Se o número tiver 10 ou 11 dígitos, é porque falta o DDI 55. Adiciona.\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n\n// Se o usuário digitou 55 duas vezes (ex: DDI 55 e Numero 551199...), corrige.\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); // Remove o primeiro 55\n}\n\n// Adiciona o + na frente para ficar no padrão internacional (E.164) para salvar\nconst finalPhone = \"+\" + phoneClean;\n\n// --- NOVA LÓGICA DE BUSCA ---\n// Remove o 55 do início para criar o padrão de busca (apenas DDD + Numero)\n// Ex: transforma 5547999999999 em 47999999999\nlet searchPhone = phoneClean;\nif (searchPhone.startsWith(\"55\") && searchPhone.length >= 12) {\n    searchPhone = searchPhone.substring(2);\n}\n\n//  3. RETORNO FINAL \nconst origemTexto = items[0].json.origem_datacrazy || \"Lista Geral\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    targetStageId: stageMap[origemTexto] || stageMap[\"Lista Geral\"],\n    \n    // Variável para SALVAR (Formato E.164 completo: +55...)\n    telefoneFormatado: finalPhone,\n    \n    // Variável para BUSCAR (Apenas DDD + Número)\n    telefoneParaBusca: searchPhone\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -355,7 +366,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Acessa o corpo dos dados vindos da Guru\nconst body = items[0].json.body || {};\nconst status = body.status ? body.status.toLowerCase() : '';\n\n// Tenta pegar o motivo da recusa\n// Se não existir, define como string vazia para não dar erro\nconst motivoRecusa = body.payment?.refuse_reason ? body.payment.refuse_reason.toLowerCase() : '';\n\nlet origem = \"Lista Geral\"; // Padrão de segurança\n\n// LÓGICA DE TRADUÇÃO INTELIGENTE \n\n// 1. Compras Aprovadas (Prioridade Máxima)\nif (status === 'approved' || status === 'completed') {\n  origem = \"Compras aprovadas\";\n}\n\n// 2. Abandono de Carrinho\nelse if (status === 'abandoned') {\n  origem = \"Abandono de carrinho\";\n}\n\n// 3. Compras em Aberto (Pix/Boleto aguardando)\nelse if (status === 'waiting_payment' || status === 'pending' || status === 'billet_printed') {\n  origem = \"Compras em aberto\";\n}\n\n// 4. Compras Expiradas\nelse if (status === 'expired') {\n  origem = \"Compras expiradas\";\n}\n\n// 5. Reembolso / Chargeback\nelse if (status === 'refunded' || status === 'chargeback' || status === 'chargedback') {\n  origem = \"Reembolso/Chargeback\";\n}\n\n// 6. Assinaturas em Atraso \nelse if (status === 'delayed' || status === 'past_due' || status === 'late') {\n  origem = \"Assinaturas em atraso\";\n}\n\n// 7. Cartão Recusado (A Lógica \"Pega Tudo\")\n// Se for 'refused' OU ('canceled' E tiver qualquer texto de motivo escrito)\nelse if (status === 'refused' || (status === 'canceled' && motivoRecusa.length > 2)) {\n  origem = \"Cartão recusado\";\n}\n\n// 8. Assinaturas Canceladas (Cancelamento manual sem motivo de erro bancário)\nelse if (status === 'canceled') {\n    // Se caiu aqui, é porque o motivoRecusa estava vazio\n    origem = \"Assinaturas canceladas\";\n}\n\n// Retorno Final\nreturn {\n  json: {\n    ...items[0].json,\n    body: body,\n    origem_datacrazy: origem\n  }\n};"
+        "jsCode": "// --- 1. DETECÇÃO DA FONTE (RabbitMQ vs Webhook) ---\n// Isso garante que funcione vindo da fila ou de teste manual\nconst json = items[0].json;\nlet body = {};\n\nif (json.content && json.content.body) {\n    // Veio do RabbitMQ (está dentro de content.body)\n    body = json.content.body;\n} else {\n    // Veio do Webhook direto (está na raiz)\n    body = json.body || {};\n}\n\n// --- 2. PREPARAÇÃO DAS VARIÁVEIS ---\nconst status = body.status ? body.status.toLowerCase() : '';\n\n// Tenta pegar o motivo da recusa\nconst motivoRecusa = body.payment?.refuse_reason ? body.payment.refuse_reason.toLowerCase() : '';\n\nlet origem = \"Lista Geral\"; // Padrão de segurança\n\n// --- 3. LÓGICA DE TRADUÇÃO INTELIGENTE ---\n\n// 1. Compras Aprovadas (Prioridade Máxima)\nif (status === 'approved' || status === 'completed') {\n  origem = \"Compras aprovadas\";\n}\n\n// 2. Abandono de Carrinho\nelse if (status === 'abandoned') {\n  origem = \"Abandono de carrinho\";\n}\n\n// 3. Compras em Aberto (Pix/Boleto aguardando)\nelse if (status === 'waiting_payment' || status === 'pending' || status === 'billet_printed') {\n  origem = \"Compras em aberto\";\n}\n\n// 4. Compras Expiradas\nelse if (status === 'expired') {\n  origem = \"Compras expiradas\";\n}\n\n// 5. Reembolso / Chargeback\nelse if (status === 'refunded' || status === 'chargeback' || status === 'chargedback') {\n  origem = \"Reembolso/Chargeback\";\n}\n\n// 6. Assinaturas em Atraso (que caem no webhook de venda)\nelse if (status === 'delayed' || status === 'past_due' || status === 'late') {\n  origem = \"Assinaturas em atraso\";\n}\n\n// 7. Cartão Recusado (A Lógica \"Pega Tudo\")\nelse if (status === 'refused' || (status === 'canceled' && motivoRecusa.length > 2)) {\n  origem = \"Cartão recusado\";\n}\n\n// 8. Assinaturas Canceladas (Cancelamento manual)\nelse if (status === 'canceled') {\n    origem = \"Assinaturas canceladas\";\n}\n\n// --- 4. RETORNO FINAL ---\nreturn {\n  json: {\n    ...items[0].json,\n    body: body, // Agora o 'body' correto é passado para frente\n    origem_datacrazy: origem\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -442,7 +453,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }}{{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"address\": {\n  \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n  \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n  \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n  \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n  \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n  \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  },\n  \"attendant\": {\n        \"id\": \"{{ $('Sorteador Atendentes').item.json.atendente.id }}\"\n}",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.body.contact.name }}\",\n  \"image\": \"\",\n  \"phone\": \"+{{ $('Config IDs').item.json.body.contact.phone_local_code }}{{ $('Config IDs').item.json.body.contact.phone_number }}\",\n  \"email\": \"{{ $('Config IDs').item.json.body.contact.email }}\",\n  \"source\": \"Guru Webhook - Vendas\",\n  \"company\": \"\",\n  \"taxId\": \"{{ $('Config IDs').item.json.body.contact.doc }}\",\n  \"site\": \"\",\n  \"instagram\": \"\",\n  \"address\": {\n    \"zip\": \"{{ $('Config IDs').item.json.body.contact.address_zip_code }}\",\n    \"address\": \"{{ $('Config IDs').item.json.body.contact.address }}\",\n    \"block\": \"{{ $('Config IDs').item.json.body.contact.address_district }}\",\n    \"city\": \"{{ $('Config IDs').item.json.body.infrastructure.city }}\",\n    \"state\": \"{{ $('Config IDs').item.json.body.infrastructure.region }}\",\n    \"country\": \"{{ $('Config IDs').item.json.body.infrastructure.country }}\"\n  },\n  \"sourceReferral\": {\n    \"sourceId\": \"\",\n    \"sourceUrl\": \"\",\n    \"ctwaId\": \"\"\n  },\n  \"tags\": [],\n  \"lists\": [],\n  \"attendant\": {\n    \"id\": \"{{ $('Sorteador Atendentes').item.json.atendente.id }}\"\n  }\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -860,7 +871,7 @@
           "parameters": [
             {
               "name": "search",
-              "value": "={{ $('Config IDs').item.json.telefoneFormatado }}"
+              "value": "={{ $('Config IDs').item.json.telefoneParaBusca }}"
             }
           ]
         },
@@ -922,7 +933,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Acessa o corpo do webhook\nconst body = items[0].json.body || {};\n\n// 1. NORMALIZAÇÃO DE CONTATO (Transforma Assinatura em Venda)\nif (body.subscriber) {\n    body.contact = body.subscriber;\n    // Garante telefones no lugar certo para o higienizador\n    body.contact.phone_local_code = body.subscriber.phone_local_code; \n    body.contact.phone_number = body.subscriber.phone_number;\n}\n\n// 2. NORMALIZAÇÃO DE PRODUTO (CORREÇÃO DO PREÇO)\n// Se não tiver unit_value (padrão Vendas), tenta pegar de offer.value (padrão Assinatura)\nif (body.product) {\n    if (body.product.unit_value === undefined) {\n        // Tenta pegar de offer.value, se não existir, tenta value, se não, 0\n        const offerValue = body.product.offer ? body.product.offer.value : undefined;\n        body.product.unit_value = offerValue !== undefined ? offerValue : (body.product.value || 0);\n    }\n}\n\n// Usa ID da transação se houver, senão usa da assinatura\nconst idTransacao = body.last_transaction ? body.last_transaction.id : body.id;\nbody.id = idTransacao; \n\n// 3. STATUS\nconst status = body.last_status ? body.last_status.toLowerCase() : (body.status || '').toLowerCase();\nlet origem = \"Lista Geral\";\n\nif (status === 'active' || status === 'activated') origem = \"Assinaturas ativas\";\nelse if (status.includes('cancel')) origem = \"Assinaturas canceladas\";\nelse if (status.includes('delay') || status.includes('past_due')) origem = \"Assinaturas em atraso\";\n\nreturn {\n  json: {\n    ...items[0].json,\n    body: body, // Body atualizado com unit_value\n    origem_datacrazy: origem\n  }\n};"
+        "jsCode": "// --- 1. DETECÇÃO DA FONTE (RabbitMQ vs Webhook) ---\nconst json = items[0].json;\nlet body = {};\n\nif (json.content && json.content.body) {\n    // Veio do RabbitMQ (está dentro de content.body)\n    body = json.content.body;\n} else {\n    // Veio do Webhook direto (está na raiz)\n    body = json.body || {};\n}\n\n// --- 2. NORMALIZAÇÃO DE CONTATO (Transforma Assinatura em Venda) ---\nif (body.subscriber) {\n    body.contact = body.subscriber;\n    // Garante telefones no lugar certo para o higienizador\n    body.contact.phone_local_code = body.subscriber.phone_local_code; \n    body.contact.phone_number = body.subscriber.phone_number;\n}\n\n// --- 3. NORMALIZAÇÃO DE PRODUTO (CORREÇÃO DO PREÇO) ---\n// Se não tiver unit_value (padrão Vendas), tenta pegar de offer.value (padrão Assinatura)\nif (body.product) {\n    if (body.product.unit_value === undefined) {\n        // Tenta pegar de offer.value, se não existir, tenta value, se não, 0\n        const offerValue = body.product.offer ? body.product.offer.value : undefined;\n        body.product.unit_value = offerValue !== undefined ? offerValue : (body.product.value || 0);\n    }\n}\n\n// --- 4. AJUSTE DE ID ---\n// Usa ID da transação se houver, senão usa da assinatura\nconst idTransacao = body.last_transaction ? body.last_transaction.id : body.id;\nbody.id = idTransacao; \n\n// --- 5. STATUS ---\nconst status = body.last_status ? body.last_status.toLowerCase() : (body.status || '').toLowerCase();\nlet origem = \"Lista Geral\";\n\nif (status === 'active' || status === 'activated') origem = \"Assinaturas ativas\";\nelse if (status.includes('cancel')) origem = \"Assinaturas canceladas\";\nelse if (status.includes('delay') || status.includes('past_due')) origem = \"Assinaturas em atraso\";\n\n// --- 6. RETORNO FINAL ---\nreturn {\n  json: {\n    ...items[0].json,\n    body: body, // Body atualizado e normalizado\n    origem_datacrazy: origem\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1067,9 +1078,595 @@
           "name": "RabbitMQ account [Weburn]"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "deleteMessage"
+      },
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        4208,
+        -80
+      ],
+      "id": "97fe1fda-a5fc-4476-a5b3-5c0b7c05ed7d",
+      "name": "RabbitMQ (excluir fila)",
+      "credentials": {
+        "rabbitmq": {
+          "id": "XjdqFDDv85zjjG99",
+          "name": "RabbitMQ account [Weburn]"
+        }
+      }
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "RabbitMQ Trigger (vendas)": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-QrusYJVSeio3qtOid60Hzg",
+            "deliveryTag": 1,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "datacrazyvendas"
+          },
+          "properties": {
+            "headers": {}
+          },
+          "content": {
+            "headers": {
+              "host": "webh.weburn.com.br",
+              "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+              "content-length": "4109",
+              "content-type": "application/json",
+              "x-forwarded-for": "35.231.193.84",
+              "x-forwarded-host": "webh.weburn.com.br",
+              "x-forwarded-port": "443",
+              "x-forwarded-proto": "https",
+              "x-forwarded-server": "55a0ea0d2a2a",
+              "x-real-ip": "35.231.193.84",
+              "x-request-id": "a0917633-a94e-4249-87be-c8be18d0806b",
+              "accept-encoding": "gzip"
+            },
+            "params": {},
+            "query": {},
+            "body": {
+              "affiliations": [],
+              "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+              "checkout_url": "https://pagar.protocolobarakat.com.br/subscribe/dr-barakat-ultima-black-friday-ads",
+              "contact": {
+                "id": "a0917605-d510-4701-aaa6-454053aaec46",
+                "name": "Elizabeth Hall",
+                "company_name": "",
+                "email": "jdhandead2001@yahoo.com",
+                "doc": "70567645410",
+                "phone_number": "81986773354",
+                "phone_local_code": "55",
+                "address": "",
+                "address_number": "",
+                "address_comp": "",
+                "address_district": "",
+                "address_city": "",
+                "address_state": "",
+                "address_state_full_name": "",
+                "address_country": "BR",
+                "address_zip_code": "",
+                "lead": []
+              },
+              "contracts": [],
+              "dates": {
+                "canceled_at": null,
+                "confirmed_at": null,
+                "created_at": "2025-12-11T15:15:07Z",
+                "expires_at": null,
+                "ordered_at": "2025-12-11T15:09:02Z",
+                "unavailable_until": null,
+                "updated_at": "2025-12-11T15:15:20Z",
+                "warranty_until": null
+              },
+              "ecommerces": [],
+              "extras": {
+                "accepted_terms_url": 0,
+                "accepted_privacy_policy_url": 0
+              },
+              "id": "a09173d8-2eae-40f8-9fe8-a7fe6e8741ff",
+              "infrastructure": {
+                "city": "ashburn",
+                "city_lat_long": "39.043757,-77.487442",
+                "country": "US",
+                "facebook_browser_id": "fb.2.1765465613762.1267089196",
+                "ga_id": "",
+                "ip": "2600:1003:b106:fb36:881:1a5a:20a4:52e7",
+                "region": "va",
+                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/22H31 Safari/604.1 [FBAN/FBIOS;FBAV/541.1.0.84.76;FBBV/836469077;FBDV/iPhone15,2;FBMD/iPhone;FBSN/iOS;FBSV/18.7.1;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5;FBRV/841603861;IABMV/1]",
+                "host": "pagar.protocolobarakat.com.br"
+              },
+              "invoice": [],
+              "is_order_bump": 0,
+              "is_reissue": 0,
+              "items": [
+                {
+                  "id": "1762372279",
+                  "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a091483c-7922-490a-bc59-812d7fcf503c.png",
+                  "internal_id": "a0496d5f-08f5-439a-9f2c-e77a34e017c4",
+                  "marketplace_id": "1762372279",
+                  "marketplace_name": "pagarme2",
+                  "name": "Dr Barakat | Última Black Friday",
+                  "offer": {
+                    "id": "a0496e2d-a656-4bf0-8bf8-e1a589cf4b89",
+                    "name": "Dr Barakat | Última Black Friday | [ADS]"
+                  },
+                  "producer": {
+                    "contact_email": "suporte@weburn.com.br",
+                    "marketplace_id": "26849805000106",
+                    "name": "Weburn"
+                  },
+                  "qty": 1,
+                  "total_value": 358.8,
+                  "type": "plan",
+                  "unit_value": 358.8
+                }
+              ],
+              "last_transaction": [],
+              "payment": {
+                "affiliate_value": 0,
+                "acquirer": {
+                  "code": "1016",
+                  "message": "Saldo insuficiente",
+                  "name": "pagarme",
+                  "nsu": "4206875098",
+                  "tid": "4206875098"
+                },
+                "can_try_again": 1,
+                "coupon": null,
+                "currency": "BRL",
+                "discount_value": 0,
+                "gross": 358.8,
+                "installments": {
+                  "value": 29.9,
+                  "qty": 12,
+                  "interest": 0
+                },
+                "marketplace_id": "ch_26kpEwR0uvsaOqXg",
+                "marketplace_name": "pagarme2",
+                "marketplace_value": 0,
+                "method": "credit_card",
+                "net": 358.8,
+                "processing_times": {
+                  "started_at": "2025-12-11T15:15:09.936Z",
+                  "finished_at": "2025-12-11T15:15:16.279Z",
+                  "delay_in_seconds": 6
+                },
+                "refund_reason": "",
+                "refuse_reason": "Saldo insuficiente (1016)",
+                "tax": {
+                  "value": 0,
+                  "rate": 0
+                },
+                "total": 358.8,
+                "credit_card": {
+                  "brand": "mastercard",
+                  "expiration_month": "02",
+                  "expiration_year": "2031",
+                  "first_digits": "516292",
+                  "id": "card_V5z6kr4CYEsM9wAX",
+                  "last_digits": "8888"
+                }
+              },
+              "product": {
+                "group": {
+                  "id": "a01b3cb8-ecf6-4cb6-91c6-fe09a1fa6fc7",
+                  "name": "Protocolo Barakat"
+                },
+                "id": "1762372279",
+                "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a091483c-7922-490a-bc59-812d7fcf503c.png",
+                "internal_id": "a0496d5f-08f5-439a-9f2c-e77a34e017c4",
+                "marketplace_id": "1762372279",
+                "marketplace_name": "pagarme2",
+                "name": "Dr Barakat | Última Black Friday",
+                "offer": {
+                  "id": "a0496e2d-a656-4bf0-8bf8-e1a589cf4b89",
+                  "name": "Dr Barakat | Última Black Friday | [ADS]"
+                },
+                "producer": {
+                  "marketplace_id": "26849805000106",
+                  "name": "Weburn",
+                  "contact_email": "suporte@weburn.com.br"
+                },
+                "qty": 1,
+                "total_value": 358.8,
+                "type": "plan",
+                "unit_value": 358.8
+              },
+              "self_attribution": null,
+              "shipment": {
+                "carrier": "",
+                "service": "",
+                "tracking": "",
+                "value": 0,
+                "status": "",
+                "delivery_time": ""
+              },
+              "shipping": {
+                "name": "Standard",
+                "value": 0
+              },
+              "source": {
+                "source": null,
+                "checkout_source": null,
+                "utm_source": null,
+                "utm_campaign": null,
+                "utm_medium": null,
+                "utm_content": null,
+                "utm_term": null,
+                "pptc": []
+              },
+              "status": "canceled",
+              "subscription": [],
+              "type": "producer",
+              "webhook_type": "transaction"
+            },
+            "webhookUrl": "https://webh.weburn.com.br/webhook/f46f3eb9-06b1-4d72-8ff0-1e2de6c08817-vendas",
+            "executionMode": "production"
+          }
+        }
+      }
+    ],
+    "RabbitMQ Trigger (assinantes)": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-ahcn_yljuqO3_q4h3CEDcQ",
+            "deliveryTag": 3,
+            "redelivered": false,
+            "exchange": "",
+            "routingKey": "datacrazyassinantes"
+          },
+          "properties": {
+            "headers": {}
+          },
+          "content": {
+            "headers": {
+              "host": "webh.weburn.com.br",
+              "user-agent": "digitalmanager.guru (dev@digitalmanager.guru)",
+              "content-length": "6809",
+              "content-type": "application/json",
+              "x-forwarded-for": "35.196.31.218",
+              "x-forwarded-host": "webh.weburn.com.br",
+              "x-forwarded-port": "443",
+              "x-forwarded-proto": "https",
+              "x-forwarded-server": "55a0ea0d2a2a",
+              "x-real-ip": "35.196.31.218",
+              "x-request-id": "a0918659-9b4f-4e64-820a-cf16cec9eb57",
+              "accept-encoding": "gzip"
+            },
+            "params": {},
+            "query": {},
+            "body": {
+              "affiliations": null,
+              "api_token": "3yafKWqqSIlnlnPXKdDcW0gXTI3CrWuYI5CN8l3O",
+              "cancel_at_cycle_end": 0,
+              "cancel_reason": "",
+              "cancelled_by": {
+                "name": "",
+                "email": "",
+                "date": ""
+              },
+              "charged_every_days": 3650,
+              "charged_times": 1,
+              "contracts": [],
+              "credit_card": {
+                "bin": "650507",
+                "brand": "elo",
+                "created_at": "2025-12-11T16:00:36Z",
+                "expiration_month": "05",
+                "expiration_year": "2032",
+                "holder_name": "sim elo",
+                "id": "8a6df718-9d79-4942-a77f-987ed3c8a0f5",
+                "last_four": "0642",
+                "marketplace": {
+                  "pagarme2": {
+                    "customer": {
+                      "id": "cus_wq6KbGeh6hxrnrVy"
+                    },
+                    "payment": {
+                      "id": "card_B8LD8wyFxmud4bpz"
+                    }
+                  }
+                },
+                "renewed": 0,
+                "updated_at": "2025-12-11T16:00:36Z"
+              },
+              "current_invoice": {
+                "charge_at": "2025-12-11",
+                "code": "in_9c6ejAaExvUZypJtm",
+                "created_at": 1765468836,
+                "cycle": 1,
+                "days_until_payment": null,
+                "discount_value": 0,
+                "id": "a0918648-be0f-4756-b5f6-5e566f205e51",
+                "increment_value": 0,
+                "paid_at": null,
+                "payment_attempts": null,
+                "payment_url": "https://clkdmg.site/pay/a0918648-be0f-4756-b5f6-5e566f205e51/invoice",
+                "period_end": "2035-12-11",
+                "period_start": "2025-12-11",
+                "status": "paid",
+                "subscription_id": "a0918648-bc41-4714-81a8-f914899ea74e",
+                "tax_value": 0,
+                "transaction_was_reissued": null,
+                "type": "cycle",
+                "updated_at": 1765468836,
+                "value": 358.8
+              },
+              "dates": {
+                "canceled_at": null,
+                "cycle_end_date": "2035-12-11",
+                "cycle_start_date": "2025-12-11",
+                "last_status_at": "2025-12-11T16:00:36Z",
+                "next_cycle_at": "2035-12-12",
+                "started_at": "2025-12-11T16:00:36Z"
+              },
+              "id": "sub_yDNKPmJnObFggwMG",
+              "internal_id": "a0918648-bc41-4714-81a8-f914899ea74e",
+              "last_status": "active",
+              "last_transaction": {
+                "affiliations": [],
+                "checkout_url": "https://pagar.protocolobarakat.com.br/subscribe/dr-barakat-ultima-black-friday-ads",
+                "contact": {
+                  "id": "a09183e2-7605-4f31-8e10-9cb1db54530e",
+                  "name": "Sara Benedett",
+                  "company_name": "",
+                  "email": "benedettsara@gmail.com",
+                  "doc": "46921907015",
+                  "phone_number": "51999845930",
+                  "phone_local_code": "55",
+                  "address": "",
+                  "address_number": "",
+                  "address_comp": "",
+                  "address_district": "",
+                  "address_city": "",
+                  "address_state": "",
+                  "address_state_full_name": "",
+                  "address_country": "BR",
+                  "address_zip_code": "",
+                  "lead": []
+                },
+                "dates": {
+                  "canceled_at": null,
+                  "confirmed_at": null,
+                  "created_at": "2025-12-11T15:53:53Z",
+                  "expires_at": null,
+                  "ordered_at": "2025-12-11T15:53:22Z",
+                  "unavailable_until": null,
+                  "updated_at": "2025-12-11T16:00:36Z",
+                  "warranty_until": null
+                },
+                "ecommerces": [],
+                "extras": {
+                  "accepted_terms_url": 0,
+                  "accepted_privacy_policy_url": 0
+                },
+                "id": "a09183b2-7b84-4776-976e-535bc8703d64",
+                "infrastructure": {
+                  "ip": "191.30.191.237",
+                  "city": "lajeado",
+                  "host": "pagar.protocolobarakat.com.br",
+                  "ga_id": "GA1.1.106610115.1765468244",
+                  "region": "rs",
+                  "country": "BR",
+                  "user_agent": "Mozilla/5.0 (Linux; Android 13; SM-A225M Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/142.0.7444.171 Mobile Safari/537.36 Instagram 408.0.0.51.78 Android (33/13; 300dpi; 720x1452; samsung; SM-A225M; a22; mt6769t; pt_BR; 839812048; IABMV/1)",
+                  "city_lat_long": "-29.460631,-51.967903",
+                  "facebook_browser_id": "fb.2.1765468247115.1009863886"
+                },
+                "invoice": {
+                  "charge_at": "2025-12-11",
+                  "created_at": "2025-12-11T16:00:36Z",
+                  "cycle": 1,
+                  "discount_value": 0,
+                  "id": "in_9c6ejAaExvUZypJtm",
+                  "increment_value": 0,
+                  "period_end": "2035-12-11",
+                  "period_start": "2025-12-11",
+                  "status": "paid",
+                  "tax_value": 0,
+                  "tries": 0,
+                  "try": 0,
+                  "type": "cycle",
+                  "value": 358.8
+                },
+                "payment": {
+                  "affiliate_value": 0,
+                  "acquirer": {
+                    "code": "0000",
+                    "message": "Transação aprovada com sucesso",
+                    "name": "pagarme",
+                    "nsu": "4206919801",
+                    "tid": "4206919801"
+                  },
+                  "can_try_again": 1,
+                  "coupon": null,
+                  "currency": "BRL",
+                  "discount_value": 0,
+                  "gross": 358.8,
+                  "installments": {
+                    "value": 29.9,
+                    "qty": 12,
+                    "interest": 0
+                  },
+                  "marketplace_id": "ch_ebLpdAHZPfwZOmlP",
+                  "marketplace_name": "pagarme2",
+                  "marketplace_value": 0,
+                  "method": "credit_card",
+                  "net": 358.8,
+                  "processing_times": {
+                    "started_at": "2025-12-11T16:00:29.103Z",
+                    "finished_at": "2025-12-11T16:00:32.047Z",
+                    "delay_in_seconds": 2
+                  },
+                  "refund_reason": "",
+                  "refuse_reason": "Transação aprovada com sucesso (0000)",
+                  "tax": {
+                    "value": 0,
+                    "rate": 0
+                  },
+                  "total": 358.8,
+                  "credit_card": {
+                    "brand": "elo",
+                    "expiration_month": "05",
+                    "expiration_year": "2032",
+                    "first_digits": "650507",
+                    "id": "card_B8LD8wyFxmud4bpz",
+                    "last_digits": "0642"
+                  }
+                },
+                "product": {
+                  "group": {
+                    "id": "a01b3cb8-ecf6-4cb6-91c6-fe09a1fa6fc7",
+                    "name": "Protocolo Barakat"
+                  },
+                  "id": "1762372279",
+                  "image_url": "https://storage.googleapis.com/disk.clkdmg.site/clients/9617f218-7d8c-431d-91bf-f43b40bf1bc7/images/products/a091483c-7922-490a-bc59-812d7fcf503c.png",
+                  "internal_id": "a0496d5f-08f5-439a-9f2c-e77a34e017c4",
+                  "marketplace_id": "1762372279",
+                  "marketplace_name": "pagarme2",
+                  "name": "Dr Barakat | Última Black Friday",
+                  "offer": {
+                    "id": "a0496e2d-a656-4bf0-8bf8-e1a589cf4b89",
+                    "name": "Dr Barakat | Última Black Friday | [ADS]"
+                  },
+                  "producer": {
+                    "marketplace_id": "26849805000106",
+                    "name": "Weburn",
+                    "contact_email": "suporte@weburn.com.br"
+                  },
+                  "qty": 1,
+                  "total_value": 358.8,
+                  "type": "plan",
+                  "unit_value": 358.8
+                },
+                "shipment": {
+                  "carrier": "",
+                  "service": "",
+                  "tracking": "",
+                  "value": 0,
+                  "status": "",
+                  "delivery_time": ""
+                },
+                "shipping": {
+                  "name": "Standard",
+                  "value": 0
+                },
+                "source": {
+                  "source": null,
+                  "checkout_source": null,
+                  "utm_source": null,
+                  "utm_campaign": null,
+                  "utm_medium": null,
+                  "utm_content": null,
+                  "utm_term": null,
+                  "pptc": []
+                },
+                "status": "approved",
+                "type": "producer",
+                "self_attribution": null
+              },
+              "name": "Dr Barakat | Última Black Friday",
+              "next_cycle_installments": 12,
+              "next_cycle_value": 358.8,
+              "next_product": {
+                "id": "a0496d5f-08f5-439a-9f2c-e77a34e017c4",
+                "marketplace_id": "1762372279",
+                "marketplace_name": "pagarme2",
+                "name": "Dr Barakat | Última Black Friday",
+                "offer": {
+                  "cash_discount": 0,
+                  "id": "a0496e2d-a656-4bf0-8bf8-e1a589cf4b89",
+                  "name": "Dr Barakat | Última Black Friday | [ADS]",
+                  "plan": {
+                    "cycles": 0,
+                    "discount": {
+                      "value": 0,
+                      "cycles": 0
+                    },
+                    "increment": {
+                      "value": 0,
+                      "cycles": 0
+                    },
+                    "interval": 10,
+                    "interval_type": "year",
+                    "provider": "guru",
+                    "split_cycles": 0,
+                    "trial_days": 0
+                  },
+                  "units_per_sale": 1,
+                  "value": 358.8
+                }
+              },
+              "payment_method": "credit_card",
+              "product": {
+                "group": {
+                  "id": "a01b3cb8-ecf6-4cb6-91c6-fe09a1fa6fc7",
+                  "name": "Protocolo Barakat"
+                },
+                "id": "a0496d5f-08f5-439a-9f2c-e77a34e017c4",
+                "marketplace_id": "1762372279",
+                "marketplace_name": "pagarme2",
+                "name": "Dr Barakat | Última Black Friday",
+                "offer": {
+                  "cash_discount": 0,
+                  "id": "a0496e2d-a656-4bf0-8bf8-e1a589cf4b89",
+                  "name": "Dr Barakat | Última Black Friday | [ADS]",
+                  "plan": {
+                    "cycles": 0,
+                    "discount": {
+                      "value": 0,
+                      "cycles": 0
+                    },
+                    "increment": {
+                      "value": 0,
+                      "cycles": 0
+                    },
+                    "interval": 10,
+                    "interval_type": "year",
+                    "provider": "guru",
+                    "split_cycles": 0,
+                    "trial_days": 0
+                  },
+                  "units_per_sale": 1,
+                  "value": 358.8
+                }
+              },
+              "provider": "guru",
+              "subscriber": {
+                "address": "",
+                "address_city": "",
+                "address_comp": "",
+                "address_country": "BR",
+                "address_district": "",
+                "address_number": "",
+                "address_state": "",
+                "address_zip_code": "",
+                "doc": "46921907015",
+                "email": "benedettsara@gmail.com",
+                "id": "a09183e2-7605-4f31-8e10-9cb1db54530e",
+                "name": "Sara Benedett",
+                "phone_local_code": "55",
+                "phone_number": "51999845930"
+              },
+              "subscription_code": "sub_yDNKPmJnObFggwMG",
+              "trial_days": 0,
+              "trial_finished_at": null,
+              "trial_started_at": null,
+              "webhook_type": "subscription"
+            },
+            "webhookUrl": "https://webh.weburn.com.br/webhook/e1d46e27-6199-4dbe-8df3-20c85f3c2daa-assinantes",
+            "executionMode": "production"
+          }
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
@@ -1085,6 +1682,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-12-11T14:49:42.550Z",
-  "versionId": "d3f2c1f1-00e8-4959-a7bf-8562a15921b8"
+  "updatedAt": "2025-12-11T16:31:35.595Z",
+  "versionId": "7fa6e884-d069-4686-b63d-233965663a32"
 }

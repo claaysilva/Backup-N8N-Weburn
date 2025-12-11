@@ -135,47 +135,40 @@
         ]
       ]
     },
-    "Buscar Tag1": {
+    "Sorteador Atendentes": {
       "main": [
         [
           {
-            "node": "Tag Existe?1",
+            "node": "Buscar Tag",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Tag Existe?1": {
+    "Buscar Tag": {
       "main": [
         [
           {
-            "node": "Seleciona Tag1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Criar Tag1",
+            "node": "Tag Existe?",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Criar Tag1": {
+    "Criar Tag": {
       "main": [
         [
           {
-            "node": "Seleciona Tag1",
+            "node": "Seleciona Tag",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Seleciona Tag1": {
+    "Seleciona Tag": {
       "main": [
         [
           {
@@ -186,11 +179,18 @@
         ]
       ]
     },
-    "Sorteador Atendentes": {
+    "Tag Existe?": {
       "main": [
         [
           {
-            "node": "Buscar Tag1",
+            "node": "Seleciona Tag",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Criar Tag",
             "type": "main",
             "index": 0
           }
@@ -253,7 +253,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag1').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -280,7 +280,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag1').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
+        "jsonBody": "={\n  \"name\": \"{{ $('Config IDs').item.json.dc_name }}\",\n  \"email\": \"{{ $('Config IDs').item.json.dc_email }}\",\n  \"phone\": \"{{ $('Config IDs').item.json.dc_phone }}\",\n  \"source\": \"{{ $('Config IDs').item.json.dc_source }}\",\n  \"address\": {\n    \"zip\": \"\",\n    \"address\": \"\",\n    \"block\": \"\",\n    \"city\": \"\",\n    \"state\": \"\",\n    \"country\": \"BR\"\n  },\n  \"tags\": [\n      {\n        \"id\": [\n          \"{{ $('Seleciona Tag').item.json.tag_id }}\"\n        ]\n      }\n    ]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -301,7 +301,7 @@
           "parameters": [
             {
               "name": "search",
-              "value": "={{ $('Config IDs').item.json.email_busca }}"
+              "value": "={{ $('Config IDs').item.json.dc_email }}"
             }
           ]
         },
@@ -363,7 +363,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// --- 1. CONFIGURAÇÃO DOS IDs DO DATACRAZY ---\n// Defina aqui o ID da etapa onde os Leads do Popup devem cair\nconst stageIdPopup = \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"; // ID da etapa \"PopUp\"\n\n// --- 2. CAPTURA DOS DADOS DO WEBHOOK ---\nconst body = items[0].json.body || {};\n\n// Captura segura dos campos do formulário\n// O formulário manda \"Nome\", \"E-mail\" e \"Telefone\" (com maiúscula)\nconst nome = body.Nome || \"\";\nconst email = body[\"E-mail\"] || \"\"; // Nota: Precisa de aspas/colchetes por causa do hífen\nconst rawPhone = body.Telefone || \"\";\nconst formName = body.form_name || \"Formulário Site\";\n\n// --- 3. TRATAMENTO INTELIGENTE DE TELEFONE ---\n// Remove tudo que não é número (tira parênteses, traços, espaços)\nlet phoneClean = rawPhone.replace(/\\D/g, '');\n\n// CORREÇÕES PARA BRASIL:\n// Se tiver 10 ou 11 dígitos, assume que é BR e adiciona o DDI 55\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\n// Se duplicou o 55 (ex: 555545...), corrige\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); \n}\n// Formato final E.164\nconst finalPhone = \"+\" + phoneClean;\n\n\n// --- 4. RETORNO FINAL PARA OS PRÓXIMOS NÓS ---\nreturn {\n  json: {\n    // Mantém os dados originais se precisar\n    ...items[0].json,\n    \n    // Dados Tratados para o DataCrazy\n    dc_name: nome,\n    dc_email: email,\n    dc_phone: finalPhone,\n    dc_stage_id: stageIdPopup,\n    dc_source: formName,\n    \n    // Variável útil para o \"Buscar Lead\" (busca por e-mail)\n    email_busca: email\n  }\n};"
+        "jsCode": "// --- 1. CONFIGURAÇÕES GERAIS ---\nconst stageIdPopup = \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"; // ID da etapa PopUp\n\n// Acessa o corpo do webhook\nconst body = items[0].json.body || {};\n\n// Variáveis de saída padronizadas\nlet nome = \"\";\nlet email = \"\";\nlet rawPhone = \"\";\nlet source = \"Desconhecido\";\nlet tagName = \"\"; // Nome da tag para buscar/criar depois\n\n// --- 2. DETECÇÃO DA ORIGEM E EXTRAÇÃO ---\n\n// CASO A: ActiveCampaign (identificado por chaves como 'contact[email]')\nif (body[\"contact[email]\"]) {\n    const firstName = body[\"contact[first_name]\"] || \"\";\n    const lastName = body[\"contact[last_name]\"] || \"\";\n    \n    nome = (firstName + \" \" + lastName).trim();\n    email = body[\"contact[email]\"];\n    rawPhone = body[\"contact[phone]\"] || \"\";\n    source = \"ActiveCampaign\"; \n    // No AC, a tag vem no campo 'contact[tags]'\n    tagName = body[\"contact[tags]\"] || \"\";\n}\n\n// CASO B: Elementor / WordPress (identificado por 'form_name' ou 'E-mail')\nelse if (body[\"E-mail\"] || body.form_name) {\n    nome = body.Nome || \"\";\n    email = body[\"E-mail\"] || \"\"; // Atenção ao hífen\n    rawPhone = body.Telefone || \"\";\n    source = body.form_name || \"\";\n    // No Elementor, usamos o nome do formulário como Tag\n    tagName = body.form_name || \"\";\n}\n\n// CASO C: Fallback (se vier de outro lugar)\nelse {\n    nome = body.name || body.Nome || \"\";\n    email = body.email || body.Email || \"\";\n    rawPhone = body.phone || body.Telefone || \"\";\n    source = \"Webhook Genérico\";\n    tagName = \"\";\n}\n\n// --- 3. TRATAMENTO DE TELEFONE (Igual para todos) ---\nlet phoneClean = rawPhone.replace(/\\D/g, ''); // Remove não-números\n\n// Correções Brasil\nif (phoneClean.length === 10 || phoneClean.length === 11) {\n    phoneClean = \"55\" + phoneClean;\n}\nif (phoneClean.startsWith(\"5555\") && phoneClean.length > 12) {\n    phoneClean = phoneClean.substring(2); \n}\nconst finalPhone = \"+\" + phoneClean;\n\n\n// --- 4. RETORNO PADRONIZADO ---\n// Agora o resto do seu fluxo só precisa olhar para \"dc_...\"\nreturn {\n  json: {\n    // Mantém dados originais para debug\n    ...items[0].json,\n    \n    // NOSSAS VARIÁVEIS LIMPAS\n    dc_name: nome,\n    dc_email: email,\n    dc_phone: finalPhone,\n    dc_source: source,\n    dc_tag_name: tagName, // Use essa variável no nó \"Buscar Tag\"\n    dc_stage_id: stageIdPopup\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -516,13 +516,26 @@
     },
     {
       "parameters": {
+        "jsCode": "// --- 1. REGRAS FIXAS (100% PARA MATHEUS) ---\n// Coloque aqui partes do nome do formulário. \n// O código vai procurar se o \"form_name\" CONTÉM alguma dessas palavras.\nconst regrasMatheus = [\n    \"muzy\", \n    \"weburn\",\n    \"bárbara\",\n    \"mecabo\" // Adicionei um exemplo, pode remover se quiser\n];\n\nconst idMatheus = \"e718891f-d45e-4b9f-9411-fe123a9eb238\"; \n\n// --- 2. EQUIPE DO SORTEIO (RESTO) ---\nconst equipeRoleta = [\n    { \n        name: \"Jacira\", \n        id: \"fd0d06b4-ef33-438e-826b-c27f1ee8131a\", \n        peso: 33 \n    },\n    { \n        name: \"Erika\", \n        id: \"ffa0859f-3300-4cd0-9e2d-997e2951f34e\", \n        peso: 33 \n    },\n    { \n        name: \"Ester Rosa\", \n        id: \"86ef09b7-d185-4d3a-940b-6c501dbf9bd6\", \n        peso: 33 \n    }\n];\n\n// --- 3. LÓGICA DE DECISÃO ---\n\n// Pega o corpo dos dados que veio do Config IDs\nconst body = $('Config IDs').item.json.body || {};\n\n// Pega o Nome do Formulário (ou form_id se preferir) e converte para minúsculo\n// Se não tiver form_name, usa string vazia para não dar erro\nconst tagParaVerificar = (body.form_name || body.form_id || \"\").toLowerCase();\n\nlet escolhido = null;\n\n// Verifica: O nome do formulário contém alguma palavra do Matheus?\nconst ehDoMatheus = regrasMatheus.some(palavra => tagParaVerificar.includes(palavra));\n\nif (ehDoMatheus) {\n    // CASO 1: É do Matheus (ex: \"Weburn - Cyber Week\")\n    escolhido = { \n        name: \"Matheus Donha\", \n        id: idMatheus,\n        tipo: \"Regra Fixa (\" + tagParaVerificar + \")\"\n    };\n} else {\n    // CASO 2: Não é do Matheus, roda a roleta\n    const totalPeso = equipeRoleta.reduce((sum, a) => sum + a.peso, 0);\n    let numeroSorteado = Math.random() * totalPeso;\n\n    for (const atendente of equipeRoleta) {\n        if (numeroSorteado < atendente.peso) {\n            escolhido = atendente;\n            break;\n        }\n        numeroSorteado -= atendente.peso;\n    }\n    if (!escolhido) escolhido = equipeRoleta[0];\n    escolhido.tipo = \"Sorteio\";\n}\n\n// --- RETORNO ---\nreturn {\n    json: {\n        ...items[0].json, \n        atendente: {\n            id: escolhido.id,\n            nome: escolhido.name,\n            motivo: escolhido.tipo\n        }\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -704,
+        544
+      ],
+      "id": "44568fc7-2687-4647-89e3-2de4b42f5797",
+      "name": "Sorteador Atendentes"
+    },
+    {
+      "parameters": {
         "url": "https://api.g1.datacrazy.io/api/v1/tags",
         "sendQuery": true,
         "queryParameters": {
           "parameters": [
             {
               "name": "search",
-              "value": "={{ $('Config IDs').item.json.dc_source }}"
+              "value": "={{ $('Config IDs').item.json.dc_tag_name }}"
             }
           ]
         },
@@ -544,41 +557,8 @@
         528
       ],
       "id": "8930214e-011f-4742-94f2-81f675e91637",
-      "name": "Buscar Tag1",
+      "name": "Buscar Tag",
       "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
-              "leftValue": "={{ $json.count }}",
-              "rightValue": 0,
-              "operator": {
-                "type": "number",
-                "operation": "gt"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        -240,
-        528
-      ],
-      "id": "15f5968a-f441-47ee-b951-b602a69b974b",
-      "name": "Tag Existe?1"
     },
     {
       "parameters": {
@@ -615,7 +595,7 @@
         608
       ],
       "id": "4349b30c-7937-44e5-aa21-801178474574",
-      "name": "Criar Tag1"
+      "name": "Criar Tag"
     },
     {
       "parameters": {
@@ -628,20 +608,40 @@
         528
       ],
       "id": "6c215df8-4204-4344-ba22-93df5c89e2b2",
-      "name": "Seleciona Tag1"
+      "name": "Seleciona Tag"
     },
     {
       "parameters": {
-        "jsCode": "// --- 1. REGRAS FIXAS (100% PARA MATHEUS) ---\n// Coloque aqui partes do nome do formulário. \n// O código vai procurar se o \"form_name\" CONTÉM alguma dessas palavras.\nconst regrasMatheus = [\n    \"muzy\", \n    \"weburn\", \n    \"mecabo\" // Adicionei um exemplo, pode remover se quiser\n];\n\nconst idMatheus = \"e718891f-d45e-4b9f-9411-fe123a9eb238\"; \n\n// --- 2. EQUIPE DO SORTEIO (RESTO) ---\nconst equipeRoleta = [\n    { \n        name: \"Jacira\", \n        id: \"fd0d06b4-ef33-438e-826b-c27f1ee8131a\", \n        peso: 33 \n    },\n    { \n        name: \"Erika\", \n        id: \"ffa0859f-3300-4cd0-9e2d-997e2951f34e\", \n        peso: 33 \n    },\n    { \n        name: \"Ester Rosa\", \n        id: \"86ef09b7-d185-4d3a-940b-6c501dbf9bd6\", \n        peso: 33 \n    }\n];\n\n// --- 3. LÓGICA DE DECISÃO ---\n\n// Pega o corpo dos dados que veio do Config IDs\nconst body = $('Config IDs').item.json.body || {};\n\n// Pega o Nome do Formulário (ou form_id se preferir) e converte para minúsculo\n// Se não tiver form_name, usa string vazia para não dar erro\nconst tagParaVerificar = (body.form_name || body.form_id || \"\").toLowerCase();\n\nlet escolhido = null;\n\n// Verifica: O nome do formulário contém alguma palavra do Matheus?\nconst ehDoMatheus = regrasMatheus.some(palavra => tagParaVerificar.includes(palavra));\n\nif (ehDoMatheus) {\n    // CASO 1: É do Matheus (ex: \"Weburn - Cyber Week\")\n    escolhido = { \n        name: \"Matheus Donha\", \n        id: idMatheus,\n        tipo: \"Regra Fixa (\" + tagParaVerificar + \")\"\n    };\n} else {\n    // CASO 2: Não é do Matheus, roda a roleta\n    const totalPeso = equipeRoleta.reduce((sum, a) => sum + a.peso, 0);\n    let numeroSorteado = Math.random() * totalPeso;\n\n    for (const atendente of equipeRoleta) {\n        if (numeroSorteado < atendente.peso) {\n            escolhido = atendente;\n            break;\n        }\n        numeroSorteado -= atendente.peso;\n    }\n    if (!escolhido) escolhido = equipeRoleta[0];\n    escolhido.tipo = \"Sorteio\";\n}\n\n// --- RETORNO ---\nreturn {\n    json: {\n        ...items[0].json, \n        atendente: {\n            id: escolhido.id,\n            nome: escolhido.name,\n            motivo: escolhido.tipo\n        }\n    }\n};"
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b015e82f-26dd-4bb7-a007-5f026390a999",
+              "leftValue": "={{ $json.count }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
       },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
       "position": [
-        -704,
-        544
+        -240,
+        528
       ],
-      "id": "44568fc7-2687-4647-89e3-2de4b42f5797",
-      "name": "Sorteador Atendentes"
+      "id": "15f5968a-f441-47ee-b951-b602a69b974b",
+      "name": "Tag Existe?"
     }
   ],
   "pinData": {
@@ -650,36 +650,37 @@
         "json": {
           "headers": {
             "host": "webh.weburn.com.br",
-            "user-agent": "WordPress/6.9; https://weburn.com.br",
-            "content-length": "219",
-            "accept": "*/*",
-            "accept-encoding": "deflate, gzip, br, zstd",
+            "user-agent": "GuzzleHttp/7",
+            "content-length": "639",
             "content-type": "application/x-www-form-urlencoded",
-            "x-forwarded-for": "195.35.19.59",
+            "x-forwarded-for": "23.22.14.42",
             "x-forwarded-host": "webh.weburn.com.br",
             "x-forwarded-port": "443",
             "x-forwarded-proto": "https",
             "x-forwarded-server": "55a0ea0d2a2a",
-            "x-real-ip": "195.35.19.59"
+            "x-real-ip": "23.22.14.42",
+            "accept-encoding": "gzip"
           },
           "params": {},
           "query": {},
           "body": {
-            "Nome": "Clayton teste datacrazy",
-            "E-mail": "clayton@weburn.com.br",
-            "Telefone": "(38) 99862-6001",
-            "utm_source": "",
-            "utm_content": "",
-            "utm_term": "",
-            "utm_medium": "",
-            "utm_campaign": "",
-            "src": "",
-            "cross": "",
-            "utm_hidden": "",
-            "form_id": "a56b2bc",
-            "form_name": "Weburn - Cyber Week"
+            "contact[id]": "2083521",
+            "contact[email]": "caufilhos02@gmail.com",
+            "contact[first_name]": "Claudia Araújo silva nunes",
+            "contact[last_name]": "",
+            "contact[phone]": "(81) 99227-6757",
+            "contact[orgname]": "",
+            "contact[customer_acct_name]": "",
+            "contact[tags]": "Barakat - Black Friday",
+            "contact[ip4]": "0.0.0.0",
+            "contact[fields][utm_campaign_1]": "[ZMT][DB][UBF][CBO] 1-3-3",
+            "contact[fields][utm_content_1]": "[NOV25][DB][UBF] [VIDEO] AD 13",
+            "contact[fields][utm_medium_1]": "INTERESSE 02 DB",
+            "contact[fields][utm_source_1]": "DBCA",
+            "contact[fields][utm_term_1]": "120236201320370726",
+            "seriesid": "532"
           },
-          "webhookUrl": "https://webh.weburn.com.br/webhook/bdbca672-b938-41cd-b356-7db5b00b6d53",
+          "webhookUrl": "https://webh.weburn.com.br/webhook/64b3ab42-f04b-4700-a6aa-7e01bb09d8d7",
           "executionMode": "production"
         }
       }
@@ -700,6 +701,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-09T17:24:01.163Z",
-  "versionId": "b82a7e28-b4b1-4e82-8c1e-e6ba1b575a75"
+  "updatedAt": "2025-12-11T20:46:07.370Z",
+  "versionId": "a9ffba3d-6354-4035-9cdc-da5c40c7a077"
 }

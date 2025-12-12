@@ -2013,7 +2013,7 @@
                   {
                     "id": "47f6e63c-dff6-4574-8c64-0c51792d2786",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Muzy - Black Friday",
+                    "rightValue": "Muzy - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2133,7 +2133,7 @@
                   {
                     "id": "48c03bd2-2964-44f6-a17e-3991af226a07",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Sérgio - Black Friday",
+                    "rightValue": "Sérgio - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2181,7 +2181,7 @@
                   {
                     "id": "22e45490-f66f-406e-b7a6-a5780be13883",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Mecabo - Black Friday",
+                    "rightValue": "Mecabo - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2205,7 +2205,7 @@
                   {
                     "id": "0d19548d-f381-4d94-8f37-5a4a393a0987",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Camila Padilha - Black Friday",
+                    "rightValue": "Camila Padilha - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2229,7 +2229,7 @@
                   {
                     "id": "b5339752-714c-4e0e-ad86-26f6e4a7ce73",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Thiago Pugliesi - Black Friday",
+                    "rightValue": "Thiago Pugliesi - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2301,7 +2301,7 @@
                   {
                     "id": "61fc3009-564c-45f5-9cba-c58674cc6406",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Angélica - Black Friday",
+                    "rightValue": "Angélica - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2325,7 +2325,7 @@
                   {
                     "id": "21cf4a7c-7fa7-4c49-a704-b23a3ef34155",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Q48 - Black Friday",
+                    "rightValue": "Q48 - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2373,7 +2373,7 @@
                   {
                     "id": "0c0cfd9b-71ca-4c6e-a509-f6b0b7f994e1",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Thalita - Black Friday",
+                    "rightValue": "Thalita - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2397,7 +2397,7 @@
                   {
                     "id": "d2eee3cd-5237-4fc1-a773-73bca89ae79e",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Lucas - Black Friday",
+                    "rightValue": "Lucas - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -2421,7 +2421,7 @@
                   {
                     "id": "7601ffcb-42b6-4413-b8f0-ec3a7c45fc42",
                     "leftValue": "={{ $json.body['contact[tags]'] }}",
-                    "rightValue": "Camila Sachs - Black Friday",
+                    "rightValue": "Camila Sachs - Projeto Virada",
                     "operator": {
                       "type": "string",
                       "operation": "contains"
@@ -8225,6 +8225,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-11T19:30:35.281Z",
-  "versionId": "f1471f00-d5ba-4b47-9deb-96734961a6a8"
+  "updatedAt": "2025-12-12T18:01:57.528Z",
+  "versionId": "25bb2848-7cb8-44f0-99e4-e7054f292c13"
 }

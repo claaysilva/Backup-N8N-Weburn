@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Listar Pipelines",
             "type": "main",
             "index": 0
           }
@@ -48,14 +48,159 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
-    "Buscar Negocio na base": {
+    "Replace Me": {
       "main": [
         [
           {
+            "node": "Loop Pipelines",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Pipelines": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Listar Estagios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Listar Estagios": {
+      "main": [
+        [
+          {
+            "node": "Filtrar Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar Base": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Preparar Busca",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar Itens": {
+      "main": [
+        [
+          {
+            "node": "Loop Pipelines",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Busca": {
+      "main": [
+        [
+          {
+            "node": "Buscar Leads Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar Leads1": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Leads Base": {
+      "main": [
+        [
+          {
+            "node": "Separar Leads1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negócios Base": {
+      "main": [
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Buscar Negócios Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
             "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Listar Pipelines": {
+      "main": [
+        [
+          {
+            "node": "Separar Itens",
             "type": "main",
             "index": 0
           }
@@ -74,8 +219,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1152,
-        -128
+        -1744,
+        816
       ],
       "id": "c5213784-e5fe-4688-8392-f727716b4bf4",
       "name": "When clicking ‘Execute workflow’"
@@ -94,11 +239,11 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "",
+                    "leftValue": "={{ $json.source }}",
                     "rightValue": "Base",
                     "operator": {
                       "type": "string",
-                      "operation": "equals"
+                      "operation": "contains"
                     },
                     "id": "9b525634-0258-45c0-a703-9f19c08d400d"
                   }
@@ -119,12 +264,11 @@
                 "conditions": [
                   {
                     "id": "d32273c7-98ae-4540-bdc8-ec89028ad838",
-                    "leftValue": "",
+                    "leftValue": "={{ $json.source }}",
                     "rightValue": "Prospecção",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "contains"
                     }
                   }
                 ],
@@ -144,12 +288,11 @@
                 "conditions": [
                   {
                     "id": "27682f43-a955-4ebc-a2ea-1e8fb8328ab9",
-                    "leftValue": "",
+                    "leftValue": "={{ $json.source }}",
                     "rightValue": "Conexão",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "contains"
                     }
                   }
                 ],
@@ -169,12 +312,11 @@
                 "conditions": [
                   {
                     "id": "c77bd662-6091-4158-b0a0-50e9434fe657",
-                    "leftValue": "",
+                    "leftValue": "={{ $json.source }}",
                     "rightValue": "Aguardando compra",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "contains"
                     }
                   }
                 ],
@@ -194,12 +336,11 @@
                 "conditions": [
                   {
                     "id": "be5e4c49-39f4-4375-84aa-7ca943e868b3",
-                    "leftValue": "",
+                    "leftValue": "={{ $json.source }}",
                     "rightValue": "Fechado",
                     "operator": {
                       "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
+                      "operation": "contains"
                     }
                   }
                 ],
@@ -210,13 +351,15 @@
             }
           ]
         },
-        "options": {}
+        "options": {
+          "fallbackOutput": "extra"
+        }
       },
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.3,
       "position": [
-        -288,
-        -96
+        1392,
+        752
       ],
       "id": "bb1b9e5d-c5cb-4a30-ba83-8ab7ce117d0d",
       "name": "Switch"
@@ -224,7 +367,7 @@
     {
       "parameters": {
         "method": "PATCH",
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -236,14 +379,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"stageId\": \"4a9d9a69-1f0c-4eb5-9d6b-ff70afd48539\"\n}",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Aguardando compra'] }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        144
+        1616,
+        1008
       ],
       "id": "974231fd-254c-4b2d-8e2a-f8ee8635ae61",
       "name": "Mover Aguardando compra"
@@ -251,7 +394,7 @@
     {
       "parameters": {
         "method": "PATCH",
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $json.id }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -263,14 +406,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"stageId\": \"f42869ac-1068-4f65-9a20-0b2e618326c9\"\n}",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Fechado'] }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        336
+        1616,
+        1200
       ],
       "id": "b263dc1b-6c01-49a5-8fc5-97349b85f43d",
       "name": "Mover Fechado"
@@ -278,7 +421,7 @@
     {
       "parameters": {
         "method": "PATCH",
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -290,14 +433,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"stageId\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"\n}",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Base'] }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        -400
+        1616,
+        432
       ],
       "id": "3b536eee-dbb9-476e-9f07-fb1207fd1978",
       "name": "Mover Base"
@@ -305,7 +448,7 @@
     {
       "parameters": {
         "method": "PATCH",
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -317,14 +460,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"stageId\": \"c2af360a-2fcc-42ad-9253-ac51a5bea7df\"\n}",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Prospecção'] }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        -208
+        1616,
+        624
       ],
       "id": "f6293990-5188-4981-a89c-4f95c066a265",
       "name": "Mover Prospecção"
@@ -332,7 +475,7 @@
     {
       "parameters": {
         "method": "PATCH",
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -344,28 +487,49 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"stageId\": \"3778f604-bb25-4836-9e24-a80e5f230954\"\n}",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Conexão'] }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        32,
-        -48
+        1616,
+        816
       ],
       "id": "0fc304e6-01cd-409c-95f1-17a22e7ae1cf",
       "name": "Mover Conexão"
     },
     {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        496,
+        816
+      ],
+      "id": "c67b6113-fa02-4aa0-b50b-dee2ba251191"
+    },
+    {
       "parameters": {
-        "url": "=https://api.g1.datacrazy.io/api/v1/businesses",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1072,
+        816
+      ],
+      "id": "8a33b1b2-d6e5-4243-886e-6166e4fe6f5d",
+      "name": "Loop Pipelines"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/pipelines/{{ $('Loop Pipelines').item.json.id }}/stages",
         "sendQuery": true,
         "queryParameters": {
           "parameters": [
-            {
-              "name": "stageId",
-              "value": "a04bd120-b40e-4fde-bbe1-e4731a4bd19c"
-            }
+            {}
           ]
         },
         "sendHeaders": true,
@@ -385,11 +549,200 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        -608,
-        32
+        -848,
+        744
       ],
-      "id": "b7a73e54-b97a-4dd3-b279-0b04129ef58c",
-      "name": "Buscar Negocio na base"
+      "id": "45760a61-bf12-42f1-a982-b890a73d212b",
+      "name": "Listar Estagios"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa a lista de estágios retornada\nconst estagios = items[0].json.data || [];\n\n// Cria um objeto para guardar os IDs: { \"Base\": \"id_123\", \"Conexão\": \"id_456\" }\nconst mapaEstagios = {};\n\nestagios.forEach(estagio => {\n    mapaEstagios[estagio.name] = estagio.id;\n});\n\n// Verifica se achou a etapa Base (obrigatória para a busca)\nif (mapaEstagios[\"Base\"]) {\n    return {\n        json: {\n            pipelineName: $('Loop Pipelines').item.json.name,\n            stageIdBase: mapaEstagios[\"Base\"], // Para a busca\n            mapaEtapas: mapaEstagios, // <--- O MAPA COMPLETO AQUI\n            encontrou: true\n        }\n    };\n} else {\n    return { json: { encontrou: false } };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -624,
+        744
+      ],
+      "id": "720a4005-c086-4f2a-b094-aed57224b6fb",
+      "name": "Filtrar Base"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "702aa4e1-4c9c-4d42-8eab-b450db51f533",
+              "leftValue": "={{ $json.encontrou }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -400,
+        744
+      ],
+      "id": "f0627d55-5a8d-4c5a-ad76-aa6b9d6c1afa",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Verifica se o nó anterior retornou dados e se existe a propriedade 'data'\nconst dados = items[0].json;\n\nif (dados && Array.isArray(dados.data)) {\n    // A MÁGICA: Transforma o array 'data' em itens individuais do n8n\n    return dados.data.map(pipeline => {\n        return {\n            json: pipeline\n        };\n    });\n} else {\n    // Se não tiver dados, retorna vazio para não dar erro\n    return [];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1296,
+        816
+      ],
+      "id": "1cb73268-35e5-4014-8f18-343c5807d6d3",
+      "name": "Separar Itens"
+    },
+    {
+      "parameters": {
+        "jsCode": "const stageId = $('Filtrar Base').item.json.stageIdBase;\nconst pipelineName = $('Filtrar Base').item.json.pipelineName;\nconst tamanhoPagina = 1000;\n\n// Cria as requisições para as páginas 0, 1 e 2\nconst paginas = [0, 1, 2]; \n\nreturn paginas.map(pagina => {\n    const skip = pagina * tamanhoPagina;\n    return {\n        json: {\n            // URL CORRIGIDA: Voltamos para /api/v1/businesses\n            // E usamos o filtro que funcionou no seu Curl 3, mas adaptado\n            url: `https://api.g1.datacrazy.io/api/v1/leads?filter[stages]=some%20${stageId}&take=${tamanhoPagina}&skip=${skip}`,\n            pipeline: pipelineName\n        }\n    };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -176,
+        744
+      ],
+      "id": "95f253eb-354f-45df-8273-5ceee37fb7bc",
+      "name": "Preparar Busca"
+    },
+    {
+      "parameters": {
+        "jsCode": "let listaCompleta = [];\n\n// 1. Resgatar o Mapa de Etapas do nó anterior\nconst mapaEtapas = $('Filtrar Base').item.json.mapaEtapas;\nconst pipelineNome = $('Filtrar Base').item.json.pipelineName;\n\n// 2. Juntar os dados das páginas\nfor (const pagina of items) {\n    const dados = pagina.json;\n    if (dados && Array.isArray(dados.data)) {\n        listaCompleta.push(...dados.data);\n    }\n}\n\n// 3. Retornar os leads com o Mapa de IDs embutido\nreturn listaCompleta.map(lead => {\n    return {\n        json: {\n            ...lead,\n            _contexto: { \n                pipeline: pipelineNome,\n                idsEtapas: mapaEtapas // Agora o lead carrega os IDs certos dessa pipeline!\n            }\n        }\n    };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        272,
+        744
+      ],
+      "id": "1b718880-9d92-4316-b2ca-3dea8ced6558",
+      "name": "Separar Leads1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        48,
+        744
+      ],
+      "id": "7c4ff551-b949-422e-9b08-9ace334ce8e5",
+      "name": "Buscar Leads Base",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}/businesses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        944,
+        744
+      ],
+      "id": "c323d33c-187d-4131-90d2-bd06f3b73696",
+      "name": "Buscar Negócios Base",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        720,
+        816
+      ],
+      "id": "8071ee19-a57f-4551-95b4-e90d9d90ef9f",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        816
+      ],
+      "id": "4e8ef9e8-e492-4edc-a87c-31a285b9fc7f"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/pipelines",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -1520,
+        816
+      ],
+      "id": "9ba87452-350b-4215-888a-182c5e54ac5a",
+      "name": "Listar Pipelines"
     }
   ],
   "pinData": {},
@@ -408,6 +761,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-12-12T14:55:25.915Z",
-  "versionId": "440857f0-5824-49bb-b7a8-4caa49862ff5"
+  "updatedAt": "2025-12-12T20:49:34.827Z",
+  "versionId": "35aa3f94-5d2f-447b-8cff-6270dccf5a1d"
 }

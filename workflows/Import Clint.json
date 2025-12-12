@@ -1,0 +1,413 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Mover Base",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Prospecção",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Conexão",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Aguardando compra",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Fechado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negocio na base": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-12T13:58:37.614Z",
+  "id": "kUZijs1o16XLQGYn",
+  "isArchived": false,
+  "meta": null,
+  "name": "Import Clint",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        -128
+      ],
+      "id": "c5213784-e5fe-4688-8392-f727716b4bf4",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "Base",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9b525634-0258-45c0-a703-9f19c08d400d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Base"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d32273c7-98ae-4540-bdc8-ec89028ad838",
+                    "leftValue": "",
+                    "rightValue": "Prospecção",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Prospecção"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "27682f43-a955-4ebc-a2ea-1e8fb8328ab9",
+                    "leftValue": "",
+                    "rightValue": "Conexão",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Conexão"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c77bd662-6091-4158-b0a0-50e9434fe657",
+                    "leftValue": "",
+                    "rightValue": "Aguardando compra",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Aguardando compra"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "be5e4c49-39f4-4375-84aa-7ca943e868b3",
+                    "leftValue": "",
+                    "rightValue": "Fechado",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Fechado"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -288,
+        -96
+      ],
+      "id": "bb1b9e5d-c5cb-4a30-ba83-8ab7ce117d0d",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"4a9d9a69-1f0c-4eb5-9d6b-ff70afd48539\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        144
+      ],
+      "id": "974231fd-254c-4b2d-8e2a-f8ee8635ae61",
+      "name": "Mover Aguardando compra"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"f42869ac-1068-4f65-9a20-0b2e618326c9\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        336
+      ],
+      "id": "b263dc1b-6c01-49a5-8fc5-97349b85f43d",
+      "name": "Mover Fechado"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        -400
+      ],
+      "id": "3b536eee-dbb9-476e-9f07-fb1207fd1978",
+      "name": "Mover Base"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"c2af360a-2fcc-42ad-9253-ac51a5bea7df\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        -208
+      ],
+      "id": "f6293990-5188-4981-a89c-4f95c066a265",
+      "name": "Mover Prospecção"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $('Verificar Duplicidade').item.json.existingBusinessId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"3778f604-bb25-4836-9e24-a80e5f230954\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        -48
+      ],
+      "id": "0fc304e6-01cd-409c-95f1-17a22e7ae1cf",
+      "name": "Mover Conexão"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "stageId",
+              "value": "a04bd120-b40e-4fde-bbe1-e4731a4bd19c"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -608,
+        32
+      ],
+      "id": "b7a73e54-b97a-4dd3-b279-0b04129ef58c",
+      "name": "Buscar Negocio na base"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-12T13:58:37.614Z",
+      "createdAt": "2025-12-12T13:58:37.614Z",
+      "role": "workflow:owner",
+      "workflowId": "kUZijs1o16XLQGYn",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-12T14:55:25.915Z",
+  "versionId": "440857f0-5824-49bb-b7a8-4caa49862ff5"
+}

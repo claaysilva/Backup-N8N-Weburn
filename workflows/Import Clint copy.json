@@ -1,0 +1,617 @@
+{
+  "active": false,
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Mover Base",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Prospecção",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Conexão",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Aguardando compra",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mover Fechado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Listar Estagios": {
+      "main": [
+        [
+          {
+            "node": "Filtrar Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar Base": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Preparar Busca",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Busca": {
+      "main": [
+        [
+          {
+            "node": "Buscar Leads Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar Leads1": {
+      "main": [
+        [
+          {
+            "node": "Buscar Negócios Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Leads Base": {
+      "main": [
+        [
+          {
+            "node": "Separar Leads1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Negócios Base": {
+      "main": [
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Listar Estagios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-12-12T20:49:40.180Z",
+  "id": "jn2uVhhNZTlIRFQj",
+  "isArchived": false,
+  "meta": null,
+  "name": "Import Clint copy",
+  "nodes": [
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "Base",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "9b525634-0258-45c0-a703-9f19c08d400d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Base"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d32273c7-98ae-4540-bdc8-ec89028ad838",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "Prospecção",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Prospecção"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "27682f43-a955-4ebc-a2ea-1e8fb8328ab9",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "Conexão",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Conexão"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c77bd662-6091-4158-b0a0-50e9434fe657",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "Aguardando compra",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Aguardando compra"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "be5e4c49-39f4-4375-84aa-7ca943e868b3",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "Fechado",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Fechado"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        928,
+        752
+      ],
+      "id": "2b468771-7670-419c-b0a0-e5eeb91b540a",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Aguardando compra'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1152,
+        1008
+      ],
+      "id": "f9f8999c-953a-48e2-b6c1-65c3165fc7d3",
+      "name": "Mover Aguardando compra"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/businesses/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Fechado'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1152,
+        1200
+      ],
+      "id": "97d06cca-75c3-46ce-96d3-177b224eac05",
+      "name": "Mover Fechado"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Base'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1152,
+        432
+      ],
+      "id": "15020dc0-621d-4868-8d02-59c6d2cf00e9",
+      "name": "Mover Base"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Prospecção'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1152,
+        624
+      ],
+      "id": "b1104352-14cb-4647-9bde-209cfc8abe36",
+      "name": "Mover Prospecção"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"{{ $json._contexto.idsEtapas['Conexão'] }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1152,
+        816
+      ],
+      "id": "ccfbfc47-d08d-4630-b6a3-0005a287e14f",
+      "name": "Mover Conexão"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/pipelines/a04595b7-c290-4ab1-b494-e0c30c53f8de/stages",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stageId\": \"a04bd120-b40e-4fde-bbe1-e4731a4bd19c\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -864,
+        816
+      ],
+      "id": "fcf93a90-2d26-4c14-9785-e982dbf17295",
+      "name": "Listar Estagios"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Acessa a lista de estágios retornada\nconst estagios = items[0].json.data || [];\n\n// Cria um objeto para guardar os IDs: { \"Base\": \"id_123\", \"Conexão\": \"id_456\" }\nconst mapaEstagios = {};\n\nestagios.forEach(estagio => {\n    mapaEstagios[estagio.name] = estagio.id;\n});\n\n// Verifica se achou a etapa Base (obrigatória para a busca)\nif (mapaEstagios[\"Base\"]) {\n    return {\n        json: {\n            stageIdBase: mapaEstagios[\"Base\"], // Para a busca\n            mapaEtapas: mapaEstagios, // <--- O MAPA COMPLETO AQUI\n            encontrou: true\n        }\n    };\n} else {\n    return { json: { encontrou: false } };\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -640,
+        816
+      ],
+      "id": "fccd1997-1774-412c-b298-50964907b82b",
+      "name": "Filtrar Base"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "702aa4e1-4c9c-4d42-8eab-b450db51f533",
+              "leftValue": "={{ $json.encontrou }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -416,
+        816
+      ],
+      "id": "d6a61a53-27c1-460a-b4f0-b91743f1924f",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const stageId = $('Filtrar Base').item.json.stageIdBase;\nconst pipelineName = $('Filtrar Base').item.json.pipelineName;\nconst tamanhoPagina = 1000;\n\n// Cria as requisições para as páginas 0, 1 e 2\nconst paginas = [0, 1, 2]; \n\nreturn paginas.map(pagina => {\n    const skip = pagina * tamanhoPagina;\n    return {\n        json: {\n            // URL CORRIGIDA: Voltamos para /api/v1/businesses\n            // E usamos o filtro que funcionou no seu Curl 3, mas adaptado\n            url: `https://api.g1.datacrazy.io/api/v1/leads?filter[stages]=some%20${stageId}&take=${tamanhoPagina}&skip=${skip}`,\n            pipeline: pipelineName\n        }\n    };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        816
+      ],
+      "id": "f9dbd273-2de2-4115-b638-518ccf1c6989",
+      "name": "Preparar Busca"
+    },
+    {
+      "parameters": {
+        "jsCode": "let listaCompleta = [];\n\n// 1. Resgatar o Mapa de Etapas do nó anterior\nconst mapaEtapas = $('Filtrar Base').item.json.mapaEtapas;\nconst pipelineNome = $('Filtrar Base').item.json.pipelineName;\n\n// 2. Juntar os dados das páginas\nfor (const pagina of items) {\n    const dados = pagina.json;\n    if (dados && Array.isArray(dados.data)) {\n        listaCompleta.push(...dados.data);\n    }\n}\n\n// 3. Retornar os leads com o Mapa de IDs embutido\nreturn listaCompleta.map(lead => {\n    return {\n        json: {\n            ...lead,\n            _contexto: { \n                pipeline: pipelineNome,\n                idsEtapas: mapaEtapas // Agora o lead carrega os IDs certos dessa pipeline!\n            }\n        }\n    };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        256,
+        816
+      ],
+      "id": "bd66b18d-411c-4feb-8659-be1b88edd689",
+      "name": "Separar Leads1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        32,
+        816
+      ],
+      "id": "e09b7876-9ea9-48c2-a1f4-d2fe9791e356",
+      "name": "Buscar Leads Base",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "=https://api.g1.datacrazy.io/api/v1/leads/{{ $json.id }}/businesses",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer dc_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmRlNjhhOTNlZjYzYTUwYmMwOTQ2MSIsInRlbmFudElkIjoiNzhlZmFmM2YtYzIxNC00MzZmLWFlMjgtZGQ1OTlmYTZlOGIxIiwibmFtZSI6Ik44TiA8PiBHdXJ1IiwiaWF0IjoxNzY0NjE1ODE5fQ.y3qOm4lzTxvRNhHYrdH-jpV7HUorQseqNHa9DeKURTo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        480,
+        816
+      ],
+      "id": "8bfdc8bb-f5aa-47a2-ae68-8f24b5929da2",
+      "name": "Buscar Negócios Base",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        704,
+        816
+      ],
+      "id": "1bf88a6e-1d14-4686-8b1e-9e13a762002b"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1088,
+        816
+      ],
+      "id": "e3b10452-5e3b-4cab-b555-87b0d2dd5d3b",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-12T20:49:40.180Z",
+      "createdAt": "2025-12-12T20:49:40.180Z",
+      "role": "workflow:owner",
+      "workflowId": "jn2uVhhNZTlIRFQj",
+      "projectId": "kDsSClWasdM3eAMX"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-12T20:57:23.351Z",
+  "versionId": "0555eddc-2f48-489b-ba3f-e1b799520c5b"
+}

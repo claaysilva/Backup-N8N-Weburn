@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Switch": {
       "main": [
@@ -721,7 +721,7 @@
           "interval": [
             {
               "field": "hours",
-              "hoursInterval": 2
+              "hoursInterval": 40
             }
           ]
         }
@@ -752,12 +752,12 @@
   "staticData": {
     "node:Schedule Trigger": {
       "recurrenceRules": [
-        4
+        8
       ]
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-13T03:19:42.284Z",
+  "updatedAt": "2025-12-13T11:26:04.463Z",
   "versionId": "a4075e9f-7d70-4d5c-91df-4a97bea19ad6"
 }

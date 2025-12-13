@@ -3,13 +3,7 @@
   "connections": {
     "Switch": {
       "main": [
-        [
-          {
-            "node": "Mover Base",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Mover Prospecção",
@@ -698,7 +692,7 @@
     },
     {
       "parameters": {
-        "amount": 2
+        "amount": 1
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -757,11 +751,13 @@
   ],
   "staticData": {
     "node:Schedule Trigger": {
-      "recurrenceRules": []
+      "recurrenceRules": [
+        4
+      ]
     }
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-12-13T02:24:27.884Z",
-  "versionId": "b25bf0cf-db0f-4ba1-a4cc-22cb677e110a"
+  "updatedAt": "2025-12-13T03:19:42.284Z",
+  "versionId": "a4075e9f-7d70-4d5c-91df-4a97bea19ad6"
 }
